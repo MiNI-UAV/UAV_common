@@ -11,6 +11,7 @@ include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/src/logger
     ${CMAKE_CURRENT_SOURCE_DIR}/src/PID
     ${CMAKE_CURRENT_SOURCE_DIR}/src/timed_loop
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/RK4
 )
 
 # Add source files
@@ -18,6 +19,7 @@ set(SOURCES
     src/logger/logger.cpp
     src/PID/PID.cpp
     src/timed_loop/timed_loop.cpp
+    src/RK4/RK4.cpp
 )
 
 # Create the library
