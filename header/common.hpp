@@ -1,4 +1,6 @@
-#include "logger.hpp"
-#include "PID.hpp"
-#include "status.hpp"
-#include "timed_loop.hpp"
+#pragma once
+
+#include "../src/logger/logger.hpp"
+#include "../src/PID/PID.hpp"
+#include "../src/timed_loop/timed_loop.hpp"
+#include "../src/timed_loop/status.hpp"
