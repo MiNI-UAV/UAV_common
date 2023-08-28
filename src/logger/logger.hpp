@@ -3,8 +3,13 @@
 #include <iostream>
 #include <fstream>
 #include <initializer_list>
+#include <string>
+#include <filesystem>
+namespace fs = std::filesystem;
 
-#define LOGGER_MASK 5
+#ifndef LOGGER_MASK
+#define LOGGER_MASK -1
+#endif
 
 class Logger
 {
@@ -16,8 +21,11 @@ public:
     void log(double time, std::initializer_list<Eigen::VectorXd> args);
     void log(double time, std::initializer_list<double> args);
 
+    static void setLogDirectory(std::string subdirectory);
+
 private:
     std::ofstream file;
     const uint8_t group;
+    static fs::path log_path;
 };
 

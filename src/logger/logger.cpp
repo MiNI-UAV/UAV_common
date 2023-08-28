@@ -3,8 +3,11 @@
 #include <iostream>
 #include <fstream>
 #include <initializer_list>
+#include <string>
+#include <filesystem>
+namespace fs = std::filesystem;
 
-extern std::string log_path;
+fs::path Logger::log_path = "logs";
 
 bool shouldLog(uint8_t group)
 {
@@ -15,7 +18,7 @@ Logger::Logger(std::string path, std::string fmt, uint8_t group):
     group{group}
 {
     if(!shouldLog(group)) return;
-    file.open(log_path + path);
+    file.open(log_path / path);
     if(fmt != "") file << fmt << std::endl;
 }
 
@@ -51,4 +54,13 @@ void Logger::log(double time, std::initializer_list<double> args)
         file << ',' << v;
     }
     file << std::endl;
+}
+
+void Logger::setLogDirectory(std::string subdirectory) 
+{
+    std::string session;
+    std::ifstream session_read(log_path / "session");
+    session_read >> session;
+    log_path /= session;
+    log_path /= subdirectory;
 }
