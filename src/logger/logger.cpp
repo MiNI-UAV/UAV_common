@@ -62,5 +62,6 @@ void Logger::setLogDirectory(std::string subdirectory)
     std::ifstream session_read(log_path / "session");
     session_read >> session;
     log_path /= session;
+    fs::create_directories(log_path / subdirectory);
     log_path /= subdirectory;
 }
