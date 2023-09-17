@@ -6,3 +6,5 @@
 #include "../src/timed_loop/status.hpp"
 #include "../src/RK4/RK4.hpp"
 #include "../src/parser/parser.hpp"
+#include "../src/parser/uav_params.hpp"
+#include "../src/components/components.hpp"
