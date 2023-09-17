@@ -2,9 +2,8 @@
 #include <limits>
 #include <algorithm>
 
-PID::PID(double dt, double Kp, double Ki, double Kd,
+PID::PID(double Kp, double Ki, double Kd,
          double min, double max, AntiWindUpMode antiWindUp):
-    _dt(dt),
     _max(max),
     _min(min),
     _Kp(Kp),
@@ -20,15 +19,15 @@ PID::~PID()
 {
 }
 
-double PID::calc(double error)
+double PID::calc(const double dt, double error)
 {
     double Pout = _Kp * error;
 
-    double dI = error * _dt;
+    double dI = error * dt;
     _integral += dI;
     double Iout = _Ki * _integral;
 
-    double derivative = (error - _pre_error) / _dt;
+    double derivative = (error - _pre_error) / dt;
     double Dout = _Kd * derivative;
 
     double output = Pout + Iout + Dout;

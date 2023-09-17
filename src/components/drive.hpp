@@ -17,7 +17,7 @@ struct Rotor : Drive
     int direction;
     double timeConstant;
     double maxSpeed;
-    
+    double hoverSpeed;
 };
 
 class Jet : public Drive

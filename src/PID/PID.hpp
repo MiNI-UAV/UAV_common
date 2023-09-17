@@ -10,17 +10,16 @@ enum AntiWindUpMode
 class PID
 {
     public:
-        PID(double dt, double Kp, double Ki, double Kd,
+        PID(double Kp, double Ki, double Kd,
          double min = std::numeric_limits<double>::min(),
          double max = std::numeric_limits<double>::max(),
          AntiWindUpMode antiWindUp = AntiWindUpMode::Clamping);
         ~PID();
-        double calc(double error);
+        double calc(const double dt, double error);
         void clear();
 
 
     private:
-        double _dt;
         double _max;
         double _min;
         double _Kp;

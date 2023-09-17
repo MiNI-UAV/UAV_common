@@ -43,6 +43,17 @@ Eigen::VectorXd UAVparams::getRotorMaxSpeeds() const
     return vec;
 }
 
+Eigen::VectorXd UAVparams::getRotorHoverSpeeds() const
+{
+    Eigen::VectorXd vec;
+    vec.setZero(noOfRotors);
+    for (int i = 0; i < noOfRotors; i++)
+    {
+        vec(i) = rotors[i].hoverSpeed;
+    }
+    return vec;
+}
+
 const UAVparams *UAVparams::getSingleton()
 {
     return singleton;
@@ -94,7 +105,7 @@ void parseHinge(rapidxml::xml_node<>* hingeNode, Hinge* hinge)
         if(std::strcmp(node->name(),"axis") == 0)
         {
             double x,y,z;
-            std::sscanf(node->value(),"%lf %lf %lf",&x,&y,&z);
+            std::sscanf(node->value(),"%lf, %lf, %lf",&x,&y,&z);
             axis << x,y,z;
         }
 
@@ -174,6 +185,11 @@ void UAVparams::setRotors(rapidxml::xml_node<> * rotorsNode)
                 rotors[i].maxSpeed = std::stod(node->value());
             }
 
+            if(std::strcmp(node->name(),"hoverSpeed") == 0)
+            {
+                rotors[i].hoverSpeed = std::stod(node->value());
+            }
+
             if(std::strcmp(node->name(),"hinges") == 0)
             {
                 rotors[i].noOfHinges = std::stod(node->first_attribute()->value());
@@ -205,14 +221,14 @@ void UAVparams::setJets(rapidxml::xml_node<> * jetsNode)
             if(std::strcmp(node->name(),"position") == 0)
             {
                 double x,y,z;
-                std::sscanf(node->value(),"%lf %lf %lf",&x,&y,&z);
+                std::sscanf(node->value(),"%lf, %lf, %lf",&x,&y,&z);
                 jets[i].position << x,y,z;
             }
 
             if(std::strcmp(node->name(),"axis") == 0)
             {
                 double x,y,z;
-                std::sscanf(node->value(),"%lf %lf %lf",&x,&y,&z);
+                std::sscanf(node->value(),"%lf, %lf, %lf",&x,&y,&z);
                 jets[i].axis << x,y,z;
             }
 
@@ -223,12 +239,12 @@ void UAVparams::setJets(rapidxml::xml_node<> * jetsNode)
 
             if(std::strcmp(node->name(),"thrust") == 0)
             {
-                jets[i].thrust = parseVectorXd(node->value(),jets[i].phases);
+                jets[i].thrust = parseVectorXd(node->value(),jets[i].phases,',');
             }
 
             if(std::strcmp(node->name(),"time") == 0)
             {
-                jets[i].time = parseVectorXd(node->value(),jets[i].phases);
+                jets[i].time = parseVectorXd(node->value(),jets[i].phases,',');
             }
 
             if(std::strcmp(node->name(),"hinges") == 0)
@@ -312,6 +328,75 @@ void UAVparams::setControlSurface(rapidxml::xml_node<> *surfaceNode)
     surfaces = ControlSurfaces(noOfSurface,matrix,min,max,trim);
 }
 
+PID parsePID(rapidxml::xml_node<>* PIDNode)
+{
+    double P = 0,I = 0,D = 0,
+    min = std::numeric_limits<double>::min(),
+    max = std::numeric_limits<double>::max();
+
+    for (rapidxml::xml_node<>* node = PIDNode->first_node(); node; node = node->next_sibling()) 
+    {
+        if(std::strcmp(node->name(),"P") == 0) P = std::stod(node->value());
+        if(std::strcmp(node->name(),"I") == 0) I = std::stod(node->value());
+        if(std::strcmp(node->name(),"D") == 0) D = std::stod(node->value());
+        if(std::strcmp(node->name(),"min") == 0) min = std::stod(node->value());
+        if(std::strcmp(node->name(),"max") == 0) max = std::stod(node->value());
+    }
+    return PID(P,I,D,min,max);
+}
+
+void UAVparams::setSensors(rapidxml::xml_node<> *sensorNode)
+{
+    for (rapidxml::xml_node<>* node = sensorNode->first_node(); node; node = node->next_sibling()) 
+    {
+        SensorParams sensor;
+        sensor.name = std::string(node->name());
+        for (rapidxml::xml_node<>* elem = node->first_node(); elem; elem = elem->next_sibling()) 
+        {
+            if(std::strcmp(elem->name(),"sd") == 0) sensor.sd = std::stod(elem->value());
+            if(std::strcmp(elem->name(),"refreshTime") == 0) sensor.refreshTime = std::stod(elem->value());
+            if(std::strcmp(elem->name(),"bias") == 0)
+            {
+                double x,y,z;
+                std::sscanf(elem->value(),"%lf, %lf, %lf",&x,&y,&z);
+                sensor.bias << x,y,z;
+            } 
+        }
+        sensors.push_back(std::move(sensor));
+    }
+}
+
+void UAVparams::setAHRS(rapidxml::xml_node<> *AHRSNode)
+{
+    for (rapidxml::xml_node<>* node = AHRSNode->first_node(); node; node = node->next_sibling()) 
+    {
+        if(std::strcmp(node->name(),"type") == 0) ahrs.type = std::string(node->value());
+        if(std::strcmp(node->name(),"alpha") == 0) ahrs.alpha = std::stod(node->value());
+        if(std::strcmp(node->name(),"Q") == 0) ahrs.Q = std::stod(node->value());
+        if(std::strcmp(node->name(),"R") == 0) ahrs.R = std::stod(node->value());
+    }
+}
+
+void UAVparams::setEKF(rapidxml::xml_node<> *EKFNode)
+{
+    for (rapidxml::xml_node<>* node = EKFNode->first_node(); node; node = node->next_sibling()) 
+    {
+        if(std::strcmp(node->name(),"predictScaler") == 0) ekf.predictScaler = std::stod(node->value());
+        if(std::strcmp(node->name(),"updateScaler") == 0) ekf.updateScaler = std::stod(node->value());
+        if(std::strcmp(node->name(),"baroScaler") == 0) ekf.baroScaler = std::stod(node->value());
+        if(std::strcmp(node->name(),"zScaler") == 0) ekf.zScaler = std::stod(node->value());
+    }
+}
+
+void UAVparams::setMixers(rapidxml::xml_node<> *mixersNode)
+{
+    for (rapidxml::xml_node<>* node = mixersNode->first_node(); node; node = node->next_sibling()) 
+    {
+        if(std::strcmp(node->name(),"rotorMixer") == 0) rotorMixer = parseMatrixXd(node->value(), noOfRotors,4, ',');
+        if(std::strcmp(node->name(),"surfaceMixer") == 0) surfaceMixer = parseMatrixXd(node->value(), surfaces.getNoOfSurface(),4, ',');
+    }
+}
+
 void UAVparams::loadConfig(std::string configFile)
 {
     if(!std::filesystem::exists(configFile))
@@ -349,6 +434,35 @@ void UAVparams::loadConfig(std::string configFile)
         if(std::strcmp(node->name(),"surface") == 0)
         {
             setControlSurface(node);
+        }
+        if(std::strcmp(node->name(),"PID") == 0)
+        {
+            for (rapidxml::xml_node<>* PIDNode = node->first_node(); PIDNode; PIDNode = PIDNode->next_sibling()) 
+            {
+                pids.insert(std::make_pair(PIDNode->name(),parsePID(PIDNode)));
+            }
+        }
+        if(std::strcmp(node->name(),"navi") == 0)
+        {
+            for (rapidxml::xml_node<>* naviNode = node->first_node(); naviNode; naviNode = naviNode->next_sibling()) 
+            {
+                if(std::strcmp(naviNode->name(),"sensors") == 0)
+                {
+                    setSensors(naviNode);
+                }
+                if(std::strcmp(naviNode->name(),"AHRS") == 0)
+                {
+                    setAHRS(naviNode);
+                }
+                if(std::strcmp(naviNode->name(),"EKF") == 0)
+                {
+                    setEKF(naviNode);
+                }
+            }
+        }
+        if(std::strcmp(node->name(),"mixers") == 0)
+        {
+            setMixers(node);
         }
     }
 }
