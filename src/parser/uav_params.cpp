@@ -159,14 +159,14 @@ void UAVparams::setRotors(rapidxml::xml_node<> * rotorsNode)
             if(std::strcmp(node->name(),"position") == 0)
             {
                 double x,y,z;
-                std::sscanf(node->value(),"%lf %lf %lf",&x,&y,&z);
+                std::sscanf(node->value(),"%lf, %lf, %lf",&x,&y,&z);
                 rotors[i].position << x,y,z;
             }
 
             if(std::strcmp(node->name(),"axis") == 0)
             {
                 double x,y,z;
-                std::sscanf(node->value(),"%lf %lf %lf",&x,&y,&z);
+                std::sscanf(node->value(),"%lf, %lf, %lf",&x,&y,&z);
                 rotors[i].axis << x,y,z;
             }
 
