@@ -4,6 +4,7 @@
 
 PID::PID(double Kp, double Ki, double Kd,
          double min, double max, AntiWindUpMode antiWindUp):
+    _dt(1.0),
     _max(max),
     _min(min),
     _Kp(Kp),
@@ -19,7 +20,17 @@ PID::~PID()
 {
 }
 
-double PID::calc(const double dt, double error)
+void PID::set_dt(double dt) 
+{
+    _dt = dt;
+}
+
+double PID::calc(double error)
+{
+    return calc(error,_dt);
+}
+
+double PID::calc(double error, double dt)
 {
     double Pout = _Kp * error;
 

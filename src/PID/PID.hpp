@@ -15,11 +15,14 @@ class PID
          double max = std::numeric_limits<double>::max(),
          AntiWindUpMode antiWindUp = AntiWindUpMode::Clamping);
         ~PID();
-        double calc(const double dt, double error);
+        void set_dt(double dt);
+        double calc(double error);
+        double calc(double error, double dt);
         void clear();
 
 
     private:
+        double _dt;
         double _max;
         double _min;
         double _Kp;
