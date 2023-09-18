@@ -47,7 +47,6 @@ struct UAVparams
         AeroCofficients aero_coffs;
 
         std::map<std::string,PID> pids;
-        std::function<Eigen::VectorXd(double,double,double,double)> mixer;
 
         std::vector<SensorParams> sensors;
         AHRSParams ahrs;
