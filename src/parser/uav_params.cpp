@@ -11,6 +11,7 @@
 UAVparams::UAVparams() 
 {
     name = "default";
+    initialMode = "NONE";
     
     if(singleton != nullptr)
     {
@@ -414,6 +415,10 @@ void UAVparams::loadConfig(std::string configFile)
         if(std::strcmp(node->name(),"name") == 0)
         {
             name.assign(node->value(), node->value_size());
+        }
+        if(std::strcmp(node->name(),"initialMode") == 0)
+        {
+            initialMode.assign(node->value(), node->value_size());
         }
         if(std::strcmp(node->name(),"ineria") == 0)
         {

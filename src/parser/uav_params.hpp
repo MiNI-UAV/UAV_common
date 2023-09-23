@@ -20,6 +20,8 @@ struct UAVparams
 
         bool instantRun;
 
+        std::string initialMode;
+
         //Mass params
         double m;
         double Ix;
