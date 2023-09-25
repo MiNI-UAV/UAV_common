@@ -95,6 +95,41 @@ void UAVparams::setMass(rapidxml::xml_node<> *interiaNode)
     }
 }
 
+void UAVparams::setInitial(rapidxml::xml_node<> *initialNode)
+{
+    initialMode = "NONE";
+    initialPosition.setZero();
+    initialOrientation.setZero();
+    initialVelocity.setZero();
+
+    for (rapidxml::xml_node<>* node = initialNode->first_node(); node; node = node->next_sibling()) 
+    {
+        if(std::strcmp(node->name(),"mode") == 0)
+        {
+           initialMode.assign(node->value(), node->value_size());
+        }
+        if(std::strcmp(node->name(),"position") == 0)
+        {
+            double x,y,z;
+            std::sscanf(node->value(),"%lf, %lf, %lf",&x,&y,&z);
+            initialPosition << x,y,z;
+        }
+        if(std::strcmp(node->name(),"orientation") == 0)
+        {
+            double x,y,z;
+            std::sscanf(node->value(),"%lf, %lf, %lf",&x,&y,&z);
+            initialOrientation << x,y,z;
+        }
+        if(std::strcmp(node->name(),"velocity") == 0)
+        {
+            double x,y,z;
+            std::sscanf(node->value(),"%lf, %lf, %lf",&x,&y,&z);
+            initialVelocity << x,y,z;
+        }
+
+    }
+}
+
 void parseHinge(rapidxml::xml_node<>* hingeNode, Hinge* hinge)
 {
     Eigen::Vector3d axis(1.0,0.0,0.0);
@@ -416,9 +451,9 @@ void UAVparams::loadConfig(std::string configFile)
         {
             name.assign(node->value(), node->value_size());
         }
-        if(std::strcmp(node->name(),"initialMode") == 0)
+        if(std::strcmp(node->name(),"initial") == 0)
         {
-            initialMode.assign(node->value(), node->value_size());
+            setInitial(node);
         }
         if(std::strcmp(node->name(),"ineria") == 0)
         {

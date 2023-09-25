@@ -21,6 +21,9 @@ struct UAVparams
         bool instantRun;
 
         std::string initialMode;
+        Eigen::Vector3d initialPosition;
+        Eigen::Vector3d initialOrientation;
+        Eigen::Vector3d initialVelocity;
 
         //Mass params
         double m;
@@ -62,6 +65,7 @@ struct UAVparams
     private:
         
         void setMass(rapidxml::xml_node<> * interiaNode);
+        void setInitial(rapidxml::xml_node<>* initialNode);
         void setRotors(rapidxml::xml_node<> * rotorsNode);
         void setJets(rapidxml::xml_node<> * rotorsNode);
         void setAero(rapidxml::xml_node<> * aeroNode);
