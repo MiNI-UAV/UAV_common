@@ -37,8 +37,8 @@ Eigen::Matrix3d asSkewMatrix(Eigen::Vector3d v)
 
 void Hinge::updateValue(double newValue) 
 {
-    static const Eigen::Matrix3d crossProductMatrix = asSkewMatrix(axis);
-    static const Eigen::Matrix3d outerProduct = axis * axis.transpose();
+    const Eigen::Matrix3d crossProductMatrix = asSkewMatrix(axis);
+    const Eigen::Matrix3d outerProduct = axis * axis.transpose();
     std::scoped_lock lck(mtx);
     value = std::clamp(newValue,min,max);
     rot = cos(value) * Eigen::Matrix3d::Identity() 
