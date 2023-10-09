@@ -9,4 +9,5 @@ struct AeroCofficients
     Eigen::Vector<double,6> C0;
     Eigen::Matrix<double,6,3> Cpqr;
     Eigen::Matrix<double,6,4> Cab;
+    double stallLimit;
 };

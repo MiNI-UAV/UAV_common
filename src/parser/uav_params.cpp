@@ -298,6 +298,8 @@ void UAVparams::setJets(rapidxml::xml_node<> * jetsNode)
 
 void UAVparams::setAero(rapidxml::xml_node<> * aeroNode)
 {
+    aero_coffs.stallLimit = 0.0;
+
     for (rapidxml::xml_node<>* node = aeroNode->first_node(); node; node = node->next_sibling()) 
     {
         if(std::strcmp(node->name(),"S") == 0)
@@ -323,6 +325,10 @@ void UAVparams::setAero(rapidxml::xml_node<> * aeroNode)
         if(std::strcmp(node->name(),"Cab") == 0)
         {
             aero_coffs.Cab =  parseMatrixXd(node->value(), 6,4, ',');
+        }
+        if(std::strcmp(node->name(),"stallLimit") == 0)
+        {
+            aero_coffs.stallLimit = std::stod(node->value());
         }
     }
 }
