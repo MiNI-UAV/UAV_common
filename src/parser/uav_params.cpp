@@ -439,6 +439,104 @@ void UAVparams::setMixers(rapidxml::xml_node<> *mixersNode)
     }
 }
 
+void UAVparams::setAmmo(rapidxml::xml_node<> *ammoNode) 
+{
+    noOfAmmo = std::stoi(ammoNode->first_attribute()->value());
+
+    if(noOfAmmo == 0) return; 
+
+    ammo = std::make_unique<Ammo[]>(noOfAmmo);
+
+    int i = 0;
+    for (rapidxml::xml_node<>* parentNode = ammoNode->first_node(); parentNode && i < noOfAmmo; parentNode = parentNode->next_sibling(), i++) 
+    {
+        for(rapidxml::xml_node<>* node = parentNode->first_node(); node; node = node->next_sibling())
+        {
+            int ammount = 0;
+            double reload = 0.0;
+            Eigen::Vector3d position(0.0,0.0,0.0);
+            double mass = 0.0;
+            Eigen::Vector3d V0(0.0,0.0,0.0);
+
+            if(std::strcmp(node->name(),"ammount") == 0)
+            {
+                ammount = std::stoi(node->value());
+            }
+
+            if(std::strcmp(node->name(),"reload") == 0)
+            {
+                reload = std::stod(node->value());
+            }
+
+            if(std::strcmp(node->name(),"position") == 0)
+            {
+                double x,y,z;
+                std::sscanf(node->value(),"%lf, %lf, %lf",&x,&y,&z);
+                position << x,y,z;
+            }
+
+            if(std::strcmp(node->name(),"mass") == 0)
+            {
+                mass = std::stod(node->value());
+            }
+
+            if(std::strcmp(node->name(),"V0") == 0)
+            {
+                double x,y,z;
+                std::sscanf(node->value(),"%lf, %lf, %lf",&x,&y,&z);
+                V0 << x,y,z;
+            }
+
+            ammo[i] = Ammo(ammount,reload,position,mass,V0);
+        }
+    }
+}
+
+void UAVparams::setCargo(rapidxml::xml_node<> *cargoNode) 
+{
+    noOfCargo = std::stoi(cargoNode->first_attribute()->value());
+
+    if(noOfCargo == 0) return; 
+
+    cargo = std::make_unique<Cargo[]>(noOfCargo);
+
+    int i = 0;
+    for (rapidxml::xml_node<>* parentNode = cargoNode->first_node(); parentNode && i < noOfCargo; parentNode = parentNode->next_sibling(), i++) 
+    {
+        for(rapidxml::xml_node<>* node = parentNode->first_node(); node; node = node->next_sibling())
+        {
+            int ammount = 0;
+            double reload = 0.0;
+            Eigen::Vector3d position(0.0,0.0,0.0);
+            double mass = 0.0;
+
+            if(std::strcmp(node->name(),"ammount") == 0)
+            {
+                ammount = std::stoi(node->value());
+            }
+
+            if(std::strcmp(node->name(),"reload") == 0)
+            {
+                reload = std::stod(node->value());
+            }
+
+            if(std::strcmp(node->name(),"position") == 0)
+            {
+                double x,y,z;
+                std::sscanf(node->value(),"%lf, %lf, %lf",&x,&y,&z);
+                position << x,y,z;
+            }
+
+            if(std::strcmp(node->name(),"mass") == 0)
+            {
+                mass = std::stod(node->value());
+            }
+
+            cargo[i] = Cargo(ammount,reload,position,mass);
+        }
+    }
+}
+
 void UAVparams::loadConfig(std::string configFile)
 {
     if(!std::filesystem::exists(configFile))

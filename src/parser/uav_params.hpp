@@ -60,6 +60,14 @@ struct UAVparams
         Eigen::MatrixX4d rotorMixer;
         Eigen::MatrixX4d surfaceMixer;
 
+        //Ammo params
+        int noOfAmmo;
+        std::unique_ptr<Ammo[]> ammo;
+
+        //Cargo params
+        int noOfCargo;
+        std::unique_ptr<Cargo[]> cargo;
+
         const static UAVparams* getSingleton();
 
     private:
@@ -74,6 +82,8 @@ struct UAVparams
         void setAHRS(rapidxml::xml_node<>* AHRSNode);
         void setEKF(rapidxml::xml_node<>* EKFNode);
         void setMixers(rapidxml::xml_node<>* mixersNode);
+        void setAmmo(rapidxml::xml_node<> * ammoNode);
+        void setCargo(rapidxml::xml_node<> * cargoNode);
 
         static UAVparams* singleton;
 
