@@ -37,6 +37,7 @@ public:
          double mass,
          Eigen::Vector3d V0
          );
+    Ammo& operator=(const Ammo& other);
     
     Eigen::Vector3d getV0() { return _V0; }
 

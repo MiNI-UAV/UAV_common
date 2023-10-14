@@ -450,14 +450,14 @@ void UAVparams::setAmmo(rapidxml::xml_node<> *ammoNode)
     int i = 0;
     for (rapidxml::xml_node<>* parentNode = ammoNode->first_node(); parentNode && i < noOfAmmo; parentNode = parentNode->next_sibling(), i++) 
     {
+        int ammount = 0;
+        double reload = 0.0;
+        Eigen::Vector3d position(0.0,0.0,0.0);
+        double mass = 0.0;
+        Eigen::Vector3d V0(0.0,0.0,0.0);
+
         for(rapidxml::xml_node<>* node = parentNode->first_node(); node; node = node->next_sibling())
         {
-            int ammount = 0;
-            double reload = 0.0;
-            Eigen::Vector3d position(0.0,0.0,0.0);
-            double mass = 0.0;
-            Eigen::Vector3d V0(0.0,0.0,0.0);
-
             if(std::strcmp(node->name(),"ammount") == 0)
             {
                 ammount = std::stoi(node->value());
@@ -485,10 +485,9 @@ void UAVparams::setAmmo(rapidxml::xml_node<> *ammoNode)
                 double x,y,z;
                 std::sscanf(node->value(),"%lf, %lf, %lf",&x,&y,&z);
                 V0 << x,y,z;
-            }
-
-            ammo[i] = Ammo(ammount,reload,position,mass,V0);
+            }      
         }
+        ammo[i] = Ammo(ammount,reload,position,mass,V0);
     }
 }
 
@@ -503,13 +502,12 @@ void UAVparams::setCargo(rapidxml::xml_node<> *cargoNode)
     int i = 0;
     for (rapidxml::xml_node<>* parentNode = cargoNode->first_node(); parentNode && i < noOfCargo; parentNode = parentNode->next_sibling(), i++) 
     {
+        int ammount = 0;
+        double reload = 0.0;
+        Eigen::Vector3d position(0.0,0.0,0.0);
+        double mass = 0.0;
         for(rapidxml::xml_node<>* node = parentNode->first_node(); node; node = node->next_sibling())
         {
-            int ammount = 0;
-            double reload = 0.0;
-            Eigen::Vector3d position(0.0,0.0,0.0);
-            double mass = 0.0;
-
             if(std::strcmp(node->name(),"ammount") == 0)
             {
                 ammount = std::stoi(node->value());
@@ -531,9 +529,8 @@ void UAVparams::setCargo(rapidxml::xml_node<> *cargoNode)
             {
                 mass = std::stod(node->value());
             }
-
-            cargo[i] = Cargo(ammount,reload,position,mass);
         }
+        cargo[i] = Cargo(ammount,reload,position,mass);
     }
 }
 
@@ -607,6 +604,14 @@ void UAVparams::loadConfig(std::string configFile)
         if(std::strcmp(node->name(),"mixers") == 0)
         {
             setMixers(node);
+        }
+        if(std::strcmp(node->name(),"ammo") == 0)
+        {
+            setAmmo(node);
+        }
+        if(std::strcmp(node->name(),"cargo") == 0)
+        {
+            setCargo(node);
         }
     }
 }

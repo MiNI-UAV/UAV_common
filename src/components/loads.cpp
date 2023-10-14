@@ -38,6 +38,13 @@ Ammo::Ammo(int ammount, double reload, Eigen::Vector3d offset, double mass,
     : Load(ammount,reload,offset,mass), _V0{V0} 
 {}
 
+Ammo &Ammo::operator=(const Ammo &other)
+{
+   _V0 = other._V0;
+   Load::operator=(other);
+   return *this;
+}
+
 Cargo::Cargo(int ammount, double reload, Eigen::Vector3d offset, double mass) 
     : Load(ammount,reload,offset,mass)        
 {}
