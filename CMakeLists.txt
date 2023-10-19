@@ -14,7 +14,7 @@ target_include_directories(${PROJECT_NAME}
     PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/src/logger
         ${CMAKE_CURRENT_SOURCE_DIR}/src/PID
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/RK4
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/ode
         ${CMAKE_CURRENT_SOURCE_DIR}/src/timed_loop
         ${CMAKE_CURRENT_SOURCE_DIR}/src/parser
         ${CMAKE_CURRENT_SOURCE_DIR}/src/components
@@ -31,7 +31,6 @@ target_sources(${PROJECT_NAME}
     ${SOURCE_DIR}/ode/ode.cpp
     ${SOURCE_DIR}/ode/ode.hpp
     ${SOURCE_DIR}/PID/PID.cpp
-    ${SOURCE_DIR}/RK4/RK4.cpp
     ${SOURCE_DIR}/timed_loop/timed_loop.cpp
     ${SOURCE_DIR}/parser/parser.cpp
     ${SOURCE_DIR}/parser/uav_params.cpp
