@@ -11,11 +11,13 @@ public:
                           std::function<Eigen::VectorXd(double,Eigen::VectorXd)> rhs_fun,
                           double h) = 0;
 
-    enum class ODEMethod { 
+    enum ODEMethod { 
         Euler,
+        Heun,
         RK4,
-        RK5
+        NONE
     };
 
+    static ODEMethod fromString(std::string str);
     static std::unique_ptr<ODE> factory(ODEMethod method);
 };

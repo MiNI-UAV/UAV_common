@@ -27,6 +27,7 @@ target_link_libraries(${PROJECT_NAME} Eigen3::Eigen)
 target_sources(${PROJECT_NAME}
     PRIVATE
     ${SOURCE_DIR}/logger/logger.cpp
+    ${SOURCE_DIR}/ode/ode_impl.hpp
     ${SOURCE_DIR}/ode/ode.cpp
     ${SOURCE_DIR}/ode/ode.hpp
     ${SOURCE_DIR}/PID/PID.cpp
@@ -50,7 +51,7 @@ target_sources(${PROJECT_NAME}
 # Tests
 enable_testing() # Enable testing for the project
 
-# Add a test target for RK4
-add_executable(RK4_test ${SOURCE_DIR}/RK4/RK4_test.cpp ${SOURCE_FILES})
-target_link_libraries(RK4_test ${PROJECT_NAME} gtest gtest_main)
-add_test(NAME RK4_test COMMAND RK4_test)
+# Test target for ODE
+add_executable(ODE_test ${SOURCE_DIR}/ode/ode_test.cpp ${SOURCE_FILES})
+target_link_libraries(ODE_test ${PROJECT_NAME} gtest gtest_main)
+add_test(NAME ODE_test COMMAND ODE_test)
