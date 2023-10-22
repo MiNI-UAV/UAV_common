@@ -1,11 +1,16 @@
 #include <Eigen/Dense>
 #include <atomic>
 
+/// @brief Load of aircraft that can be droped or launched
 class Load
 {
 public:
+    /// @brief get mass of load
+    /// @return mass
     double getMass() { return _mass; }
 
+    /// @brief get offset of load
+    /// @return offset vector
     Eigen::Vector3d getOffset() { return _offset; }
 
     /// @brief Try to release load
@@ -39,6 +44,8 @@ public:
          );
     Ammo& operator=(const Ammo& other);
     
+    /// @brief get start velocity of ammo when launched
+    /// @return start velocity vector
     Eigen::Vector3d getV0() { return _V0; }
 
 protected:

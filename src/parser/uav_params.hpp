@@ -9,6 +9,7 @@
 #include "../PID/PID.hpp"
 
 
+/// @brief Parsed UAV configuration from XML
 struct UAVparams
 {
     public:
