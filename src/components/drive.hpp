@@ -11,6 +11,7 @@ struct Drive
     Hinge hinges[2];
 };
 
+/// @brief Rotor engine with controlled speed
 struct Rotor : Drive
 {
     double forceCoff;
@@ -21,6 +22,7 @@ struct Rotor : Drive
     double hoverSpeed;
 };
 
+/// @brief Jet rocket engine
 class Jet : public Drive
 {
 public:

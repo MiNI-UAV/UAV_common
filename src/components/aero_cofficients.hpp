@@ -1,9 +1,10 @@
 #pragma once
 #include <Eigen/Dense>
 
+/// @brief Aerodynamic cofficient
 struct AeroCofficients
 {
-    double S;
+    double S; 
     double d;
     double eAR;
     Eigen::Vector<double,6> C0;

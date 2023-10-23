@@ -2,6 +2,7 @@
 
 #include "ode.hpp"
 
+/// @brief Explicit Euler algorithm
 class ODE_Euler: public ODE
 {
     Eigen::VectorXd step(double t,
@@ -13,6 +14,7 @@ class ODE_Euler: public ODE
     }
 };
 
+/// @brief Second order explicit Heun algorithm
 class ODE_Heun: public ODE
 {
     Eigen::VectorXd step(double t,
@@ -26,6 +28,7 @@ class ODE_Heun: public ODE
     }
 };
 
+/// @brief Fourth order Runge Kutta algorithm
 class ODE_RK4: public ODE
 {
     Eigen::VectorXd step(double t,
