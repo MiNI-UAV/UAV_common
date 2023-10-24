@@ -7,6 +7,12 @@
 class ODE
 {
 public:
+    /// @brief Constructor
+    ODE(int micro_steps);
+
+    /// @brief Virtual deconstructor
+    virtual ~ODE() {}
+
     /// @brief One step of explicit solving algorithm
     /// @param t start time
     /// @param y0 start variable
@@ -17,6 +23,10 @@ public:
                           Eigen::VectorXd y0,
                           std::function<Eigen::VectorXd(double,Eigen::VectorXd)> rhs_fun,
                           double h) = 0;
+
+    /// @brief Return microsteps - number of rhs function calls to calculate on step.
+    /// @return microsteps
+    int getMicrosteps() const;
 
     /// @brief Supported solving method
     enum ODEMethod { 
@@ -36,4 +46,9 @@ public:
     /// @param method type of desired method
     /// @return instance of ODE solver
     static std::unique_ptr<ODE> factory(ODEMethod method);
+
+private:
+    
+    /// @brief define how many time rhs_fun will be called in one step
+    const int _micro_steps;
 };

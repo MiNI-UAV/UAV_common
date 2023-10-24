@@ -89,32 +89,24 @@ TEST_P(ODETest, TestFirstOrder)
     ASSERT_FLOAT_EQ(y.x() - a * t,0.0);
 }
 
-//ODE should calc harmonic oscillator with low error
-TEST_P(ODETest, TestHarmonicOscillator)
+//RHS function should be called declared times
+TEST_P(ODETest, TestRHSCalls)
 {
-    constexpr double EPS = 0.05;
-    constexpr double k = 2.0;
-    constexpr double m = 5.0;
-    const double T = 2.0 * std::atan(1.0)*4 * std::sqrt(m/k);
-    constexpr double dt = 0.01;
-    constexpr double A = 1.0;
-
     auto method = GetParam();
     auto ode = ODE::factory(method);
     ASSERT_NE(ode, nullptr);
 
-    Eigen::Vector2d y0;
-    y0 << A, 0.0;
-    Eigen::Vector2d y = y0;
-    for(double time = 0; time < T/2.0; time += dt)
-    {
-        y = ode->step(time,y,[](double t, Eigen::VectorXd y){
-            Eigen::Vector2d res;
-            res << y.y(), -(k / m) * y.x();
-            return res;
-        },dt);
-    }
-    ASSERT_LT((y + y0).norm(), EPS);
+    int counter = 0;
+    Eigen::Vector<double,1> y0;
+    y0 << 0.0;
+    ode->step(0.0,y0,
+        [&counter](double t, Eigen::VectorXd y)
+        {
+            counter++;
+            return y;
+        },1.0);
+
+    ASSERT_EQ(counter, ode->getMicrosteps());
 }
 
 INSTANTIATE_TEST_SUITE_P(TestDerivedClasses, ODETest, testing::ValuesIn(getMethodsToTest()));

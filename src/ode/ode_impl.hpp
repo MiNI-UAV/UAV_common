@@ -5,6 +5,11 @@
 /// @brief Explicit Euler algorithm
 class ODE_Euler: public ODE
 {
+public:
+    ODE_Euler()
+        : ODE(1)
+    {}
+
     Eigen::VectorXd step(double t,
                           Eigen::VectorXd y0,
                           std::function<Eigen::VectorXd(double,Eigen::VectorXd)> rhs_fun,
@@ -17,6 +22,11 @@ class ODE_Euler: public ODE
 /// @brief Second order explicit Heun algorithm
 class ODE_Heun: public ODE
 {
+public:
+    ODE_Heun()
+        : ODE(2)
+    {}
+
     Eigen::VectorXd step(double t,
                           Eigen::VectorXd y0,
                           std::function<Eigen::VectorXd(double,Eigen::VectorXd)> rhs_fun,
@@ -31,6 +41,12 @@ class ODE_Heun: public ODE
 /// @brief Fourth order Runge Kutta algorithm
 class ODE_RK4: public ODE
 {
+public:
+    ODE_RK4()
+        : ODE(4)
+    {}
+
+
     Eigen::VectorXd step(double t,
                           Eigen::VectorXd y0,
                           std::function<Eigen::VectorXd(double,Eigen::VectorXd)> rhs_fun,

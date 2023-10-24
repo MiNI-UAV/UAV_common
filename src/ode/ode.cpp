@@ -1,6 +1,12 @@
 #include "ode.hpp"
 #include "ode_impl.hpp"
 
+ODE::ODE(int micro_steps)
+    : _micro_steps{micro_steps}
+{}
+
+int ODE::getMicrosteps() const { return _micro_steps; }
+
 ODE::ODEMethod ODE::fromString(std::string str)
 {
     if(str.compare("Euler") == 0)
