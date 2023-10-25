@@ -2,6 +2,7 @@
 #include <Eigen/Dense>
 #include "hinge.hpp"
 
+/// @brief Drive propelling aircraft
 struct Drive
 {
     Eigen::Vector3d position;
@@ -10,6 +11,7 @@ struct Drive
     Hinge hinges[2];
 };
 
+/// @brief Rotor engine with controlled speed
 struct Rotor : Drive
 {
     double forceCoff;
@@ -20,6 +22,7 @@ struct Rotor : Drive
     double hoverSpeed;
 };
 
+/// @brief Jet rocket engine
 class Jet : public Drive
 {
 public:
@@ -28,15 +31,27 @@ public:
     Eigen::VectorXd time;
     
 
+    /// @brief start jet engine
+    /// @param time timestamp of start
+    /// @return true if start succesful, false if already started
     bool start(double time);
+    /// @brief get thrust in specific time 
+    /// @param time timestamp
+    /// @return thrust value in Newtons
     double getThrust(double time);
+    /// @brief get last calculated thrust
+    /// @return last calculated thrust
     double getLastThrust() {return lastThrust;};
     
 private:
+    /// @brief State of jet engine
     enum JetState
     {
+        /// @brief Idle before start
         READY,
+        /// @brief jet engine is running
         WORKING,
+        /// @brief  jet engine was started and burnt
         BURNT
     } state = JetState::READY; 
     int currentPhase = 0;

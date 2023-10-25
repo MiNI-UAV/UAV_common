@@ -36,3 +36,6 @@ docs/
 *.exe
 *.out
 *.app
+
+# Tests
+Testing/

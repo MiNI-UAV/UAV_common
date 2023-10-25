@@ -1,6 +1,7 @@
 #pragma once
 #include <Eigen/Dense>
 
+/// @brief Base parameters of a sensor
 struct SensorParams
 {
     std::string name;
@@ -9,6 +10,7 @@ struct SensorParams
     double refreshTime;
 };
 
+/// @brief AHRS parameters
 struct AHRSParams
 {
     std::string type;
@@ -17,6 +19,7 @@ struct AHRSParams
     double R;
 };
 
+/// @brief Scalers for EKF
 struct EKFScalers
 {
     double predictScaler;
