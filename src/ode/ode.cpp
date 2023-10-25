@@ -41,3 +41,13 @@ std::unique_ptr<ODE> ODE::factory(ODEMethod method)
         return std::unique_ptr<ODE>(); 
     }
 }
+
+int ODE::getMicrosteps(ODEMethod method)
+{
+    if(method == ODE::ODEMethod::NONE)
+    {
+        return 0;
+    }
+    auto ode = factory(method);
+    return ode->getMicrosteps();
+}

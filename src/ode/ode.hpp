@@ -47,6 +47,11 @@ public:
     /// @return instance of ODE solver
     static std::unique_ptr<ODE> factory(ODEMethod method);
 
+    /// @brief Get microsteps of given method
+    /// @param method method type
+    /// @return number of microstep in one algoritm step
+    static int getMicrosteps(ODEMethod method);
+
 private:
     
     /// @brief define how many time rhs_fun will be called in one step

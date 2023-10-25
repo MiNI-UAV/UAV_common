@@ -106,6 +106,7 @@ TEST_P(ODETest, TestRHSCalls)
             return y;
         },1.0);
 
+    ASSERT_EQ(ODE::getMicrosteps(method),ode->getMicrosteps());
     ASSERT_EQ(counter, ode->getMicrosteps());
 }
 
