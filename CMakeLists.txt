@@ -34,7 +34,7 @@ target_sources(${PROJECT_NAME}
     ${SOURCE_DIR}/timed_loop/timed_loop.cpp
     ${SOURCE_DIR}/parser/parser.cpp
     ${SOURCE_DIR}/parser/uav_params.cpp
-    ${SOURCE_DIR}/components/aero_cofficients.hpp
+    ${SOURCE_DIR}/components/aero_coefficients.hpp
     ${SOURCE_DIR}/components/components.hpp
     ${SOURCE_DIR}/components/control_surfaces.cpp
     ${SOURCE_DIR}/components/control_surfaces.hpp

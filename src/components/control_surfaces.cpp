@@ -12,7 +12,7 @@ ControlSurfaces::ControlSurfaces(int noOfSurfaces, Eigen::Matrix<double, 6, -1> 
     values = trim;
 }
 
-Eigen::Vector<double, 6> ControlSurfaces::getCofficients() const
+Eigen::Vector<double, 6> ControlSurfaces::getCoefficients() const
 {
     return matrix * values;
 }

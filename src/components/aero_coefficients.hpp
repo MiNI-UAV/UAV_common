@@ -1,8 +1,8 @@
 #pragma once
 #include <Eigen/Dense>
 
-/// @brief Aerodynamic cofficient
-struct AeroCofficients
+/// @brief Aerodynamic coefficient
+struct AeroCoefficients
 {
     double S; 
     double d;

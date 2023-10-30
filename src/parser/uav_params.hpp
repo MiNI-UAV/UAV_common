@@ -50,7 +50,7 @@ struct UAVparams
         ControlSurfaces surfaces;
 
         //Aerodynamic params
-        AeroCofficients aero_coffs;
+        AeroCoefficients aero_coffs;
 
         std::map<std::string,PID> pids;
 
