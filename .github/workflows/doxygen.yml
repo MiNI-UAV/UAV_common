@@ -22,7 +22,7 @@ jobs:
       - name: Build Doxygen documentation
         run: |
           doxygen Doxyfile
-        working-directory: docs
+        working-directory: .
 
       - name: Configure Git
         run: |
