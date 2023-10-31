@@ -21,8 +21,7 @@ jobs:
 
       - name: Build Doxygen documentation
         run: |
-          doxygen Doxyfile
-        working-directory: .
+          doxygen
 
       - name: Configure Git
         run: |
@@ -37,8 +36,6 @@ jobs:
           mv docs/html/* ./
           git add -A
           git commit -m "Update Doxygen documentation"
-          git branch -D main
-          git branch -m main
-          git push -f origin main
+          git push -f origin gh-pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
