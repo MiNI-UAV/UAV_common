@@ -21,6 +21,14 @@ ODE::ODEMethod ODE::fromString(std::string str)
     {
         return ODE::ODEMethod::RK4;
     }
+    if(str.compare("PC2") == 0)
+    {
+        return ODE::ODEMethod::PC2;
+    }
+    if(str.compare("PC4") == 0)
+    {
+        return ODE::ODEMethod::PC4;
+    }
     return ODE::ODEMethod::NONE;
 }
 
@@ -36,6 +44,12 @@ std::unique_ptr<ODE> ODE::factory(ODEMethod method)
     
     case ODE::ODEMethod::RK4:
         return std::make_unique<ODE_RK4>();
+    
+    case ODE::ODEMethod::PC2:
+        return std::make_unique<ODE_PC2>();
+
+    case ODE::ODEMethod::PC4:
+        return std::make_unique<ODE_PC4>();
     
     default:
         return std::unique_ptr<ODE>(); 

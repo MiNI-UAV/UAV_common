@@ -33,6 +33,8 @@ public:
         Euler,
         Heun,
         RK4,
+        PC2,
+        PC4,
         NONE
     };
 

@@ -31,6 +31,12 @@ TEST_F(ODETest, FromStringTest) {
     method = ODE::fromString("RK4");
     ASSERT_EQ(method, ODE::RK4);
 
+    method = ODE::fromString("PC2");
+    ASSERT_EQ(method, ODE::PC2);
+
+    method = ODE::fromString("PC4");
+    ASSERT_EQ(method, ODE::PC4);
+
     method = ODE::fromString("Invalid");
     ASSERT_EQ(method, ODE::NONE);
 }
@@ -45,6 +51,12 @@ TEST_F(ODETest, FactoryTest) {
 
     std::unique_ptr<ODE> rk4ODE = ODE::factory(ODE::RK4);
     ASSERT_NE(rk4ODE, nullptr);
+
+    std::unique_ptr<ODE> pc2ODE = ODE::factory(ODE::PC2);
+    ASSERT_NE(pc2ODE, nullptr);
+
+    std::unique_ptr<ODE> pc4ODE = ODE::factory(ODE::PC4);
+    ASSERT_NE(pc4ODE, nullptr);
 
     std::unique_ptr<ODE> invalidODE = ODE::factory(ODE::NONE);
     ASSERT_EQ(invalidODE, nullptr);
@@ -71,6 +83,7 @@ TEST_P(ODETest, TestFirstOrder)
 {
     constexpr double a = 2.0;
     constexpr int t = 5;
+    constexpr double tol = 1e-10;
 
     auto method = GetParam();
     auto ode = ODE::factory(method);
@@ -86,7 +99,7 @@ TEST_P(ODETest, TestFirstOrder)
             return Eigen::Vector<double,1>::Constant(2.0);
         },1.0);
     }
-    ASSERT_FLOAT_EQ(y.x() - a * t,0.0);
+    EXPECT_NEAR(y.x() - a * t,0.0,tol);
 }
 
 //RHS function should be called declared times
@@ -99,6 +112,15 @@ TEST_P(ODETest, TestRHSCalls)
     int counter = 0;
     Eigen::Vector<double,1> y0;
     y0 << 0.0;
+    //run it 10 times for non self-starting methods
+    for(int i = 0; i < 10; i++)
+    {
+        ode->step(0.0,y0,
+            [](double t, Eigen::VectorXd y)
+            {
+                return y;
+            },1.0);
+    }
     ode->step(0.0,y0,
         [&counter](double t, Eigen::VectorXd y)
         {
