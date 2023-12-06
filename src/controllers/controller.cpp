@@ -1,5 +1,7 @@
 #include "controller.hpp"
 #include "impl/PID.hpp"
+#include "impl/bang_bang.hpp"
+#include "impl/double_setpoint.hpp"
 #include <cstring>
 #include <stdexcept>
 
@@ -22,8 +24,18 @@ Controller::ControllerFactory(rapidxml::xml_node<>* controller_node)
     {
         return std::unique_ptr<Controller>{};
     }
-
-    if(std::strcmp(type_node->value(),"PID") == 0) return std::unique_ptr<Controller>(new controllers::PID(controller_node));
+    if(std::strcmp(type_node->value(),"PID") == 0)
+    {
+        return std::unique_ptr<Controller>(new controllers::PID(controller_node));
+    }
+    if(std::strcmp(type_node->value(),"BANGBANG") == 0)
+    {
+        return std::unique_ptr<Controller>(new controllers::BangBang(controller_node));
+    }
+    if(std::strcmp(type_node->value(),"DOUBLESETPOINT") == 0)
+    {
+        return std::unique_ptr<Controller>(new controllers::DoubleSetpoint(controller_node));
+    }
 
     return std::unique_ptr<Controller>{};
 }

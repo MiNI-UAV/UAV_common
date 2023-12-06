@@ -47,6 +47,8 @@ target_sources(${PROJECT_NAME}
     ${SOURCE_DIR}/components/navi.hpp
     ${SOURCE_DIR}/controllers/controller.cpp
     ${SOURCE_DIR}/controllers/impl/PID.cpp
+    ${SOURCE_DIR}/controllers/impl/bang_bang.cpp
+    ${SOURCE_DIR}/controllers/impl/double_setpoint.cpp
 )
 
 # Tests
