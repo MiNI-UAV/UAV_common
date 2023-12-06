@@ -45,6 +45,8 @@ target_sources(${PROJECT_NAME}
     ${SOURCE_DIR}/components/loads.hpp
     ${SOURCE_DIR}/components/loads.cpp
     ${SOURCE_DIR}/components/navi.hpp
+    ${SOURCE_DIR}/controllers/controller.cpp
+    ${SOURCE_DIR}/controllers/impl/PID.cpp
 )
 
 # Tests
