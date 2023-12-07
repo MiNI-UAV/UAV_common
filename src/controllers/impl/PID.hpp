@@ -25,7 +25,7 @@ namespace controllers
             /// @param max saturation - upper range limit
             /// @param antiWindUp antiwindup method
             PID(double Kp, double Ki, double Kd,
-                double min = std::numeric_limits<double>::min(),
+                double min = -std::numeric_limits<double>::max(),
                 double max = std::numeric_limits<double>::max(),
                 AntiWindUpMode antiWindUp = AntiWindUpMode::CLAMPING);
 

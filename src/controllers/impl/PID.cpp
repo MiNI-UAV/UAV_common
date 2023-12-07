@@ -7,6 +7,15 @@ using namespace controllers;
 
 PID::PID(double Kp, double Ki, double Kd,
          double min, double max, AntiWindUpMode antiWindUp)
+    :
+    _max(max),
+    _min(min),
+    _Kp(Kp),
+    _Kd(Kd),
+    _Ki(Ki),
+    _pre_error(0),
+    _integral(0),
+    _antiWindUp(antiWindUp)
 {     
 }
 

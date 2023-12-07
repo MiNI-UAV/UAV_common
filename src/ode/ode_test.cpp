@@ -132,6 +132,40 @@ TEST_P(ODETest, TestRHSCalls)
     ASSERT_EQ(counter, ode->getMicrosteps());
 }
 
+TEST_P(ODETest, TestHarmonicOscillator)
+{
+    constexpr double m   = 2.0;
+    constexpr double k   = 5.0;
+    constexpr double x0  = 1.0;
+    constexpr double v0  = 2.0;
+    constexpr double dt  = 1e-3;
+    constexpr double N   = 1e3;
+    constexpr double tol = 1e-2;
+
+    auto method = GetParam();
+    auto ode = ODE::factory(method);
+    ASSERT_NE(ode, nullptr);
+
+    const double initial_energy = 0.5 * m * v0 * v0 + 0.5 * k * x0 * x0;
+
+    Eigen::Vector<double,2> y;
+    y << x0, v0;
+    for(int i = 0; i < N; i++)
+    {
+        y = ode->step(dt*N,y,
+            [](double t, Eigen::VectorXd y)
+            {
+                Eigen::Vector<double,2> rhs;
+                rhs << y(1), (-k / m) * y(0);
+                return rhs;
+            },dt);
+        
+        double energy = 0.5 * m * y(1) * y(1) + 0.5 * k * y(0) * y(0);
+        EXPECT_NEAR(initial_energy,energy,tol*initial_energy);
+    }
+
+}
+
 INSTANTIATE_TEST_SUITE_P(TestDerivedClasses, ODETest, testing::ValuesIn(getMethodsToTest()));
 
 int main(int argc, char** argv) {
