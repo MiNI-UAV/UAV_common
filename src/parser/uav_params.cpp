@@ -15,7 +15,7 @@ UAVparams::UAVparams()
     
     if(singleton != nullptr)
     {
-        std::cerr << "Only one instance of UAVParams should exist";
+        std::cerr << "Only one instance of UAVParams should exist"  << std::endl;
         return;
     }
     singleton = this;
@@ -581,6 +581,21 @@ void UAVparams::loadConfig(std::string configFile)
             for (rapidxml::xml_node<>* PIDNode = node->first_node(); PIDNode; PIDNode = PIDNode->next_sibling()) 
             {
                 pids.insert(std::make_pair(PIDNode->name(),parsePID(PIDNode)));
+            }
+        }
+        if(std::strcmp(node->name(),"controllers") == 0)
+        {
+            for (rapidxml::xml_node<>* controller_node = node->first_node(); controller_node; controller_node = controller_node->next_sibling()) 
+            {
+                auto controller = Controller::ControllerFactory(controller_node);
+                if(controller != nullptr)
+                {
+                    controllers.insert(std::make_pair(controller_node->name(), std::move(controller)));
+                }
+                else
+                {
+                    std::cerr << "Controller " << controller_node->name() << " could not be parsed correctly" << std::endl;
+                }
             }
         }
         if(std::strcmp(node->name(),"navi") == 0)

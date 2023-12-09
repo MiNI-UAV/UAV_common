@@ -7,6 +7,7 @@
 
 #include "../components/components.hpp"
 #include "../PID/PID.hpp"
+#include "../controllers/controller.hpp"
 
 
 /// @brief Parsed UAV configuration from XML
@@ -53,6 +54,8 @@ struct UAVparams
         AeroCoefficients aero_coffs;
 
         std::map<std::string,PID> pids;
+
+        std::map<std::string,std::unique_ptr<Controller>> controllers;
 
         std::vector<SensorParams> sensors;
         AHRSParams ahrs;

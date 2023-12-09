@@ -45,6 +45,11 @@ target_sources(${PROJECT_NAME}
     ${SOURCE_DIR}/components/loads.hpp
     ${SOURCE_DIR}/components/loads.cpp
     ${SOURCE_DIR}/components/navi.hpp
+    ${SOURCE_DIR}/controllers/controller.cpp
+    ${SOURCE_DIR}/controllers/impl/PID.cpp
+    ${SOURCE_DIR}/controllers/impl/PIFF.cpp
+    ${SOURCE_DIR}/controllers/impl/bang_bang.cpp
+    ${SOURCE_DIR}/controllers/impl/double_setpoint.cpp
 )
 
 # Tests
@@ -54,3 +59,8 @@ enable_testing() # Enable testing for the project
 add_executable(ODE_test ${SOURCE_DIR}/ode/ode_test.cpp ${SOURCE_FILES})
 target_link_libraries(ODE_test ${PROJECT_NAME} gtest gtest_main)
 add_test(NAME ODE_test COMMAND ODE_test)
+
+# Test target for Controllers
+add_executable(Controller_test ${SOURCE_DIR}/controllers/controller_test.cpp ${SOURCE_FILES})
+target_link_libraries(Controller_test ${PROJECT_NAME} gtest gtest_main)
+add_test(NAME Controller_test COMMAND Controller_test)
