@@ -18,7 +18,7 @@ controllers::DoubleSetpoint::DoubleSetpoint(
         if(std::strcmp(node->name(),"high") == 0) _high = std::stod(node->value());
         if(std::strcmp(node->name(),"midRange") == 0) _mid_range = std::stod(node->value());
         if(std::strcmp(node->name(),"delta") == 0) _delta = std::stod(node->value());
-        if(std::strcmp(node->name(),"type") == 0) assert(std::strcmp(node->value(),"DOUBLESETPOINT") == 0);
+        if(std::strcmp(node->name(),"type") == 0) assert(std::strcmp(node->value(),"DOUBLE_SETPOINT") == 0);
     }
 }
 

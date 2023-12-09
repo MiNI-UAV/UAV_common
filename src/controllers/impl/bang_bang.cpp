@@ -14,7 +14,7 @@ controllers::BangBang::BangBang(rapidxml::xml_node<> *controller_node)
         if(std::strcmp(node->name(),"low") == 0) _low = std::stod(node->value());
         if(std::strcmp(node->name(),"high") == 0) _high = std::stod(node->value());
         if(std::strcmp(node->name(),"delta") == 0) _delta = std::stod(node->value());
-        if(std::strcmp(node->name(),"type") == 0) assert(std::strcmp(node->value(),"BANGBANG") == 0);
+        if(std::strcmp(node->name(),"type") == 0) assert(std::strcmp(node->value(),"BANG_BANG") == 0);
     }
 }
 
