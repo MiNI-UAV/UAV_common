@@ -23,10 +23,11 @@ namespace controllers
             DoubleSetpoint(rapidxml::xml_node<>* controller_node);
 
             /// @brief calc output of controller with specific time step
-            /// @param error input of controller
+            /// @param desired input of controller, desired value
+            /// @param actual measured actual value
             /// @param dt time step
             /// @return output of controller
-            double calc(double error, double dt) override;
+            double calc(double desired, double actual, double dt) override;
 
             /// @brief clear internal state
             void clear() override;

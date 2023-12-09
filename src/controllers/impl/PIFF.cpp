@@ -1,32 +1,31 @@
-#include "PID.hpp"
+#include "PIFF.hpp"
 #include <algorithm>
 #include <cstring>
 #include <string>
 
 using namespace controllers;
 
-PID::PID(double Kp, double Ki, double Kd,
+PIFF::PIFF(double Kp, double Ki, double Kff,
          double min, double max, AntiWindUpMode antiWindUp)
     :
     _max(max),
     _min(min),
     _Kp(Kp),
-    _Kd(Kd),
     _Ki(Ki),
-    _pre_error(0),
+    _Kff(Kff),
     _integral(0),
     _antiWindUp(antiWindUp)
 {     
 }
 
-PID::PID(rapidxml::xml_node<>* controller_node):
-    PID(0.0,0.0,0.0)
+PIFF::PIFF(rapidxml::xml_node<>* controller_node):
+    PIFF(0.0,0.0,0.0)
 {
     for (rapidxml::xml_node<>* node = controller_node->first_node(); node; node = node->next_sibling()) 
     {
         if(std::strcmp(node->name(),"P") == 0) _Kp = std::stod(node->value());
         if(std::strcmp(node->name(),"I") == 0) _Ki = std::stod(node->value());
-        if(std::strcmp(node->name(),"D") == 0) _Kd = std::stod(node->value());
+        if(std::strcmp(node->name(),"FF") == 0) _Kff = std::stod(node->value());
         if(std::strcmp(node->name(),"min") == 0) _min = std::stod(node->value());
         if(std::strcmp(node->name(),"max") == 0) _max = std::stod(node->value());
         if(std::strcmp(node->name(),"antyWindup") == 0)
@@ -34,18 +33,18 @@ PID::PID(rapidxml::xml_node<>* controller_node):
             if(std::strcmp(node->value(),"NONE") == 0) _antiWindUp = AntiWindUpMode::NONE;
             if(std::strcmp(node->name(),"CLAMPING") == 0) _antiWindUp = AntiWindUpMode::CLAMPING;
         }
-        if(std::strcmp(node->name(),"type") == 0) assert(std::strcmp(node->value(),"PID") == 0);
+        if(std::strcmp(node->name(),"type") == 0) assert(std::strcmp(node->value(),"PIFF") == 0);
     }
 }
 
-std::unique_ptr<Controller> PID::clone() const {
-    auto copied = std::unique_ptr<Controller>(new PID(_Kp,_Ki,_Kd,_min,_max,_antiWindUp));
+std::unique_ptr<Controller> PIFF::clone() const {
+    auto copied = std::unique_ptr<Controller>(new PIFF(_Kp,_Ki,_Kff,_min,_max,_antiWindUp));
     copied->set_dt(_dt);
     copied->clear();
     return copied;
 }
 
-double PID::calc(double desired, double actual, double dt)
+double PIFF::calc(double desired, double actual, double dt)
 {
     double error = desired - actual;
 
@@ -55,10 +54,7 @@ double PID::calc(double desired, double actual, double dt)
     _integral += dI;
     double Iout = _Ki * _integral;
 
-    double derivative = (error - _pre_error) / dt;
-    double Dout = _Kd * derivative;
-
-    double output = Pout + Iout + Dout;
+    double output = Pout + Iout + _Kff * desired;
 
     output = std::clamp(output,_min,_max);
 
@@ -69,12 +65,10 @@ double PID::calc(double desired, double actual, double dt)
         _integral -= dI;
     }
 
-    _pre_error = error;
-
     return output;
 }
 
-void PID::clear()
+void PIFF::clear()
 {
     _integral = 0;
 }

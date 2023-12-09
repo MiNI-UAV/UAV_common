@@ -18,8 +18,10 @@ controllers::BangBang::BangBang(rapidxml::xml_node<> *controller_node)
     }
 }
 
-double controllers::BangBang::calc(double error, [[maybe_unused]] double dt) 
+double controllers::BangBang::calc(double desired, double actual, [[maybe_unused]] double dt) 
 { 
+    double error = desired - actual;
+
     if(_last_output_sign > 0)
     {
         if(error < -_delta)

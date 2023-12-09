@@ -7,7 +7,7 @@
 
 namespace controllers
 {
-    class PID : public Controller
+    class PIFF : public Controller
     {
         public:
         
@@ -20,11 +20,11 @@ namespace controllers
             /// @brief Constructor with all PID controller parameters
             /// @param Kp P term
             /// @param Ki I term
-            /// @param Kd D term
+            /// @param Kff FF term
             /// @param min saturation - lower range limit
             /// @param max saturation - upper range limit
             /// @param antiWindUp antiwindup method
-            PID(double Kp, double Ki, double Kd,
+            PIFF(double Kp, double Ki, double Kff,
                 double min = -std::numeric_limits<double>::max(),
                 double max = std::numeric_limits<double>::max(),
                 AntiWindUpMode antiWindUp = AntiWindUpMode::CLAMPING);
@@ -32,7 +32,7 @@ namespace controllers
 
             /// @brief Construct controller with parameters from xml
             /// @param controller_node xml node with controller params
-            PID(rapidxml::xml_node<>* controller_node);
+            PIFF(rapidxml::xml_node<>* controller_node);
 
             /// @brief calc output of controller with specific time step
             /// @param desired input of controller, desired value
@@ -51,9 +51,8 @@ namespace controllers
             double _max;
             double _min;
             double _Kp;
-            double _Kd;
             double _Ki;
-            double _pre_error;
+            double _Kff;
             double _integral;
             AntiWindUpMode _antiWindUp;
     };

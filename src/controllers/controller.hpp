@@ -19,15 +19,17 @@ class Controller
         void set_dt(double dt) { _dt = dt; }
 
         /// @brief calc output of controller
-        /// @param error input of controller
+        /// @param desired input of controller, desired value
+        /// @param actual measured actual value
         /// @return output of controller
-        double calc(double error) { return calc(error,_dt); };
+        double calc(double desired, double actual) { return calc(desired, actual,_dt); };
 
         /// @brief calc output of controller with specific time step
-        /// @param error input of controller
+        /// @param desired input of controller, desired value
+        /// @param actual measured actual value
         /// @param dt time step
         /// @return output of controller
-        virtual double calc(double error, double dt)  = 0;
+        virtual double calc(double desired, double actual, double dt)  = 0;
 
         /// @brief clear internal state
         virtual void clear()  = 0;

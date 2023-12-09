@@ -21,10 +21,11 @@ namespace controllers
             BangBang(rapidxml::xml_node<>* controller_node);
 
             /// @brief calc output of controller with specific time step
-            /// @param error input of controller
-            /// @param dt time step, unused
+            /// @param desired input of controller, desired value
+            /// @param actual measured actual value
+            /// @param dt time step
             /// @return output of controller
-            double calc(double error, [[maybe_unused]] double dt) override;
+            double calc(double desired, double actual, [[maybe_unused]] double dt) override;
 
             /// @brief clear internal state
             void clear() override;

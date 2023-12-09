@@ -22,8 +22,10 @@ controllers::DoubleSetpoint::DoubleSetpoint(
     }
 }
 
-double controllers::DoubleSetpoint::calc(double error, double dt)
+double controllers::DoubleSetpoint::calc(double desired, double actual, double dt)
 {
+    double error = desired - actual;
+    
     if(error > _mid_range + _delta)
     {
         _last_output_sign = 1;
