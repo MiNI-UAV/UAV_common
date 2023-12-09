@@ -6,7 +6,6 @@
 #include "rapidxml/rapidxml.hpp"
 
 #include "../components/components.hpp"
-#include "../PID/PID.hpp"
 #include "../controllers/controller.hpp"
 
 
@@ -52,8 +51,6 @@ struct UAVparams
 
         //Aerodynamic params
         AeroCoefficients aero_coffs;
-
-        std::map<std::string,PID> pids;
 
         std::map<std::string,std::unique_ptr<Controller>> controllers;
 

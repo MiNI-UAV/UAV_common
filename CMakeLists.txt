@@ -30,7 +30,6 @@ target_sources(${PROJECT_NAME}
     ${SOURCE_DIR}/ode/ode_impl.hpp
     ${SOURCE_DIR}/ode/ode.cpp
     ${SOURCE_DIR}/ode/ode.hpp
-    ${SOURCE_DIR}/PID/PID.cpp
     ${SOURCE_DIR}/timed_loop/timed_loop.cpp
     ${SOURCE_DIR}/parser/parser.cpp
     ${SOURCE_DIR}/parser/uav_params.cpp

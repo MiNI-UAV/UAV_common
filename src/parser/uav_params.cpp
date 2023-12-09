@@ -370,23 +370,6 @@ void UAVparams::setControlSurface(rapidxml::xml_node<> *surfaceNode)
     surfaces = ControlSurfaces(noOfSurface,matrix,min,max,trim);
 }
 
-PID parsePID(rapidxml::xml_node<>* PIDNode)
-{
-    double P = 0,I = 0,D = 0,
-    min = std::numeric_limits<double>::min(),
-    max = std::numeric_limits<double>::max();
-
-    for (rapidxml::xml_node<>* node = PIDNode->first_node(); node; node = node->next_sibling()) 
-    {
-        if(std::strcmp(node->name(),"P") == 0) P = std::stod(node->value());
-        if(std::strcmp(node->name(),"I") == 0) I = std::stod(node->value());
-        if(std::strcmp(node->name(),"D") == 0) D = std::stod(node->value());
-        if(std::strcmp(node->name(),"min") == 0) min = std::stod(node->value());
-        if(std::strcmp(node->name(),"max") == 0) max = std::stod(node->value());
-    }
-    return PID(P,I,D,min,max);
-}
-
 void UAVparams::setSensors(rapidxml::xml_node<> *sensorNode)
 {
     for (rapidxml::xml_node<>* node = sensorNode->first_node(); node; node = node->next_sibling()) 
@@ -575,13 +558,6 @@ void UAVparams::loadConfig(std::string configFile)
         if(std::strcmp(node->name(),"surface") == 0)
         {
             setControlSurface(node);
-        }
-        if(std::strcmp(node->name(),"PID") == 0)
-        {
-            for (rapidxml::xml_node<>* PIDNode = node->first_node(); PIDNode; PIDNode = PIDNode->next_sibling()) 
-            {
-                pids.insert(std::make_pair(PIDNode->name(),parsePID(PIDNode)));
-            }
         }
         if(std::strcmp(node->name(),"controllers") == 0)
         {
