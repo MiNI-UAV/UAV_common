@@ -101,6 +101,7 @@ void UAVparams::setInitial(rapidxml::xml_node<> *initialNode)
     initialPosition.setZero();
     initialOrientation.setZero();
     initialVelocity.setZero();
+    target.setZero();
 
     for (rapidxml::xml_node<>* node = initialNode->first_node(); node; node = node->next_sibling()) 
     {
@@ -126,7 +127,12 @@ void UAVparams::setInitial(rapidxml::xml_node<> *initialNode)
             std::sscanf(node->value(),"%lf, %lf, %lf",&x,&y,&z);
             initialVelocity << x,y,z;
         }
-
+        if(std::strcmp(node->name(),"target") == 0)
+        {
+            double x,y,z;
+            std::sscanf(node->value(),"%lf, %lf, %lf",&x,&y,&z);
+            target << x,y,z;
+        }
     }
 }
 

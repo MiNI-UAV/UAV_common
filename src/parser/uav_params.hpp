@@ -25,6 +25,7 @@ struct UAVparams
         Eigen::Vector3d initialPosition;
         Eigen::Vector3d initialOrientation;
         Eigen::Vector3d initialVelocity;
+        Eigen::Vector3d target;
 
         //Mass params
         double m;

@@ -15,9 +15,9 @@ for i = 1:length(csvFiles)
     plot(x, y, 'DisplayName', csvFiles(i).name);
 end
 
-xlabel('X-axis Label');
-ylabel('Y-axis Label');
-title('Controller comparation');
+xlabel('Czas');
+ylabel('Wartość regulowana');
+title('Test regulatorów');
 legend('Location', 'Best');
 
 hold off;
