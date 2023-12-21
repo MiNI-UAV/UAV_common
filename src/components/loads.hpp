@@ -13,6 +13,10 @@ public:
     /// @return offset vector
     Eigen::Vector3d getOffset() { return _offset; }
 
+    /// @brief get ammount of load
+    /// @return ammount
+    int getAmmount() { return _ammount; }
+
     /// @brief Try to release load
     /// @param time 
     /// @return leftover ammount of loads. Return -1 if load is not ready and -2 if out of load
