@@ -1,8 +1,9 @@
 #include "controller.hpp"
 #include "impl/PID.hpp"
-#include "impl/PIFF.hpp"
+#include "impl/PID_discrete.hpp"
 #include "impl/bang_bang.hpp"
 #include "impl/double_setpoint.hpp"
+#include "impl/z_trans.hpp"
 #include <cstring>
 #include <stdexcept>
 
@@ -29,10 +30,6 @@ Controller::ControllerFactory(rapidxml::xml_node<> *controller_node)
     {
         return std::unique_ptr<Controller>(new controllers::PID(controller_node));
     }
-    if(std::strcmp(type_node->value(),"PIFF") == 0)
-    {
-        return std::unique_ptr<Controller>(new controllers::PIFF(controller_node));
-    }
     if(std::strcmp(type_node->value(),"BANG_BANG") == 0)
     {
         return std::unique_ptr<Controller>(new controllers::BangBang(controller_node));
@@ -40,6 +37,14 @@ Controller::ControllerFactory(rapidxml::xml_node<> *controller_node)
     if(std::strcmp(type_node->value(),"DOUBLE_SETPOINT") == 0)
     {
         return std::unique_ptr<Controller>(new controllers::DoubleSetpoint(controller_node));
+    }
+    if(std::strcmp(type_node->value(),"PID_DISCRETE") == 0)
+    {
+        return std::unique_ptr<Controller>(new controllers::PID_Discrete(controller_node));
+    }
+    if(std::strcmp(type_node->value(),"ZTRANS") == 0)
+    {
+        return controllers::ZTransformFactory::factory(controller_node);
     }
 
     return std::unique_ptr<Controller>{};

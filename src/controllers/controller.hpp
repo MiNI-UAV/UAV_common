@@ -16,7 +16,7 @@ class Controller
 
         /// @brief Set new time step
         /// @param dt new time step
-        void set_dt(double dt) { _dt = dt; }
+        virtual void set_dt(double dt) { _dt = dt; }
 
         /// @brief calc output of controller
         /// @param desired input of controller, desired value

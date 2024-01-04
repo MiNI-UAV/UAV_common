@@ -2,20 +2,22 @@
 #include <algorithm>
 #include <cstring>
 #include <string>
+#include <stdexcept>
 
 using namespace controllers;
 
-PID::PID(double Kp, double Ki, double Kd,
+PID::PID(double Kp, double Ki, double Kd, double Kff,
          double min, double max, AntiWindUpMode antiWindUp)
     :
-    _max(max),
-    _min(min),
-    _Kp(Kp),
-    _Kd(Kd),
-    _Ki(Ki),
-    _pre_error(0),
-    _integral(0),
-    _antiWindUp(antiWindUp)
+    _max{max},
+    _min{min},
+    _Kp{Kp},
+    _Kd{Kd},
+    _Ki{Ki},
+    _Kff{Kff},
+    _pre_error{0},
+    _integral{0},
+    _antiWindUp{antiWindUp}
 {     
 }
 
@@ -27,6 +29,7 @@ PID::PID(rapidxml::xml_node<>* controller_node):
         if(std::strcmp(node->name(),"P") == 0) _Kp = std::stod(node->value());
         if(std::strcmp(node->name(),"I") == 0) _Ki = std::stod(node->value());
         if(std::strcmp(node->name(),"D") == 0) _Kd = std::stod(node->value());
+        if(std::strcmp(node->name(),"FF") == 0) _Kff = std::stod(node->value());
         if(std::strcmp(node->name(),"min") == 0) _min = std::stod(node->value());
         if(std::strcmp(node->name(),"max") == 0) _max = std::stod(node->value());
         if(std::strcmp(node->name(),"antyWindup") == 0)
@@ -39,13 +42,13 @@ PID::PID(rapidxml::xml_node<>* controller_node):
 }
 
 std::unique_ptr<Controller> PID::clone() const {
-    auto copied = std::unique_ptr<Controller>(new PID(_Kp,_Ki,_Kd,_min,_max,_antiWindUp));
+    auto copied = std::unique_ptr<Controller>(new PID(_Kp,_Ki,_Kd,_Kff,_min,_max,_antiWindUp));
     copied->set_dt(_dt);
     copied->clear();
     return copied;
 }
 
-double PID::calc(double desired, double actual, double dt)
+double controllers::PID::calc(double desired, double actual, double dt)
 {
     double error = desired - actual;
 
@@ -58,12 +61,14 @@ double PID::calc(double desired, double actual, double dt)
     double derivative = (error - _pre_error) / dt;
     double Dout = _Kd * derivative;
 
-    double output = Pout + Iout + Dout;
+    double FFout = _Kff * desired;
+
+    double output = Pout + Iout + Dout + FFout;
 
     output = std::clamp(output,_min,_max);
 
     //ANTI-WINDUP - CLAMPING
-    if(_antiWindUp == AntiWindUpMode:: CLAMPING)
+    if(_antiWindUp == AntiWindUpMode::CLAMPING)
     {
         if((error > 0 && output == _max) || (error < 0 && output == _min))
         _integral -= dI;

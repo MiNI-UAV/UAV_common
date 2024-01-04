@@ -1,7 +1,8 @@
 #include "impl/PID.hpp"
-#include "impl/PIFF.hpp"
+#include "impl/PID_discrete.hpp"
 #include "impl/bang_bang.hpp"
 #include "impl/double_setpoint.hpp"
+#include "impl/z_trans.hpp"
 #include <gtest/gtest.h>
 #include <memory>
 #include <filesystem>
@@ -20,10 +21,13 @@ protected:
 std::vector<std::shared_ptr<Controller>> getMethodsToTest()
 {
     std::vector<std::shared_ptr<Controller>> controllers;
-    controllers.push_back(std::shared_ptr<Controller>(new controllers::PID(0.5,0.01,0.001)));
-    controllers.push_back(std::shared_ptr<Controller>(new controllers::PIFF(0.5,0.01,0.01)));
+    controllers.push_back(std::shared_ptr<Controller>(new controllers::PID(0.5,0.01,0.001,0.01)));
+    controllers.push_back(std::shared_ptr<Controller>(new controllers::PID_Discrete(0.5,0.5,0.001,0.01)));
     controllers.push_back(std::shared_ptr<Controller>(new controllers::BangBang(0.5,-0.5,0.1)));
     controllers.push_back(std::shared_ptr<Controller>(new controllers::DoubleSetpoint(0.5,0.0,-0.5,0.1)));
+    controllers.push_back(std::shared_ptr<Controller>(
+        new controllers::ZTransform<3,3>(
+            {{0.01, 0.48, -0.489}}, {{1.0,-1.0, 0.0}})));
     return controllers;
 }
 
@@ -31,9 +35,11 @@ std::vector<std::shared_ptr<Controller>> getMethodsToTest()
 TEST_P(ControllerTest, TestConstFunction)
 {
     constexpr double val = 5.0;
+    constexpr double dt = 0.1;
 
     auto controller = GetParam();
 
+    controller->set_dt(dt);
     controller->clear();
     ASSERT_GE(controller->calc(val,0.0),0.0);
     controller->clear();
@@ -46,7 +52,7 @@ TEST_P(ControllerTest, SimpleObjectControl)
     constexpr double x0 = 0.0;
     constexpr double x_set = 10.0;
     constexpr double loss = 0.1;
-    constexpr double dt = 0.1;
+    constexpr double dt = 0.01;
     constexpr double control_time = 5.0;
     constexpr int loops = 3;
     constexpr double tol = 0.2;
