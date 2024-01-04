@@ -1,0 +1,45 @@
+digraph "src/parser/uav_params.hpp"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="src/parser/uav_params.hpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="Eigen/Dense",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="mutex",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="memory",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="map",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="rapidxml/rapidxml.hpp",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="../components/components.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$components_8hpp.html",tooltip=" "];
+  Node7 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="drive.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$drive_8hpp.html",tooltip=" "];
+  Node8 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="hinge.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hinge_8hpp.html",tooltip=" "];
+  Node9 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node9 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node9 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 -> Node10 [color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="control_surfaces.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$control__surfaces_8hpp.html",tooltip=" "];
+  Node10 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 -> Node11 [color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="aero_coefficients.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$aero__coefficients_8hpp.html",tooltip=" "];
+  Node11 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 -> Node12 [color="midnightblue",fontsize="10",style="solid"];
+  Node12 [label="loads.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$loads_8hpp.html",tooltip=" "];
+  Node12 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node12 -> Node13 [color="midnightblue",fontsize="10",style="solid"];
+  Node13 [label="atomic",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node7 -> Node14 [color="midnightblue",fontsize="10",style="solid"];
+  Node14 [label="navi.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$navi_8hpp.html",tooltip=" "];
+  Node14 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node15 [color="midnightblue",fontsize="10",style="solid"];
+  Node15 [label="../controllers/controller.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$controller_8hpp.html",tooltip=" "];
+  Node15 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node15 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+}

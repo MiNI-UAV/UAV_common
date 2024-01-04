@@ -1,0 +1,102 @@
+\hypertarget{class_control_surfaces}{}\doxysection{Control\+Surfaces Class Reference}
+\label{class_control_surfaces}\index{ControlSurfaces@{ControlSurfaces}}
+
+
+Aircraft\textquotesingle{}s control surfaces.  
+
+
+
+
+{\ttfamily \#include $<$control\+\_\+surfaces.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_control_surfaces_a0eb5a606d5cabc1f3749237ff7cdc2d2}{Control\+Surfaces}} ()
+\item 
+\mbox{\hyperlink{class_control_surfaces_a1f57cb67189f99b1099d2980ab981af9}{Control\+Surfaces}} (int no\+Of\+Surfaces, Eigen\+::\+Matrix$<$ double, 6,-\/1 $>$ matrix, Eigen\+::\+Vector\+Xd min, Eigen\+::\+Vector\+Xd max, Eigen\+::\+Vector\+Xd trim)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector$<$ double, 6 $>$ \mbox{\hyperlink{class_control_surfaces_aca2fdc08d97e50f7ef85d305ada715fd}{get\+Coefficients}} () const
+\item 
+bool \mbox{\hyperlink{class_control_surfaces_a447af12acecbeaa241610bf89402d604}{set\+Values}} (Eigen\+::\+Vector\+Xd new\+\_\+values)
+\item 
+void \mbox{\hyperlink{class_control_surfaces_a6486ba0a755760844e9e230fcf90f8a4}{restore\+Trim}} ()
+\item 
+int \mbox{\hyperlink{class_control_surfaces_a0b60d8956403cc109ee62a1c45a3615d}{get\+No\+Of\+Surface}} () const
+\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{class_control_surfaces_a3aa66b2f5349ab8d11deb6d43c7c1bac}{get\+Values}} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Aircraft\textquotesingle{}s control surfaces. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_control_surfaces_a0eb5a606d5cabc1f3749237ff7cdc2d2}\label{class_control_surfaces_a0eb5a606d5cabc1f3749237ff7cdc2d2}} 
+\index{ControlSurfaces@{ControlSurfaces}!ControlSurfaces@{ControlSurfaces}}
+\index{ControlSurfaces@{ControlSurfaces}!ControlSurfaces@{ControlSurfaces}}
+\doxysubsubsection{\texorpdfstring{ControlSurfaces()}{ControlSurfaces()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Control\+Surfaces\+::\+Control\+Surfaces (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_control_surfaces_a1f57cb67189f99b1099d2980ab981af9}\label{class_control_surfaces_a1f57cb67189f99b1099d2980ab981af9}} 
+\index{ControlSurfaces@{ControlSurfaces}!ControlSurfaces@{ControlSurfaces}}
+\index{ControlSurfaces@{ControlSurfaces}!ControlSurfaces@{ControlSurfaces}}
+\doxysubsubsection{\texorpdfstring{ControlSurfaces()}{ControlSurfaces()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Control\+Surfaces\+::\+Control\+Surfaces (\begin{DoxyParamCaption}\item[{int}]{no\+Of\+Surfaces,  }\item[{Eigen\+::\+Matrix$<$ double, 6,-\/1 $>$}]{matrix,  }\item[{Eigen\+::\+Vector\+Xd}]{min,  }\item[{Eigen\+::\+Vector\+Xd}]{max,  }\item[{Eigen\+::\+Vector\+Xd}]{trim }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em no\+Of\+Surfaces} & number of independent surfaces \\
+\hline
+{\em matrix} & coefficients matrix \\
+\hline
+{\em min} & vector of min angles \\
+\hline
+{\em max} & vector of max angles \\
+\hline
+{\em trim} & vector of trim angles \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_control_surfaces_aca2fdc08d97e50f7ef85d305ada715fd}\label{class_control_surfaces_aca2fdc08d97e50f7ef85d305ada715fd}} 
+\index{ControlSurfaces@{ControlSurfaces}!getCoefficients@{getCoefficients}}
+\index{getCoefficients@{getCoefficients}!ControlSurfaces@{ControlSurfaces}}
+\doxysubsubsection{\texorpdfstring{getCoefficients()}{getCoefficients()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector$<$ double, 6 $>$ Control\+Surfaces\+::get\+Coefficients (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_control_surfaces_a0b60d8956403cc109ee62a1c45a3615d}\label{class_control_surfaces_a0b60d8956403cc109ee62a1c45a3615d}} 
+\index{ControlSurfaces@{ControlSurfaces}!getNoOfSurface@{getNoOfSurface}}
+\index{getNoOfSurface@{getNoOfSurface}!ControlSurfaces@{ControlSurfaces}}
+\doxysubsubsection{\texorpdfstring{getNoOfSurface()}{getNoOfSurface()}}
+{\footnotesize\ttfamily int Control\+Surfaces\+::get\+No\+Of\+Surface (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_control_surfaces_a3aa66b2f5349ab8d11deb6d43c7c1bac}\label{class_control_surfaces_a3aa66b2f5349ab8d11deb6d43c7c1bac}} 
+\index{ControlSurfaces@{ControlSurfaces}!getValues@{getValues}}
+\index{getValues@{getValues}!ControlSurfaces@{ControlSurfaces}}
+\doxysubsubsection{\texorpdfstring{getValues()}{getValues()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Control\+Surfaces\+::get\+Values (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_control_surfaces_a6486ba0a755760844e9e230fcf90f8a4}\label{class_control_surfaces_a6486ba0a755760844e9e230fcf90f8a4}} 
+\index{ControlSurfaces@{ControlSurfaces}!restoreTrim@{restoreTrim}}
+\index{restoreTrim@{restoreTrim}!ControlSurfaces@{ControlSurfaces}}
+\doxysubsubsection{\texorpdfstring{restoreTrim()}{restoreTrim()}}
+{\footnotesize\ttfamily void Control\+Surfaces\+::restore\+Trim (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_control_surfaces_a447af12acecbeaa241610bf89402d604}\label{class_control_surfaces_a447af12acecbeaa241610bf89402d604}} 
+\index{ControlSurfaces@{ControlSurfaces}!setValues@{setValues}}
+\index{setValues@{setValues}!ControlSurfaces@{ControlSurfaces}}
+\doxysubsubsection{\texorpdfstring{setValues()}{setValues()}}
+{\footnotesize\ttfamily bool Control\+Surfaces\+::set\+Values (\begin{DoxyParamCaption}\item[{Eigen\+::\+Vector\+Xd}]{new\+\_\+values }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/components/\mbox{\hyperlink{control__surfaces_8hpp}{control\+\_\+surfaces.\+hpp}}\item 
+src/components/\mbox{\hyperlink{control__surfaces_8cpp}{control\+\_\+surfaces.\+cpp}}\end{DoxyCompactItemize}

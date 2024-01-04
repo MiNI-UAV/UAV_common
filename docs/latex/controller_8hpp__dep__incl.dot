@@ -1,0 +1,49 @@
+digraph "src/controllers/controller.hpp"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="src/controllers/controller.hpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="header/common.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$common_8hpp.html",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="src/controllers/controller.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$controller_8cpp.html",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="src/controllers/impl\l/bang_bang.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$bang__bang_8hpp.html",tooltip=" "];
+  Node4 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="src/controllers/controller\l_test.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$controller__test_8cpp.html",tooltip=" "];
+  Node4 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="src/controllers/impl\l/bang_bang.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$bang__bang_8cpp.html",tooltip=" "];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="src/controllers/impl\l/double_setpoint.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$double__setpoint_8hpp.html",tooltip=" "];
+  Node7 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="src/controllers/impl\l/double_setpoint.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$double__setpoint_8cpp.html",tooltip=" "];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="src/controllers/impl\l/PID.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_p_i_d_8hpp.html",tooltip=" "];
+  Node9 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node9 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node9 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="src/controllers/impl\l/PID.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_p_i_d_8cpp.html",tooltip=" "];
+  Node1 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="src/controllers/impl\l/PID_discrete.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_p_i_d__discrete_8hpp.html",tooltip=" "];
+  Node11 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node11 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node11 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node12 [label="src/controllers/impl\l/PID_discrete.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_p_i_d__discrete_8cpp.html",tooltip=" "];
+  Node1 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node13 [label="src/controllers/impl\l/z_trans.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$z__trans_8hpp.html",tooltip=" "];
+  Node13 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node13 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node13 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node13 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node13 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node14 [label="src/controllers/impl\l/z_trans.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$z__trans_8cpp.html",tooltip=" "];
+  Node1 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node15 [label="src/parser/uav_params.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$uav__params_8hpp.html",tooltip=" "];
+  Node15 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node15 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node16 [label="src/parser/uav_params.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$uav__params_8cpp.html",tooltip=" "];
+}

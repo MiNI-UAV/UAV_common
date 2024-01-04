@@ -1,0 +1,132 @@
+\hypertarget{classcontrollers_1_1_double_setpoint}{}\doxysection{controllers\+::Double\+Setpoint Class Reference}
+\label{classcontrollers_1_1_double_setpoint}\index{controllers::DoubleSetpoint@{controllers::DoubleSetpoint}}
+
+
+{\ttfamily \#include $<$double\+\_\+setpoint.\+hpp$>$}
+
+
+
+Inheritance diagram for controllers\+::Double\+Setpoint\+:
+% FIG 0
+
+
+Collaboration diagram for controllers\+::Double\+Setpoint\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcontrollers_1_1_double_setpoint_af13acb75136bae4581e0771ec80ab7e2}{Double\+Setpoint}} (double high, double mid, double low, double mid\+\_\+range, double delta=0.\+0)
+\begin{DoxyCompactList}\small\item\em Constructor with all Bang-\/bang controller parameters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcontrollers_1_1_double_setpoint_ae1d4547992122f02eab14e24ddcad408}{Double\+Setpoint}} (rapidxml\+::xml\+\_\+node$<$$>$ $\ast$controller\+\_\+node)
+\begin{DoxyCompactList}\small\item\em Construct controller with parameters from xml. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classcontrollers_1_1_double_setpoint_ad4932109de10953bd07cbd668be392f6}{calc}} (double desired, double actual, double dt) override
+\begin{DoxyCompactList}\small\item\em calc output of controller with specific time step \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcontrollers_1_1_double_setpoint_ad76cf236d24194994126dc3c4ee8fcb8}{clear}} () override
+\begin{DoxyCompactList}\small\item\em clear internal state \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_controller}{Controller}} $>$ \mbox{\hyperlink{classcontrollers_1_1_double_setpoint_af30412b6d829ec6a22f0aad7d553c762}{clone}} () const override
+\begin{DoxyCompactList}\small\item\em virtual clone method \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classcontrollers_1_1_double_setpoint_af13acb75136bae4581e0771ec80ab7e2}\label{classcontrollers_1_1_double_setpoint_af13acb75136bae4581e0771ec80ab7e2}} 
+\index{controllers::DoubleSetpoint@{controllers::DoubleSetpoint}!DoubleSetpoint@{DoubleSetpoint}}
+\index{DoubleSetpoint@{DoubleSetpoint}!controllers::DoubleSetpoint@{controllers::DoubleSetpoint}}
+\doxysubsubsection{\texorpdfstring{DoubleSetpoint()}{DoubleSetpoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily controllers\+::\+Double\+Setpoint\+::\+Double\+Setpoint (\begin{DoxyParamCaption}\item[{double}]{high,  }\item[{double}]{mid,  }\item[{double}]{low,  }\item[{double}]{mid\+\_\+range,  }\item[{double}]{delta = {\ttfamily 0.0} }\end{DoxyParamCaption})}
+
+
+
+Constructor with all Bang-\/bang controller parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em high} & output when error is in positive range \\
+\hline
+{\em mid} & output when error is in center range \\
+\hline
+{\em low} & output when error is in negative range \\
+\hline
+{\em mid\+\_\+range} & size of center field from zero \\
+\hline
+{\em delta} & histeresis symetrical to zero \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcontrollers_1_1_double_setpoint_ae1d4547992122f02eab14e24ddcad408}\label{classcontrollers_1_1_double_setpoint_ae1d4547992122f02eab14e24ddcad408}} 
+\index{controllers::DoubleSetpoint@{controllers::DoubleSetpoint}!DoubleSetpoint@{DoubleSetpoint}}
+\index{DoubleSetpoint@{DoubleSetpoint}!controllers::DoubleSetpoint@{controllers::DoubleSetpoint}}
+\doxysubsubsection{\texorpdfstring{DoubleSetpoint()}{DoubleSetpoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily controllers\+::\+Double\+Setpoint\+::\+Double\+Setpoint (\begin{DoxyParamCaption}\item[{rapidxml\+::xml\+\_\+node$<$$>$ $\ast$}]{controller\+\_\+node }\end{DoxyParamCaption})}
+
+
+
+Construct controller with parameters from xml. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller\+\_\+node} & xml node with controller params \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classcontrollers_1_1_double_setpoint_ad4932109de10953bd07cbd668be392f6}\label{classcontrollers_1_1_double_setpoint_ad4932109de10953bd07cbd668be392f6}} 
+\index{controllers::DoubleSetpoint@{controllers::DoubleSetpoint}!calc@{calc}}
+\index{calc@{calc}!controllers::DoubleSetpoint@{controllers::DoubleSetpoint}}
+\doxysubsubsection{\texorpdfstring{calc()}{calc()}}
+{\footnotesize\ttfamily double controllers\+::\+Double\+Setpoint\+::calc (\begin{DoxyParamCaption}\item[{double}]{desired,  }\item[{double}]{actual,  }\item[{double}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+calc output of controller with specific time step 
+
+
+\begin{DoxyParams}{Parameters}
+{\em desired} & input of controller, desired value \\
+\hline
+{\em actual} & measured actual value \\
+\hline
+{\em dt} & time step \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+output of controller 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_controller_a069b8bdde8a3df0e83688a84646d6270}{Controller}}.
+
+\mbox{\Hypertarget{classcontrollers_1_1_double_setpoint_ad76cf236d24194994126dc3c4ee8fcb8}\label{classcontrollers_1_1_double_setpoint_ad76cf236d24194994126dc3c4ee8fcb8}} 
+\index{controllers::DoubleSetpoint@{controllers::DoubleSetpoint}!clear@{clear}}
+\index{clear@{clear}!controllers::DoubleSetpoint@{controllers::DoubleSetpoint}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void controllers\+::\+Double\+Setpoint\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+clear internal state 
+
+
+
+Implements \mbox{\hyperlink{class_controller_a540f9f6b248d4e6a29061133a6ede5e2}{Controller}}.
+
+\mbox{\Hypertarget{classcontrollers_1_1_double_setpoint_af30412b6d829ec6a22f0aad7d553c762}\label{classcontrollers_1_1_double_setpoint_af30412b6d829ec6a22f0aad7d553c762}} 
+\index{controllers::DoubleSetpoint@{controllers::DoubleSetpoint}!clone@{clone}}
+\index{clone@{clone}!controllers::DoubleSetpoint@{controllers::DoubleSetpoint}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_controller}{Controller}} $>$ controllers\+::\+Double\+Setpoint\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+virtual clone method 
+
+
+
+Implements \mbox{\hyperlink{class_controller_a956c82e68f635fce8e66700a985fb3fb}{Controller}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/controllers/impl/\mbox{\hyperlink{double__setpoint_8hpp}{double\+\_\+setpoint.\+hpp}}\item 
+src/controllers/impl/\mbox{\hyperlink{double__setpoint_8cpp}{double\+\_\+setpoint.\+cpp}}\end{DoxyCompactItemize}

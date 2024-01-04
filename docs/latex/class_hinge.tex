@@ -1,0 +1,93 @@
+\hypertarget{class_hinge}{}\doxysection{Hinge Class Reference}
+\label{class_hinge}\index{Hinge@{Hinge}}
+
+
+\mbox{\hyperlink{class_hinge}{Hinge}} connecting aircraft with drives.  
+
+
+
+
+{\ttfamily \#include $<$hinge.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_hinge_a528b29d88106928f8eb5bc229eefddea}{Hinge}} ()=default
+\item 
+\mbox{\hyperlink{class_hinge_a571d980f9abdd92d6536d8c219ff9bee}{Hinge}} (Eigen\+::\+Vector3d axis, double max, double min, double trim)
+\item 
+\mbox{\hyperlink{class_hinge_ac146918d84d9250753eb309e22ee6bfc}{Hinge}} (const \mbox{\hyperlink{class_hinge}{Hinge}} \&old)
+\item 
+\mbox{\hyperlink{class_hinge}{Hinge}} \& \mbox{\hyperlink{class_hinge_a074ef5e953d41e3fb20ae802db309655}{operator=}} (const \mbox{\hyperlink{class_hinge}{Hinge}} \&old)
+\item 
+void \mbox{\hyperlink{class_hinge_a3190f3b751cdd5af2fa380b830e7ebf7}{update\+Value}} (double new\+Value)
+\begin{DoxyCompactList}\small\item\em set new angle on hinge \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix3d \mbox{\hyperlink{class_hinge_a8de1f0ebbce99d1eaac499d270a515ad}{get\+Rot}} ()
+\begin{DoxyCompactList}\small\item\em Get rotattion matrix of orientation change due to hinge. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_hinge}{Hinge}} connecting aircraft with drives. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_hinge_a528b29d88106928f8eb5bc229eefddea}\label{class_hinge_a528b29d88106928f8eb5bc229eefddea}} 
+\index{Hinge@{Hinge}!Hinge@{Hinge}}
+\index{Hinge@{Hinge}!Hinge@{Hinge}}
+\doxysubsubsection{\texorpdfstring{Hinge()}{Hinge()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Hinge\+::\+Hinge (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{class_hinge_a571d980f9abdd92d6536d8c219ff9bee}\label{class_hinge_a571d980f9abdd92d6536d8c219ff9bee}} 
+\index{Hinge@{Hinge}!Hinge@{Hinge}}
+\index{Hinge@{Hinge}!Hinge@{Hinge}}
+\doxysubsubsection{\texorpdfstring{Hinge()}{Hinge()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Hinge\+::\+Hinge (\begin{DoxyParamCaption}\item[{Eigen\+::\+Vector3d}]{axis,  }\item[{double}]{max,  }\item[{double}]{min,  }\item[{double}]{trim }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_hinge_ac146918d84d9250753eb309e22ee6bfc}\label{class_hinge_ac146918d84d9250753eb309e22ee6bfc}} 
+\index{Hinge@{Hinge}!Hinge@{Hinge}}
+\index{Hinge@{Hinge}!Hinge@{Hinge}}
+\doxysubsubsection{\texorpdfstring{Hinge()}{Hinge()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Hinge\+::\+Hinge (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_hinge}{Hinge}} \&}]{old }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_hinge_a8de1f0ebbce99d1eaac499d270a515ad}\label{class_hinge_a8de1f0ebbce99d1eaac499d270a515ad}} 
+\index{Hinge@{Hinge}!getRot@{getRot}}
+\index{getRot@{getRot}!Hinge@{Hinge}}
+\doxysubsubsection{\texorpdfstring{getRot()}{getRot()}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix3d Hinge\+::get\+Rot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get rotattion matrix of orientation change due to hinge. 
+
+\begin{DoxyReturn}{Returns}
+rotation matrix 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_hinge_a074ef5e953d41e3fb20ae802db309655}\label{class_hinge_a074ef5e953d41e3fb20ae802db309655}} 
+\index{Hinge@{Hinge}!operator=@{operator=}}
+\index{operator=@{operator=}!Hinge@{Hinge}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hinge}{Hinge}} \& Hinge\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_hinge}{Hinge}} \&}]{old }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_hinge_a3190f3b751cdd5af2fa380b830e7ebf7}\label{class_hinge_a3190f3b751cdd5af2fa380b830e7ebf7}} 
+\index{Hinge@{Hinge}!updateValue@{updateValue}}
+\index{updateValue@{updateValue}!Hinge@{Hinge}}
+\doxysubsubsection{\texorpdfstring{updateValue()}{updateValue()}}
+{\footnotesize\ttfamily void Hinge\+::update\+Value (\begin{DoxyParamCaption}\item[{double}]{new\+Value }\end{DoxyParamCaption})}
+
+
+
+set new angle on hinge 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Value} & new angle of hinge \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/components/\mbox{\hyperlink{hinge_8hpp}{hinge.\+hpp}}\item 
+src/components/\mbox{\hyperlink{hinge_8cpp}{hinge.\+cpp}}\end{DoxyCompactItemize}

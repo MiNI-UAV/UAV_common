@@ -1,0 +1,218 @@
+\hypertarget{class_o_d_e}{}\doxysection{ODE Class Reference}
+\label{class_o_d_e}\index{ODE@{ODE}}
+
+
+Ordinal differencial equation solver.  
+
+
+
+
+{\ttfamily \#include $<$ode.\+hpp$>$}
+
+
+
+Inheritance diagram for ODE\+:
+% FIG 0
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_o_d_e_ad33d2072ea0db5c08ef9e442ae5db1b2}{ODEMethod}} \{ \newline
+\mbox{\hyperlink{class_o_d_e_ad33d2072ea0db5c08ef9e442ae5db1b2a551a36071c2de4aa230e40cf3bfd1697}{Euler}}
+, \mbox{\hyperlink{class_o_d_e_ad33d2072ea0db5c08ef9e442ae5db1b2a0f336f7ba59ae143716613ec34459676}{Heun}}
+, \mbox{\hyperlink{class_o_d_e_ad33d2072ea0db5c08ef9e442ae5db1b2a1c60ec086dd4ecaae421765027ece882}{RK4}}
+, \mbox{\hyperlink{class_o_d_e_ad33d2072ea0db5c08ef9e442ae5db1b2a054bf7645cd4cf016898a118d3981b6b}{PC2}}
+, \newline
+\mbox{\hyperlink{class_o_d_e_ad33d2072ea0db5c08ef9e442ae5db1b2aa80c8b8da9c420bc8853742b974254b9}{PC4}}
+, \mbox{\hyperlink{class_o_d_e_ad33d2072ea0db5c08ef9e442ae5db1b2a69d1910b0b304ccb3ca9a8126779613f}{NONE}}
+ \}
+\begin{DoxyCompactList}\small\item\em Supported solving method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_o_d_e_ab6d78620bbd0ca4c8be1d01c84e964ce}{ODE}} (int micro\+\_\+steps)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_o_d_e_aca98f8a1bf24a0321be6b6525020bd56}{$\sim$\+ODE}} ()
+\begin{DoxyCompactList}\small\item\em Virtual deconstructor. \end{DoxyCompactList}\item 
+virtual Eigen\+::\+Vector\+Xd \mbox{\hyperlink{class_o_d_e_aec0dbc10de155ed18bb5f1b36087e492}{step}} (double t, Eigen\+::\+Vector\+Xd y0, std\+::function$<$ Eigen\+::\+Vector\+Xd(double, Eigen\+::\+Vector\+Xd)$>$ rhs\+\_\+fun, double h)=0
+\begin{DoxyCompactList}\small\item\em One step of explicit solving algorithm. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_o_d_e_a22241040d1d982f70cd0414ca16d5413}{get\+Microsteps}} () const
+\begin{DoxyCompactList}\small\item\em Return microsteps -\/ number of rhs function calls to calculate on step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_o_d_e_ad33d2072ea0db5c08ef9e442ae5db1b2}{ODEMethod}} \mbox{\hyperlink{class_o_d_e_aa8488d8d7d8d24d4651f5399dc4a419b}{from\+String}} (std\+::string str)
+\begin{DoxyCompactList}\small\item\em Parse solving method from string. \end{DoxyCompactList}\item 
+static std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_o_d_e}{ODE}} $>$ \mbox{\hyperlink{class_o_d_e_a3d5f799956247d1d50c0109f920d75cc}{factory}} (\mbox{\hyperlink{class_o_d_e_ad33d2072ea0db5c08ef9e442ae5db1b2}{ODEMethod}} method)
+\begin{DoxyCompactList}\small\item\em Factory constructing \mbox{\hyperlink{class_o_d_e}{ODE}} solvers. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_o_d_e_a15234cf8673c5d3c252ab0f6c3303972}{get\+Microsteps}} (\mbox{\hyperlink{class_o_d_e_ad33d2072ea0db5c08ef9e442ae5db1b2}{ODEMethod}} method)
+\begin{DoxyCompactList}\small\item\em Get microsteps of given method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Ordinal differencial equation solver. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_o_d_e_ad33d2072ea0db5c08ef9e442ae5db1b2}\label{class_o_d_e_ad33d2072ea0db5c08ef9e442ae5db1b2}} 
+\index{ODE@{ODE}!ODEMethod@{ODEMethod}}
+\index{ODEMethod@{ODEMethod}!ODE@{ODE}}
+\doxysubsubsection{\texorpdfstring{ODEMethod}{ODEMethod}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_o_d_e_ad33d2072ea0db5c08ef9e442ae5db1b2}{ODE\+::\+ODEMethod}}}
+
+
+
+Supported solving method. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Euler@{Euler}!ODE@{ODE}}\index{ODE@{ODE}!Euler@{Euler}}}\mbox{\Hypertarget{class_o_d_e_ad33d2072ea0db5c08ef9e442ae5db1b2a551a36071c2de4aa230e40cf3bfd1697}\label{class_o_d_e_ad33d2072ea0db5c08ef9e442ae5db1b2a551a36071c2de4aa230e40cf3bfd1697}} 
+Euler&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Heun@{Heun}!ODE@{ODE}}\index{ODE@{ODE}!Heun@{Heun}}}\mbox{\Hypertarget{class_o_d_e_ad33d2072ea0db5c08ef9e442ae5db1b2a0f336f7ba59ae143716613ec34459676}\label{class_o_d_e_ad33d2072ea0db5c08ef9e442ae5db1b2a0f336f7ba59ae143716613ec34459676}} 
+Heun&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RK4@{RK4}!ODE@{ODE}}\index{ODE@{ODE}!RK4@{RK4}}}\mbox{\Hypertarget{class_o_d_e_ad33d2072ea0db5c08ef9e442ae5db1b2a1c60ec086dd4ecaae421765027ece882}\label{class_o_d_e_ad33d2072ea0db5c08ef9e442ae5db1b2a1c60ec086dd4ecaae421765027ece882}} 
+RK4&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PC2@{PC2}!ODE@{ODE}}\index{ODE@{ODE}!PC2@{PC2}}}\mbox{\Hypertarget{class_o_d_e_ad33d2072ea0db5c08ef9e442ae5db1b2a054bf7645cd4cf016898a118d3981b6b}\label{class_o_d_e_ad33d2072ea0db5c08ef9e442ae5db1b2a054bf7645cd4cf016898a118d3981b6b}} 
+PC2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PC4@{PC4}!ODE@{ODE}}\index{ODE@{ODE}!PC4@{PC4}}}\mbox{\Hypertarget{class_o_d_e_ad33d2072ea0db5c08ef9e442ae5db1b2aa80c8b8da9c420bc8853742b974254b9}\label{class_o_d_e_ad33d2072ea0db5c08ef9e442ae5db1b2aa80c8b8da9c420bc8853742b974254b9}} 
+PC4&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NONE@{NONE}!ODE@{ODE}}\index{ODE@{ODE}!NONE@{NONE}}}\mbox{\Hypertarget{class_o_d_e_ad33d2072ea0db5c08ef9e442ae5db1b2a69d1910b0b304ccb3ca9a8126779613f}\label{class_o_d_e_ad33d2072ea0db5c08ef9e442ae5db1b2a69d1910b0b304ccb3ca9a8126779613f}} 
+NONE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_o_d_e_ab6d78620bbd0ca4c8be1d01c84e964ce}\label{class_o_d_e_ab6d78620bbd0ca4c8be1d01c84e964ce}} 
+\index{ODE@{ODE}!ODE@{ODE}}
+\index{ODE@{ODE}!ODE@{ODE}}
+\doxysubsubsection{\texorpdfstring{ODE()}{ODE()}}
+{\footnotesize\ttfamily ODE\+::\+ODE (\begin{DoxyParamCaption}\item[{int}]{micro\+\_\+steps }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+\mbox{\Hypertarget{class_o_d_e_aca98f8a1bf24a0321be6b6525020bd56}\label{class_o_d_e_aca98f8a1bf24a0321be6b6525020bd56}} 
+\index{ODE@{ODE}!````~ODE@{$\sim$ODE}}
+\index{````~ODE@{$\sim$ODE}!ODE@{ODE}}
+\doxysubsubsection{\texorpdfstring{$\sim$ODE()}{~ODE()}}
+{\footnotesize\ttfamily virtual ODE\+::$\sim$\+ODE (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Virtual deconstructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_o_d_e_a3d5f799956247d1d50c0109f920d75cc}\label{class_o_d_e_a3d5f799956247d1d50c0109f920d75cc}} 
+\index{ODE@{ODE}!factory@{factory}}
+\index{factory@{factory}!ODE@{ODE}}
+\doxysubsubsection{\texorpdfstring{factory()}{factory()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_o_d_e}{ODE}} $>$ ODE\+::factory (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_o_d_e_ad33d2072ea0db5c08ef9e442ae5db1b2}{ODEMethod}}}]{method }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Factory constructing \mbox{\hyperlink{class_o_d_e}{ODE}} solvers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em method} & type of desired method \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+instance of \mbox{\hyperlink{class_o_d_e}{ODE}} solver 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_o_d_e_aa8488d8d7d8d24d4651f5399dc4a419b}\label{class_o_d_e_aa8488d8d7d8d24d4651f5399dc4a419b}} 
+\index{ODE@{ODE}!fromString@{fromString}}
+\index{fromString@{fromString}!ODE@{ODE}}
+\doxysubsubsection{\texorpdfstring{fromString()}{fromString()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_o_d_e_ad33d2072ea0db5c08ef9e442ae5db1b2}{ODE\+::\+ODEMethod}} ODE\+::from\+String (\begin{DoxyParamCaption}\item[{std\+::string}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Parse solving method from string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & input string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+solving method if parsed, NONE if unknown 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_o_d_e_a22241040d1d982f70cd0414ca16d5413}\label{class_o_d_e_a22241040d1d982f70cd0414ca16d5413}} 
+\index{ODE@{ODE}!getMicrosteps@{getMicrosteps}}
+\index{getMicrosteps@{getMicrosteps}!ODE@{ODE}}
+\doxysubsubsection{\texorpdfstring{getMicrosteps()}{getMicrosteps()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int ODE\+::get\+Microsteps (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return microsteps -\/ number of rhs function calls to calculate on step. 
+
+\begin{DoxyReturn}{Returns}
+microsteps 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_o_d_e_a15234cf8673c5d3c252ab0f6c3303972}\label{class_o_d_e_a15234cf8673c5d3c252ab0f6c3303972}} 
+\index{ODE@{ODE}!getMicrosteps@{getMicrosteps}}
+\index{getMicrosteps@{getMicrosteps}!ODE@{ODE}}
+\doxysubsubsection{\texorpdfstring{getMicrosteps()}{getMicrosteps()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int ODE\+::get\+Microsteps (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_o_d_e_ad33d2072ea0db5c08ef9e442ae5db1b2}{ODEMethod}}}]{method }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get microsteps of given method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em method} & method type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of microstep in one algoritm step 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_o_d_e_aec0dbc10de155ed18bb5f1b36087e492}\label{class_o_d_e_aec0dbc10de155ed18bb5f1b36087e492}} 
+\index{ODE@{ODE}!step@{step}}
+\index{step@{step}!ODE@{ODE}}
+\doxysubsubsection{\texorpdfstring{step()}{step()}}
+{\footnotesize\ttfamily virtual Eigen\+::\+Vector\+Xd ODE\+::step (\begin{DoxyParamCaption}\item[{double}]{t,  }\item[{Eigen\+::\+Vector\+Xd}]{y0,  }\item[{std\+::function$<$ Eigen\+::\+Vector\+Xd(double, Eigen\+::\+Vector\+Xd)$>$}]{rhs\+\_\+fun,  }\item[{double}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+One step of explicit solving algorithm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & start time \\
+\hline
+{\em y0} & start variable \\
+\hline
+{\em rhs\+\_\+fun} & right-\/hand-\/side function, calculation of derivative \\
+\hline
+{\em h} & time step \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+~\newline
+ 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_o_d_e___p_c4_ac95196c2059de5cd55d45af132242dba}{ODE\+\_\+\+PC4}}, \mbox{\hyperlink{class_o_d_e___p_c2_a579a12d5abb5f952e182e28314c9032a}{ODE\+\_\+\+PC2}}, \mbox{\hyperlink{class_o_d_e___r_k4_ace6c4907d464c718baf806765566436e}{ODE\+\_\+\+RK4}}, \mbox{\hyperlink{class_o_d_e___heun_ad40e9bdc4a8885371dbf139d896286c3}{ODE\+\_\+\+Heun}}, and \mbox{\hyperlink{class_o_d_e___euler_aa4e14fb710a859cb9b747f7a76948f7f}{ODE\+\_\+\+Euler}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/ode/\mbox{\hyperlink{ode_8hpp}{ode.\+hpp}}\item 
+src/ode/\mbox{\hyperlink{ode_8cpp}{ode.\+cpp}}\end{DoxyCompactItemize}

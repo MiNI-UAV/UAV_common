@@ -1,0 +1,140 @@
+\hypertarget{controller__plots_8m}{}\doxysection{scripts/controller\+\_\+plots.m File Reference}
+\label{controller__plots_8m}\index{scripts/controller\_plots.m@{scripts/controller\_plots.m}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{controller__plots_8m_ad177afad89983c685ac0878f4bb9ee51}{plot}} (\mbox{\hyperlink{controller__plots_8m_a9336ebf25087d91c818ee6e9ec29f8c1}{x}}, \mbox{\hyperlink{controller__plots_8m_a2fb1c5cf58867b5bbc9a1b145a86f3a0}{y}}, \textquotesingle{}Display\+Name\textquotesingle{}, \mbox{\hyperlink{controller__plots_8m_a0d9c1a19cf64a495c97b8ed032681182}{csv\+Files}}(\mbox{\hyperlink{controller__plots_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}).name)
+\item 
+end \mbox{\hyperlink{controller__plots_8m_ab9322e626a0297012c6193a5d8eeafba}{xlabel}} (\textquotesingle{}Czas\textquotesingle{})
+\item 
+\mbox{\hyperlink{controller__plots_8m_a6078b27ec4cc3209b67ad9f2a42d700d}{ylabel}} (\textquotesingle{}Wartość regulowana\textquotesingle{})
+\item 
+\mbox{\hyperlink{controller__plots_8m_ad7bdbb43d33e56da3435ad1ee4f0b70a}{title}} (\textquotesingle{}Test regulatorów\textquotesingle{})
+\item 
+\mbox{\hyperlink{controller__plots_8m_a8691631725fd9faad525f94df0a6d655}{legend}} (\textquotesingle{}Location\textquotesingle{}, \textquotesingle{}Best\textquotesingle{})
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{controller__plots_8m_a3f3d3b13a15c726d6aa03db3dd0d6377}{clc}}
+\item 
+clear \mbox{\hyperlink{controller__plots_8m_a6c3b2d11c32d0c0fa3e55783a6b18f25}{folder\+Path}} = \textquotesingle{}../build/controller\+\_\+plots/\textquotesingle{}
+\item 
+\mbox{\hyperlink{controller__plots_8m_a0d9c1a19cf64a495c97b8ed032681182}{csv\+Files}} = dir(fullfile(\mbox{\hyperlink{controller__plots_8m_a6c3b2d11c32d0c0fa3e55783a6b18f25}{folder\+Path}}, \textquotesingle{}$\ast$.csv\textquotesingle{}))
+\item 
+\mbox{\hyperlink{controller__plots_8m_a391e34f2de441d79152a7b3d6e4c9c86}{figure}}
+\item 
+hold \mbox{\hyperlink{controller__plots_8m_a58ab1fd68e97078232808206b850161b}{on}}
+\item 
+for \mbox{\hyperlink{controller__plots_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}
+\item 
+\mbox{\hyperlink{controller__plots_8m_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}} = readmatrix(file\+Path)
+\item 
+\mbox{\hyperlink{controller__plots_8m_a9336ebf25087d91c818ee6e9ec29f8c1}{x}} = \mbox{\hyperlink{controller__plots_8m_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}(\+:, 1)
+\item 
+\mbox{\hyperlink{controller__plots_8m_a2fb1c5cf58867b5bbc9a1b145a86f3a0}{y}} = \mbox{\hyperlink{controller__plots_8m_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}(\+:, 2)
+\item 
+hold \mbox{\hyperlink{controller__plots_8m_a835accca41274fb237599d9b3c117fcf}{off}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{controller__plots_8m_a8691631725fd9faad525f94df0a6d655}\label{controller__plots_8m_a8691631725fd9faad525f94df0a6d655}} 
+\index{controller\_plots.m@{controller\_plots.m}!legend@{legend}}
+\index{legend@{legend}!controller\_plots.m@{controller\_plots.m}}
+\doxysubsubsection{\texorpdfstring{legend()}{legend()}}
+{\footnotesize\ttfamily legend (\begin{DoxyParamCaption}\item[{\textquotesingle{}Location\textquotesingle{}}]{,  }\item[{\textquotesingle{}Best\textquotesingle{}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{controller__plots_8m_ad177afad89983c685ac0878f4bb9ee51}\label{controller__plots_8m_ad177afad89983c685ac0878f4bb9ee51}} 
+\index{controller\_plots.m@{controller\_plots.m}!plot@{plot}}
+\index{plot@{plot}!controller\_plots.m@{controller\_plots.m}}
+\doxysubsubsection{\texorpdfstring{plot()}{plot()}}
+{\footnotesize\ttfamily plot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{controller__plots_8m_a9336ebf25087d91c818ee6e9ec29f8c1}{x}}}]{,  }\item[{\mbox{\hyperlink{controller__plots_8m_a2fb1c5cf58867b5bbc9a1b145a86f3a0}{y}}}]{,  }\item[{\textquotesingle{}Display\+Name\textquotesingle{}}]{,  }\item[{\mbox{\hyperlink{controller__plots_8m_a0d9c1a19cf64a495c97b8ed032681182}{csv\+Files}}(\mbox{\hyperlink{controller__plots_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}).}]{name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{controller__plots_8m_ad7bdbb43d33e56da3435ad1ee4f0b70a}\label{controller__plots_8m_ad7bdbb43d33e56da3435ad1ee4f0b70a}} 
+\index{controller\_plots.m@{controller\_plots.m}!title@{title}}
+\index{title@{title}!controller\_plots.m@{controller\_plots.m}}
+\doxysubsubsection{\texorpdfstring{title()}{title()}}
+{\footnotesize\ttfamily title (\begin{DoxyParamCaption}\item[{\textquotesingle{}Test regulatorów\textquotesingle{}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{controller__plots_8m_ab9322e626a0297012c6193a5d8eeafba}\label{controller__plots_8m_ab9322e626a0297012c6193a5d8eeafba}} 
+\index{controller\_plots.m@{controller\_plots.m}!xlabel@{xlabel}}
+\index{xlabel@{xlabel}!controller\_plots.m@{controller\_plots.m}}
+\doxysubsubsection{\texorpdfstring{xlabel()}{xlabel()}}
+{\footnotesize\ttfamily end xlabel (\begin{DoxyParamCaption}\item[{\textquotesingle{}Czas\textquotesingle{}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{controller__plots_8m_a6078b27ec4cc3209b67ad9f2a42d700d}\label{controller__plots_8m_a6078b27ec4cc3209b67ad9f2a42d700d}} 
+\index{controller\_plots.m@{controller\_plots.m}!ylabel@{ylabel}}
+\index{ylabel@{ylabel}!controller\_plots.m@{controller\_plots.m}}
+\doxysubsubsection{\texorpdfstring{ylabel()}{ylabel()}}
+{\footnotesize\ttfamily ylabel (\begin{DoxyParamCaption}\item[{\textquotesingle{}Wartość regulowana\textquotesingle{}}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{controller__plots_8m_a3f3d3b13a15c726d6aa03db3dd0d6377}\label{controller__plots_8m_a3f3d3b13a15c726d6aa03db3dd0d6377}} 
+\index{controller\_plots.m@{controller\_plots.m}!clc@{clc}}
+\index{clc@{clc}!controller\_plots.m@{controller\_plots.m}}
+\doxysubsubsection{\texorpdfstring{clc}{clc}}
+{\footnotesize\ttfamily clc}
+
+\mbox{\Hypertarget{controller__plots_8m_a0d9c1a19cf64a495c97b8ed032681182}\label{controller__plots_8m_a0d9c1a19cf64a495c97b8ed032681182}} 
+\index{controller\_plots.m@{controller\_plots.m}!csvFiles@{csvFiles}}
+\index{csvFiles@{csvFiles}!controller\_plots.m@{controller\_plots.m}}
+\doxysubsubsection{\texorpdfstring{csvFiles}{csvFiles}}
+{\footnotesize\ttfamily csv\+Files = dir(fullfile(\mbox{\hyperlink{controller__plots_8m_a6c3b2d11c32d0c0fa3e55783a6b18f25}{folder\+Path}}, \textquotesingle{}$\ast$.csv\textquotesingle{}))}
+
+\mbox{\Hypertarget{controller__plots_8m_a511ae0b1c13f95e5f08f1a0dd3da3d93}\label{controller__plots_8m_a511ae0b1c13f95e5f08f1a0dd3da3d93}} 
+\index{controller\_plots.m@{controller\_plots.m}!data@{data}}
+\index{data@{data}!controller\_plots.m@{controller\_plots.m}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily data = readmatrix(file\+Path)}
+
+\mbox{\Hypertarget{controller__plots_8m_a391e34f2de441d79152a7b3d6e4c9c86}\label{controller__plots_8m_a391e34f2de441d79152a7b3d6e4c9c86}} 
+\index{controller\_plots.m@{controller\_plots.m}!figure@{figure}}
+\index{figure@{figure}!controller\_plots.m@{controller\_plots.m}}
+\doxysubsubsection{\texorpdfstring{figure}{figure}}
+{\footnotesize\ttfamily figure}
+
+\mbox{\Hypertarget{controller__plots_8m_a6c3b2d11c32d0c0fa3e55783a6b18f25}\label{controller__plots_8m_a6c3b2d11c32d0c0fa3e55783a6b18f25}} 
+\index{controller\_plots.m@{controller\_plots.m}!folderPath@{folderPath}}
+\index{folderPath@{folderPath}!controller\_plots.m@{controller\_plots.m}}
+\doxysubsubsection{\texorpdfstring{folderPath}{folderPath}}
+{\footnotesize\ttfamily clear folder\+Path = \textquotesingle{}../build/controller\+\_\+plots/\textquotesingle{}}
+
+\mbox{\Hypertarget{controller__plots_8m_a6f6ccfcf58b31cb6412107d9d5281426}\label{controller__plots_8m_a6f6ccfcf58b31cb6412107d9d5281426}} 
+\index{controller\_plots.m@{controller\_plots.m}!i@{i}}
+\index{i@{i}!controller\_plots.m@{controller\_plots.m}}
+\doxysubsubsection{\texorpdfstring{i}{i}}
+{\footnotesize\ttfamily for i}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= 1:length(\mbox{\hyperlink{controller__plots_8m_a0d9c1a19cf64a495c97b8ed032681182}{csvFiles}})}
+\DoxyCodeLine{    filePath = fullfile(\mbox{\hyperlink{controller__plots_8m_a6c3b2d11c32d0c0fa3e55783a6b18f25}{folderPath}}, \mbox{\hyperlink{controller__plots_8m_a0d9c1a19cf64a495c97b8ed032681182}{csvFiles}}(\mbox{\hyperlink{controller__plots_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}}).name)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{controller__plots_8m_a835accca41274fb237599d9b3c117fcf}\label{controller__plots_8m_a835accca41274fb237599d9b3c117fcf}} 
+\index{controller\_plots.m@{controller\_plots.m}!off@{off}}
+\index{off@{off}!controller\_plots.m@{controller\_plots.m}}
+\doxysubsubsection{\texorpdfstring{off}{off}}
+{\footnotesize\ttfamily hold off}
+
+\mbox{\Hypertarget{controller__plots_8m_a58ab1fd68e97078232808206b850161b}\label{controller__plots_8m_a58ab1fd68e97078232808206b850161b}} 
+\index{controller\_plots.m@{controller\_plots.m}!on@{on}}
+\index{on@{on}!controller\_plots.m@{controller\_plots.m}}
+\doxysubsubsection{\texorpdfstring{on}{on}}
+{\footnotesize\ttfamily hold on}
+
+\mbox{\Hypertarget{controller__plots_8m_a9336ebf25087d91c818ee6e9ec29f8c1}\label{controller__plots_8m_a9336ebf25087d91c818ee6e9ec29f8c1}} 
+\index{controller\_plots.m@{controller\_plots.m}!x@{x}}
+\index{x@{x}!controller\_plots.m@{controller\_plots.m}}
+\doxysubsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily x = \mbox{\hyperlink{controller__plots_8m_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}(\+:, 1)}
+
+\mbox{\Hypertarget{controller__plots_8m_a2fb1c5cf58867b5bbc9a1b145a86f3a0}\label{controller__plots_8m_a2fb1c5cf58867b5bbc9a1b145a86f3a0}} 
+\index{controller\_plots.m@{controller\_plots.m}!y@{y}}
+\index{y@{y}!controller\_plots.m@{controller\_plots.m}}
+\doxysubsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily y = \mbox{\hyperlink{controller__plots_8m_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}(\+:, 2)}
+

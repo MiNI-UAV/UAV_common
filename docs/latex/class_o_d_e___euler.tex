@@ -1,0 +1,76 @@
+\hypertarget{class_o_d_e___euler}{}\doxysection{ODE\+\_\+\+Euler Class Reference}
+\label{class_o_d_e___euler}\index{ODE\_Euler@{ODE\_Euler}}
+
+
+Explicit Euler algorithm.  
+
+
+
+
+{\ttfamily \#include $<$ode\+\_\+impl.\+hpp$>$}
+
+
+
+Inheritance diagram for ODE\+\_\+\+Euler\+:
+% FIG 0
+
+
+Collaboration diagram for ODE\+\_\+\+Euler\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_o_d_e___euler_a96d007dedae6609eb2a783b1ed8237d3}{ODE\+\_\+\+Euler}} ()
+\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{class_o_d_e___euler_aa4e14fb710a859cb9b747f7a76948f7f}{step}} (double t, Eigen\+::\+Vector\+Xd y0, std\+::function$<$ Eigen\+::\+Vector\+Xd(double, Eigen\+::\+Vector\+Xd)$>$ rhs\+\_\+fun, double h) override
+\begin{DoxyCompactList}\small\item\em One step of explicit solving algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Explicit Euler algorithm. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_o_d_e___euler_a96d007dedae6609eb2a783b1ed8237d3}\label{class_o_d_e___euler_a96d007dedae6609eb2a783b1ed8237d3}} 
+\index{ODE\_Euler@{ODE\_Euler}!ODE\_Euler@{ODE\_Euler}}
+\index{ODE\_Euler@{ODE\_Euler}!ODE\_Euler@{ODE\_Euler}}
+\doxysubsubsection{\texorpdfstring{ODE\_Euler()}{ODE\_Euler()}}
+{\footnotesize\ttfamily ODE\+\_\+\+Euler\+::\+ODE\+\_\+\+Euler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_o_d_e___euler_aa4e14fb710a859cb9b747f7a76948f7f}\label{class_o_d_e___euler_aa4e14fb710a859cb9b747f7a76948f7f}} 
+\index{ODE\_Euler@{ODE\_Euler}!step@{step}}
+\index{step@{step}!ODE\_Euler@{ODE\_Euler}}
+\doxysubsubsection{\texorpdfstring{step()}{step()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd ODE\+\_\+\+Euler\+::step (\begin{DoxyParamCaption}\item[{double}]{t,  }\item[{Eigen\+::\+Vector\+Xd}]{y0,  }\item[{std\+::function$<$ Eigen\+::\+Vector\+Xd(double, Eigen\+::\+Vector\+Xd)$>$}]{rhs\+\_\+fun,  }\item[{double}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+One step of explicit solving algorithm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & start time \\
+\hline
+{\em y0} & start variable \\
+\hline
+{\em rhs\+\_\+fun} & right-\/hand-\/side function, calculation of derivative \\
+\hline
+{\em h} & time step \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+~\newline
+ 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_o_d_e_aec0dbc10de155ed18bb5f1b36087e492}{ODE}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/ode/\mbox{\hyperlink{ode__impl_8hpp}{ode\+\_\+impl.\+hpp}}\end{DoxyCompactItemize}

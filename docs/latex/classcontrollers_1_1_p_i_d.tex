@@ -1,0 +1,166 @@
+\hypertarget{classcontrollers_1_1_p_i_d}{}\doxysection{controllers\+::PID Class Reference}
+\label{classcontrollers_1_1_p_i_d}\index{controllers::PID@{controllers::PID}}
+
+
+{\ttfamily \#include $<$PID.\+hpp$>$}
+
+
+
+Inheritance diagram for controllers\+::PID\+:
+% FIG 0
+
+
+Collaboration diagram for controllers\+::PID\+:
+% FIG 1
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{classcontrollers_1_1_p_i_d_aa20cfb7f65deff92a8a1872d36fe93de}{Anti\+Wind\+Up\+Mode}} \{ \mbox{\hyperlink{classcontrollers_1_1_p_i_d_aa20cfb7f65deff92a8a1872d36fe93deab50339a10e1de285ac99d4c3990b8693}{NONE}}
+, \mbox{\hyperlink{classcontrollers_1_1_p_i_d_aa20cfb7f65deff92a8a1872d36fe93dea16c791abf6948134908f0c861234075b}{CLAMPING}}
+ \}
+\begin{DoxyCompactList}\small\item\em Methods of handling windup in controller. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcontrollers_1_1_p_i_d_a17355b8f6d32706f244ade48701fc8ba}{PID}} (double Kp, double Ki, double Kd, double Kff=0.\+0, double min=-\/std\+::numeric\+\_\+limits$<$ double $>$\+::max(), double max=std\+::numeric\+\_\+limits$<$ double $>$\+::max(), \mbox{\hyperlink{classcontrollers_1_1_p_i_d_aa20cfb7f65deff92a8a1872d36fe93de}{Anti\+Wind\+Up\+Mode}} anti\+Wind\+Up=\mbox{\hyperlink{classcontrollers_1_1_p_i_d_aa20cfb7f65deff92a8a1872d36fe93dea16c791abf6948134908f0c861234075b}{Anti\+Wind\+Up\+Mode\+::\+CLAMPING}})
+\begin{DoxyCompactList}\small\item\em Constructor with all \mbox{\hyperlink{classcontrollers_1_1_p_i_d}{PID}} controller parameters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcontrollers_1_1_p_i_d_a49ccb41d8fe61864e41f238ed4c27ede}{PID}} (rapidxml\+::xml\+\_\+node$<$$>$ $\ast$controller\+\_\+node)
+\begin{DoxyCompactList}\small\item\em Construct controller with parameters from xml. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classcontrollers_1_1_p_i_d_adf71d8e0f81592bd899ddbea6b4b2c8a}{calc}} (double desired, double actual, double dt) override
+\begin{DoxyCompactList}\small\item\em calc output of controller with specific time step \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcontrollers_1_1_p_i_d_a12fab9405d975285c6473a01ba0dda28}{clear}} () override
+\begin{DoxyCompactList}\small\item\em clear internal state \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_controller}{Controller}} $>$ \mbox{\hyperlink{classcontrollers_1_1_p_i_d_ad5b2d00bb586e2163d816300270a482a}{clone}} () const override
+\begin{DoxyCompactList}\small\item\em virtual clone method \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classcontrollers_1_1_p_i_d_aa20cfb7f65deff92a8a1872d36fe93de}\label{classcontrollers_1_1_p_i_d_aa20cfb7f65deff92a8a1872d36fe93de}} 
+\index{controllers::PID@{controllers::PID}!AntiWindUpMode@{AntiWindUpMode}}
+\index{AntiWindUpMode@{AntiWindUpMode}!controllers::PID@{controllers::PID}}
+\doxysubsubsection{\texorpdfstring{AntiWindUpMode}{AntiWindUpMode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classcontrollers_1_1_p_i_d_aa20cfb7f65deff92a8a1872d36fe93de}{controllers\+::\+PID\+::\+Anti\+Wind\+Up\+Mode}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Methods of handling windup in controller. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NONE@{NONE}!controllers::PID@{controllers::PID}}\index{controllers::PID@{controllers::PID}!NONE@{NONE}}}\mbox{\Hypertarget{classcontrollers_1_1_p_i_d_aa20cfb7f65deff92a8a1872d36fe93deab50339a10e1de285ac99d4c3990b8693}\label{classcontrollers_1_1_p_i_d_aa20cfb7f65deff92a8a1872d36fe93deab50339a10e1de285ac99d4c3990b8693}} 
+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CLAMPING@{CLAMPING}!controllers::PID@{controllers::PID}}\index{controllers::PID@{controllers::PID}!CLAMPING@{CLAMPING}}}\mbox{\Hypertarget{classcontrollers_1_1_p_i_d_aa20cfb7f65deff92a8a1872d36fe93dea16c791abf6948134908f0c861234075b}\label{classcontrollers_1_1_p_i_d_aa20cfb7f65deff92a8a1872d36fe93dea16c791abf6948134908f0c861234075b}} 
+CLAMPING&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classcontrollers_1_1_p_i_d_a17355b8f6d32706f244ade48701fc8ba}\label{classcontrollers_1_1_p_i_d_a17355b8f6d32706f244ade48701fc8ba}} 
+\index{controllers::PID@{controllers::PID}!PID@{PID}}
+\index{PID@{PID}!controllers::PID@{controllers::PID}}
+\doxysubsubsection{\texorpdfstring{PID()}{PID()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily PID\+::\+PID (\begin{DoxyParamCaption}\item[{double}]{Kp,  }\item[{double}]{Ki,  }\item[{double}]{Kd,  }\item[{double}]{Kff = {\ttfamily 0.0},  }\item[{double}]{min = {\ttfamily -\/std\+:\+:numeric\+\_\+limits$<$double$>$\+:\+:max()},  }\item[{double}]{max = {\ttfamily std\+:\+:numeric\+\_\+limits$<$double$>$\+:\+:max()},  }\item[{\mbox{\hyperlink{classcontrollers_1_1_p_i_d_aa20cfb7f65deff92a8a1872d36fe93de}{Anti\+Wind\+Up\+Mode}}}]{anti\+Wind\+Up = {\ttfamily \mbox{\hyperlink{classcontrollers_1_1_p_i_d_aa20cfb7f65deff92a8a1872d36fe93dea16c791abf6948134908f0c861234075b}{Anti\+Wind\+Up\+Mode\+::\+CLAMPING}}} }\end{DoxyParamCaption})}
+
+
+
+Constructor with all \mbox{\hyperlink{classcontrollers_1_1_p_i_d}{PID}} controller parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Kp} & P term \\
+\hline
+{\em Ki} & I term \\
+\hline
+{\em Kd} & D term \\
+\hline
+{\em Kff} & FF term \\
+\hline
+{\em min} & saturation -\/ lower range limit \\
+\hline
+{\em max} & saturation -\/ upper range limit \\
+\hline
+{\em anti\+Wind\+Up} & antiwindup method \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcontrollers_1_1_p_i_d_a49ccb41d8fe61864e41f238ed4c27ede}\label{classcontrollers_1_1_p_i_d_a49ccb41d8fe61864e41f238ed4c27ede}} 
+\index{controllers::PID@{controllers::PID}!PID@{PID}}
+\index{PID@{PID}!controllers::PID@{controllers::PID}}
+\doxysubsubsection{\texorpdfstring{PID()}{PID()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily PID\+::\+PID (\begin{DoxyParamCaption}\item[{rapidxml\+::xml\+\_\+node$<$$>$ $\ast$}]{controller\+\_\+node }\end{DoxyParamCaption})}
+
+
+
+Construct controller with parameters from xml. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller\+\_\+node} & xml node with controller params \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classcontrollers_1_1_p_i_d_adf71d8e0f81592bd899ddbea6b4b2c8a}\label{classcontrollers_1_1_p_i_d_adf71d8e0f81592bd899ddbea6b4b2c8a}} 
+\index{controllers::PID@{controllers::PID}!calc@{calc}}
+\index{calc@{calc}!controllers::PID@{controllers::PID}}
+\doxysubsubsection{\texorpdfstring{calc()}{calc()}}
+{\footnotesize\ttfamily double controllers\+::\+PID\+::calc (\begin{DoxyParamCaption}\item[{double}]{desired,  }\item[{double}]{actual,  }\item[{double}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+calc output of controller with specific time step 
+
+
+\begin{DoxyParams}{Parameters}
+{\em desired} & input of controller, desired value \\
+\hline
+{\em actual} & measured actual value \\
+\hline
+{\em dt} & time step \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+output of controller 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_controller_a069b8bdde8a3df0e83688a84646d6270}{Controller}}.
+
+\mbox{\Hypertarget{classcontrollers_1_1_p_i_d_a12fab9405d975285c6473a01ba0dda28}\label{classcontrollers_1_1_p_i_d_a12fab9405d975285c6473a01ba0dda28}} 
+\index{controllers::PID@{controllers::PID}!clear@{clear}}
+\index{clear@{clear}!controllers::PID@{controllers::PID}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void PID\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+clear internal state 
+
+
+
+Implements \mbox{\hyperlink{class_controller_a540f9f6b248d4e6a29061133a6ede5e2}{Controller}}.
+
+\mbox{\Hypertarget{classcontrollers_1_1_p_i_d_ad5b2d00bb586e2163d816300270a482a}\label{classcontrollers_1_1_p_i_d_ad5b2d00bb586e2163d816300270a482a}} 
+\index{controllers::PID@{controllers::PID}!clone@{clone}}
+\index{clone@{clone}!controllers::PID@{controllers::PID}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_controller}{Controller}} $>$ PID\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+virtual clone method 
+
+
+
+Implements \mbox{\hyperlink{class_controller_a956c82e68f635fce8e66700a985fb3fb}{Controller}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/controllers/impl/\mbox{\hyperlink{_p_i_d_8hpp}{PID.\+hpp}}\item 
+src/controllers/impl/\mbox{\hyperlink{_p_i_d_8cpp}{PID.\+cpp}}\end{DoxyCompactItemize}

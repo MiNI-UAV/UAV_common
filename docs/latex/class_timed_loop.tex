@@ -1,0 +1,79 @@
+\hypertarget{class_timed_loop}{}\doxysection{Timed\+Loop Class Reference}
+\label{class_timed_loop}\index{TimedLoop@{TimedLoop}}
+
+
+Simulation of real-\/time synchronized loop.  
+
+
+
+
+{\ttfamily \#include $<$timed\+\_\+loop.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_timed_loop_a289e14aad260b6696b699b25e2b1ba1a}{Timed\+Loop}} (int period\+In\+Ms, std\+::function$<$ void(void)$>$ func, \mbox{\hyperlink{status_8hpp_a67a0db04d321a74b7e7fcfd3f1a3f70b}{Status}} \&status)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_timed_loop_ae20d893ac9df7afe1e073d4d6cf98fb2}{go}} ()
+\begin{DoxyCompactList}\small\item\em start infinite loop \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_timed_loop_a1333190bcb4bb6e1c062249d8265e393}{go}} (uint32\+\_\+t loops)
+\begin{DoxyCompactList}\small\item\em start loop for specific cycle numbers \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Simulation of real-\/time synchronized loop. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_timed_loop_a289e14aad260b6696b699b25e2b1ba1a}\label{class_timed_loop_a289e14aad260b6696b699b25e2b1ba1a}} 
+\index{TimedLoop@{TimedLoop}!TimedLoop@{TimedLoop}}
+\index{TimedLoop@{TimedLoop}!TimedLoop@{TimedLoop}}
+\doxysubsubsection{\texorpdfstring{TimedLoop()}{TimedLoop()}}
+{\footnotesize\ttfamily Timed\+Loop\+::\+Timed\+Loop (\begin{DoxyParamCaption}\item[{int}]{period\+In\+Ms,  }\item[{std\+::function$<$ void(void)$>$}]{func,  }\item[{\mbox{\hyperlink{status_8hpp_a67a0db04d321a74b7e7fcfd3f1a3f70b}{Status}} \&}]{status }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em period\+In\+Ms} & loop period in milliseconds \\
+\hline
+{\em func} & function that should be called in loop \\
+\hline
+{\em status} & reference to controlling status \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_timed_loop_ae20d893ac9df7afe1e073d4d6cf98fb2}\label{class_timed_loop_ae20d893ac9df7afe1e073d4d6cf98fb2}} 
+\index{TimedLoop@{TimedLoop}!go@{go}}
+\index{go@{go}!TimedLoop@{TimedLoop}}
+\doxysubsubsection{\texorpdfstring{go()}{go()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Timed\+Loop\+::go (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+start infinite loop 
+
+\mbox{\Hypertarget{class_timed_loop_a1333190bcb4bb6e1c062249d8265e393}\label{class_timed_loop_a1333190bcb4bb6e1c062249d8265e393}} 
+\index{TimedLoop@{TimedLoop}!go@{go}}
+\index{go@{go}!TimedLoop@{TimedLoop}}
+\doxysubsubsection{\texorpdfstring{go()}{go()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Timed\+Loop\+::go (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{loops }\end{DoxyParamCaption})}
+
+
+
+start loop for specific cycle numbers 
+
+
+\begin{DoxyParams}{Parameters}
+{\em loops} & how many cycles should be done \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/timed\+\_\+loop/\mbox{\hyperlink{timed__loop_8hpp}{timed\+\_\+loop.\+hpp}}\item 
+src/timed\+\_\+loop/\mbox{\hyperlink{timed__loop_8cpp}{timed\+\_\+loop.\+cpp}}\end{DoxyCompactItemize}

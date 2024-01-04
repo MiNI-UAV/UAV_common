@@ -1,0 +1,44 @@
+\hypertarget{status_8hpp}{}\doxysection{src/timed\+\_\+loop/status.hpp File Reference}
+\label{status_8hpp}\index{src/timed\_loop/status.hpp@{src/timed\_loop/status.hpp}}
+This graph shows which files directly or indirectly include this file\+:
+% FIG 0
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{status_8hpp_a67a0db04d321a74b7e7fcfd3f1a3f70b}{Status}} \{ \mbox{\hyperlink{status_8hpp_a67a0db04d321a74b7e7fcfd3f1a3f70ba0e9a37114c0e458d28d52f06ec0f2242}{idle}} = 1
+, \mbox{\hyperlink{status_8hpp_a67a0db04d321a74b7e7fcfd3f1a3f70bab514bba77fe136c3a3b6f56b818f7b0c}{running}} = 2
+, \mbox{\hyperlink{status_8hpp_a67a0db04d321a74b7e7fcfd3f1a3f70ba5ac97463d821745c7a3dc6035ca8f15e}{exiting}} = 3
+, \mbox{\hyperlink{status_8hpp_a67a0db04d321a74b7e7fcfd3f1a3f70baf4d4f5a44481b7cb71e4feea2bd72060}{reload}} = 4
+ \}
+\begin{DoxyCompactList}\small\item\em status of timed loop. Control it\textquotesingle{}s job \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{status_8hpp_a67a0db04d321a74b7e7fcfd3f1a3f70b}\label{status_8hpp_a67a0db04d321a74b7e7fcfd3f1a3f70b}} 
+\index{status.hpp@{status.hpp}!Status@{Status}}
+\index{Status@{Status}!status.hpp@{status.hpp}}
+\doxysubsubsection{\texorpdfstring{Status}{Status}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{status_8hpp_a67a0db04d321a74b7e7fcfd3f1a3f70b}{Status}}}
+
+
+
+status of timed loop. Control it\textquotesingle{}s job 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{idle@{idle}!status.hpp@{status.hpp}}\index{status.hpp@{status.hpp}!idle@{idle}}}\mbox{\Hypertarget{status_8hpp_a67a0db04d321a74b7e7fcfd3f1a3f70ba0e9a37114c0e458d28d52f06ec0f2242}\label{status_8hpp_a67a0db04d321a74b7e7fcfd3f1a3f70ba0e9a37114c0e458d28d52f06ec0f2242}} 
+idle&loop is ready to run \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{running@{running}!status.hpp@{status.hpp}}\index{status.hpp@{status.hpp}!running@{running}}}\mbox{\Hypertarget{status_8hpp_a67a0db04d321a74b7e7fcfd3f1a3f70bab514bba77fe136c3a3b6f56b818f7b0c}\label{status_8hpp_a67a0db04d321a74b7e7fcfd3f1a3f70bab514bba77fe136c3a3b6f56b818f7b0c}} 
+running&loop is running \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{exiting@{exiting}!status.hpp@{status.hpp}}\index{status.hpp@{status.hpp}!exiting@{exiting}}}\mbox{\Hypertarget{status_8hpp_a67a0db04d321a74b7e7fcfd3f1a3f70ba5ac97463d821745c7a3dc6035ca8f15e}\label{status_8hpp_a67a0db04d321a74b7e7fcfd3f1a3f70ba5ac97463d821745c7a3dc6035ca8f15e}} 
+exiting&loop will be break in next occasion. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{reload@{reload}!status.hpp@{status.hpp}}\index{status.hpp@{status.hpp}!reload@{reload}}}\mbox{\Hypertarget{status_8hpp_a67a0db04d321a74b7e7fcfd3f1a3f70baf4d4f5a44481b7cb71e4feea2bd72060}\label{status_8hpp_a67a0db04d321a74b7e7fcfd3f1a3f70baf4d4f5a44481b7cb71e4feea2bd72060}} 
+reload&loop job should be reloaded \\
+\hline
+
+\end{DoxyEnumFields}

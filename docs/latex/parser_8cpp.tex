@@ -1,0 +1,64 @@
+\hypertarget{parser_8cpp}{}\doxysection{src/parser/parser.cpp File Reference}
+\label{parser_8cpp}\index{src/parser/parser.cpp@{src/parser/parser.cpp}}
+{\ttfamily \#include \char`\"{}parser.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+Include dependency graph for parser.\+cpp\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{parser_8cpp_a2e5d8a134fc3e0813f73823d07a0e518}{parse\+Matrix\+Xd}} (const std\+::string \&input, int R, int C, char delimiter)
+\begin{DoxyCompactList}\small\item\em Parse input string to double matrix of specific shape and delimiter. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{parser_8cpp_a8ec7f8bc954173b4c85536e69c095548}{parse\+Vector\+Xd}} (std\+::string str, int no\+Of\+Elem, char delimiter)
+\begin{DoxyCompactList}\small\item\em Parse input string to double vector of specific length and delimiter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{parser_8cpp_a2e5d8a134fc3e0813f73823d07a0e518}\label{parser_8cpp_a2e5d8a134fc3e0813f73823d07a0e518}} 
+\index{parser.cpp@{parser.cpp}!parseMatrixXd@{parseMatrixXd}}
+\index{parseMatrixXd@{parseMatrixXd}!parser.cpp@{parser.cpp}}
+\doxysubsubsection{\texorpdfstring{parseMatrixXd()}{parseMatrixXd()}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd parse\+Matrix\+Xd (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{input,  }\item[{int}]{R,  }\item[{int}]{C,  }\item[{char}]{delimiter = {\ttfamily \textquotesingle{}~\textquotesingle{}} }\end{DoxyParamCaption})}
+
+
+
+Parse input string to double matrix of specific shape and delimiter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & input string \\
+\hline
+{\em R} & number of rows \\
+\hline
+{\em C} & number of columns \\
+\hline
+{\em delimiter} & delimiter \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+parsed matrix 
+\end{DoxyReturn}
+\mbox{\Hypertarget{parser_8cpp_a8ec7f8bc954173b4c85536e69c095548}\label{parser_8cpp_a8ec7f8bc954173b4c85536e69c095548}} 
+\index{parser.cpp@{parser.cpp}!parseVectorXd@{parseVectorXd}}
+\index{parseVectorXd@{parseVectorXd}!parser.cpp@{parser.cpp}}
+\doxysubsubsection{\texorpdfstring{parseVectorXd()}{parseVectorXd()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd parse\+Vector\+Xd (\begin{DoxyParamCaption}\item[{std\+::string}]{str,  }\item[{int}]{no\+Of\+Elem,  }\item[{char}]{delimiter = {\ttfamily \textquotesingle{}~\textquotesingle{}} }\end{DoxyParamCaption})}
+
+
+
+Parse input string to double vector of specific length and delimiter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & input string \\
+\hline
+{\em no\+Of\+Elem} & length of vector \\
+\hline
+{\em delimiter} & delimiter \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+parsed vector 
+\end{DoxyReturn}

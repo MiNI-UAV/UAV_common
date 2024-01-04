@@ -1,0 +1,17 @@
+digraph "ODE"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="ODE",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Ordinal differencial equation solver."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="ODE_Euler",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_o_d_e___euler.html",tooltip="Explicit Euler algorithm."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="ODE_Heun",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_o_d_e___heun.html",tooltip="Second order explicit Heun algorithm."];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="ODE_PC2",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_o_d_e___p_c2.html",tooltip="Second order predictor-corrector method Second order Adams-bashforth and Adams-moulton."];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="ODE_PC4",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_o_d_e___p_c4.html",tooltip="Fourth order predictor-corrector method Fourth order Adams-bashforth and Adams-moulton."];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="ODE_RK4",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_o_d_e___r_k4.html",tooltip="Fourth order Runge Kutta algorithm."];
+}

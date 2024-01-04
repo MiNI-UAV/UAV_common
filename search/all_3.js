@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['c0_19',['C0',['../struct_aero_coefficients.html#abb327e7d8a65e49242c95cc417c92fde',1,'AeroCoefficients']]],
+  ['cab_20',['Cab',['../struct_aero_coefficients.html#adce52d2c0e4351665c4ff2a5354f41ba',1,'AeroCoefficients']]],
+  ['calc_21',['calc',['../classcontrollers_1_1_z_transform.html#a1c373d6f373a95c2a8478d75b8d72d28',1,'controllers::ZTransform::calc()'],['../classcontrollers_1_1_z_transform_static.html#a2f1291d626d78796214dd150821c46f8',1,'controllers::ZTransformStatic::calc()'],['../classcontrollers_1_1_p_i_d___discrete.html#adb13dff8192f1d9334c45d060b9b722c',1,'controllers::PID_Discrete::calc()'],['../classcontrollers_1_1_p_i_d.html#adf71d8e0f81592bd899ddbea6b4b2c8a',1,'controllers::PID::calc()'],['../classcontrollers_1_1_double_setpoint.html#ad4932109de10953bd07cbd668be392f6',1,'controllers::DoubleSetpoint::calc()'],['../classcontrollers_1_1_bang_bang.html#a255dd462f9594b7981a163e84ba75bed',1,'controllers::BangBang::calc()'],['../class_controller.html#a069b8bdde8a3df0e83688a84646d6270',1,'Controller::calc(double desired, double actual, double dt)=0'],['../class_controller.html#a64869eff712f2984a4c7536c4503233c',1,'Controller::calc(double desired, double actual)']]],
+  ['cargo_22',['Cargo',['../class_cargo.html',1,'Cargo'],['../class_cargo.html#a032a130f79ab97f1dcc26625bc1a8918',1,'Cargo::Cargo(int ammount, double reload, Eigen::Vector3d offset, double mass)'],['../class_cargo.html#a7ca7aa95334f61ec233767aebc313b9c',1,'Cargo::Cargo()=default']]],
+  ['cargo_23',['cargo',['../struct_u_a_vparams.html#a5bb6c8b9ca0da4f2f16521250055d4b0',1,'UAVparams']]],
+  ['clamping_24',['CLAMPING',['../classcontrollers_1_1_p_i_d.html#aa20cfb7f65deff92a8a1872d36fe93dea16c791abf6948134908f0c861234075b',1,'controllers::PID']]],
+  ['clc_25',['clc',['../controller__plots_8m.html#a3f3d3b13a15c726d6aa03db3dd0d6377',1,'controller_plots.m']]],
+  ['clear_26',['clear',['../classcontrollers_1_1_z_transform.html#adf3a411b96c3bc345e3139bf7dda45fa',1,'controllers::ZTransform::clear()'],['../classcontrollers_1_1_z_transform_static.html#a11c88678b5aaf3114616c0d70b01144f',1,'controllers::ZTransformStatic::clear()'],['../classcontrollers_1_1_p_i_d___discrete.html#ac9ba104e82e76ace18a8728b5f0c0e69',1,'controllers::PID_Discrete::clear()'],['../classcontrollers_1_1_p_i_d.html#a12fab9405d975285c6473a01ba0dda28',1,'controllers::PID::clear()'],['../classcontrollers_1_1_double_setpoint.html#ad76cf236d24194994126dc3c4ee8fcb8',1,'controllers::DoubleSetpoint::clear()'],['../classcontrollers_1_1_bang_bang.html#a77f47271bc49c53937bff1795684db47',1,'controllers::BangBang::clear()'],['../class_controller.html#a540f9f6b248d4e6a29061133a6ede5e2',1,'Controller::clear()']]],
+  ['clone_27',['clone',['../classcontrollers_1_1_p_i_d.html#ad5b2d00bb586e2163d816300270a482a',1,'controllers::PID::clone()'],['../classcontrollers_1_1_bang_bang.html#aa7eb29bed59f461444685ea3d5100565',1,'controllers::BangBang::clone()'],['../class_controller.html#a956c82e68f635fce8e66700a985fb3fb',1,'Controller::clone()'],['../classcontrollers_1_1_z_transform.html#a0b5994ae54dfa05733f54bae697565ee',1,'controllers::ZTransform::clone()'],['../classcontrollers_1_1_z_transform_static.html#ad4c4e585527a14bdaeced430d4efccbb',1,'controllers::ZTransformStatic::clone()'],['../classcontrollers_1_1_p_i_d___discrete.html#aab8c7bd1131efcee368b9a155d30ee6c',1,'controllers::PID_Discrete::clone()'],['../classcontrollers_1_1_double_setpoint.html#af30412b6d829ec6a22f0aad7d553c762',1,'controllers::DoubleSetpoint::clone()']]],
+  ['common_2ehpp_28',['common.hpp',['../common_8hpp.html',1,'']]],
+  ['components_2ehpp_29',['components.hpp',['../components_8hpp.html',1,'']]],
+  ['control_5fsurfaces_2ecpp_30',['control_surfaces.cpp',['../control__surfaces_8cpp.html',1,'']]],
+  ['control_5fsurfaces_2ehpp_31',['control_surfaces.hpp',['../control__surfaces_8hpp.html',1,'']]],
+  ['controller_32',['Controller',['../class_controller.html',1,'Controller'],['../class_controller.html#a95c56822d667e94b031451729ce069a9',1,'Controller::Controller()']]],
+  ['controller_2ecpp_33',['controller.cpp',['../controller_8cpp.html',1,'']]],
+  ['controller_2ehpp_34',['controller.hpp',['../controller_8hpp.html',1,'']]],
+  ['controller_5fplots_2em_35',['controller_plots.m',['../controller__plots_8m.html',1,'']]],
+  ['controller_5ftest_2ecpp_36',['controller_test.cpp',['../controller__test_8cpp.html',1,'']]],
+  ['controllerfactory_37',['ControllerFactory',['../class_controller.html#a56841bbaf1636c01f0b2e270a61dffb9',1,'Controller']]],
+  ['controllers_38',['controllers',['../namespacecontrollers.html',1,'controllers'],['../struct_u_a_vparams.html#af506811615135d1dbe3e22fe50c7d8a6',1,'UAVparams::controllers()']]],
+  ['controllertest_39',['ControllerTest',['../class_controller_test.html',1,'']]],
+  ['controlsurfaces_40',['ControlSurfaces',['../class_control_surfaces.html',1,'ControlSurfaces'],['../class_control_surfaces.html#a0eb5a606d5cabc1f3749237ff7cdc2d2',1,'ControlSurfaces::ControlSurfaces()'],['../class_control_surfaces.html#a1f57cb67189f99b1099d2980ab981af9',1,'ControlSurfaces::ControlSurfaces(int noOfSurfaces, Eigen::Matrix&lt; double, 6,-1 &gt; matrix, Eigen::VectorXd min, Eigen::VectorXd max, Eigen::VectorXd trim)']]],
+  ['cpqr_41',['Cpqr',['../struct_aero_coefficients.html#a188ce07ffa6ae89b12ad7af89f5e851f',1,'AeroCoefficients']]],
+  ['csvfiles_42',['csvFiles',['../controller__plots_8m.html#a0d9c1a19cf64a495c97b8ed032681182',1,'controller_plots.m']]]
+];

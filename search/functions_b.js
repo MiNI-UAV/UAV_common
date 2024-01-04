@@ -1,0 +1,9 @@
+var searchData=
+[
+  ['parsehinge_330',['parseHinge',['../uav__params_8cpp.html#ad443c0444d744c035c1348bc6b235811',1,'uav_params.cpp']]],
+  ['parsematrixxd_331',['parseMatrixXd',['../parser_8cpp.html#a2e5d8a134fc3e0813f73823d07a0e518',1,'parseMatrixXd(const std::string &amp;input, int R, int C, char delimiter):&#160;parser.cpp'],['../parser_8hpp.html#af5cf9a8e1fcdff413e810452528d392c',1,'parseMatrixXd(const std::string &amp;input, int R, int C, char delimiter=&apos; &apos;):&#160;parser.cpp']]],
+  ['parsevectorxd_332',['parseVectorXd',['../parser_8cpp.html#a8ec7f8bc954173b4c85536e69c095548',1,'parseVectorXd(std::string str, int noOfElem, char delimiter):&#160;parser.cpp'],['../parser_8hpp.html#a1b018a46b571d901ccca69a3cc321d03',1,'parseVectorXd(std::string str, int noOfElem, char delimiter=&apos; &apos;):&#160;parser.cpp']]],
+  ['pid_333',['PID',['../classcontrollers_1_1_p_i_d.html#a17355b8f6d32706f244ade48701fc8ba',1,'controllers::PID::PID(double Kp, double Ki, double Kd, double Kff=0.0, double min=-std::numeric_limits&lt; double &gt;::max(), double max=std::numeric_limits&lt; double &gt;::max(), AntiWindUpMode antiWindUp=AntiWindUpMode::CLAMPING)'],['../classcontrollers_1_1_p_i_d.html#a49ccb41d8fe61864e41f238ed4c27ede',1,'controllers::PID::PID(rapidxml::xml_node&lt;&gt; *controller_node)']]],
+  ['pid_5fdiscrete_334',['PID_Discrete',['../classcontrollers_1_1_p_i_d___discrete.html#a1ef2b5b23d341a67764f5eacaebc9c5a',1,'controllers::PID_Discrete::PID_Discrete(double Kp, double Ki, double Kd, double Kff=0.0, double N=100.0, double min=-std::numeric_limits&lt; double &gt;::max(), double max=std::numeric_limits&lt; double &gt;::max())'],['../classcontrollers_1_1_p_i_d___discrete.html#aaa8333e54a0b06d6fbe60c370a0242b4',1,'controllers::PID_Discrete::PID_Discrete(rapidxml::xml_node&lt;&gt; *controller_node)']]],
+  ['plot_335',['plot',['../controller__plots_8m.html#ad177afad89983c685ac0878f4bb9ee51',1,'controller_plots.m']]]
+];

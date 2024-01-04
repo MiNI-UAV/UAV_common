@@ -1,0 +1,125 @@
+\hypertarget{class_load}{}\doxysection{Load Class Reference}
+\label{class_load}\index{Load@{Load}}
+
+
+\mbox{\hyperlink{class_load}{Load}} of aircraft that can be droped or launched.  
+
+
+
+
+{\ttfamily \#include $<$loads.\+hpp$>$}
+
+
+
+Inheritance diagram for Load\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_load_acc6a02b659bc5ea310ad59c7a675b609}{get\+Mass}} ()
+\begin{DoxyCompactList}\small\item\em get mass of load \end{DoxyCompactList}\item 
+Eigen\+::\+Vector3d \mbox{\hyperlink{class_load_a27290ea16708df4200401f9ab9521556}{get\+Offset}} ()
+\begin{DoxyCompactList}\small\item\em get offset of load \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_load_aa62b57f1cf4c27a117aa96f2041f0b17}{get\+Ammount}} ()
+\begin{DoxyCompactList}\small\item\em get ammount of load \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_load_a8dd512ffee0b403b7ee67755567d9590}{release}} (double time)
+\begin{DoxyCompactList}\small\item\em Try to release load. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_load_a529860f9324d6c2370b1d90c7cf2bd9d}{Load}} ()=default
+\item 
+\mbox{\hyperlink{class_load_a295955f8f465eff9274516cb131073e5}{Load}} (int ammount, double \mbox{\hyperlink{status_8hpp_a67a0db04d321a74b7e7fcfd3f1a3f70baf4d4f5a44481b7cb71e4feea2bd72060}{reload}}, Eigen\+::\+Vector3d offset, double mass)
+\item 
+\mbox{\hyperlink{class_load}{Load}} \& \mbox{\hyperlink{class_load_aa767a3336e18506e8c2f6dd476f8d207}{operator=}} (const \mbox{\hyperlink{class_load}{Load}} \&other)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_load}{Load}} of aircraft that can be droped or launched. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_load_a529860f9324d6c2370b1d90c7cf2bd9d}\label{class_load_a529860f9324d6c2370b1d90c7cf2bd9d}} 
+\index{Load@{Load}!Load@{Load}}
+\index{Load@{Load}!Load@{Load}}
+\doxysubsubsection{\texorpdfstring{Load()}{Load()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Load\+::\+Load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [default]}}
+
+\mbox{\Hypertarget{class_load_a295955f8f465eff9274516cb131073e5}\label{class_load_a295955f8f465eff9274516cb131073e5}} 
+\index{Load@{Load}!Load@{Load}}
+\index{Load@{Load}!Load@{Load}}
+\doxysubsubsection{\texorpdfstring{Load()}{Load()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Load\+::\+Load (\begin{DoxyParamCaption}\item[{int}]{ammount,  }\item[{double}]{reload,  }\item[{Eigen\+::\+Vector3d}]{offset,  }\item[{double}]{mass }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_load_aa62b57f1cf4c27a117aa96f2041f0b17}\label{class_load_aa62b57f1cf4c27a117aa96f2041f0b17}} 
+\index{Load@{Load}!getAmmount@{getAmmount}}
+\index{getAmmount@{getAmmount}!Load@{Load}}
+\doxysubsubsection{\texorpdfstring{getAmmount()}{getAmmount()}}
+{\footnotesize\ttfamily int Load\+::get\+Ammount (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get ammount of load 
+
+\begin{DoxyReturn}{Returns}
+ammount 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_load_acc6a02b659bc5ea310ad59c7a675b609}\label{class_load_acc6a02b659bc5ea310ad59c7a675b609}} 
+\index{Load@{Load}!getMass@{getMass}}
+\index{getMass@{getMass}!Load@{Load}}
+\doxysubsubsection{\texorpdfstring{getMass()}{getMass()}}
+{\footnotesize\ttfamily double Load\+::get\+Mass (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get mass of load 
+
+\begin{DoxyReturn}{Returns}
+mass 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_load_a27290ea16708df4200401f9ab9521556}\label{class_load_a27290ea16708df4200401f9ab9521556}} 
+\index{Load@{Load}!getOffset@{getOffset}}
+\index{getOffset@{getOffset}!Load@{Load}}
+\doxysubsubsection{\texorpdfstring{getOffset()}{getOffset()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector3d Load\+::get\+Offset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get offset of load 
+
+\begin{DoxyReturn}{Returns}
+offset vector 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_load_aa767a3336e18506e8c2f6dd476f8d207}\label{class_load_aa767a3336e18506e8c2f6dd476f8d207}} 
+\index{Load@{Load}!operator=@{operator=}}
+\index{operator=@{operator=}!Load@{Load}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_load}{Load}} \& Load\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_load}{Load}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_load_a8dd512ffee0b403b7ee67755567d9590}\label{class_load_a8dd512ffee0b403b7ee67755567d9590}} 
+\index{Load@{Load}!release@{release}}
+\index{release@{release}!Load@{Load}}
+\doxysubsubsection{\texorpdfstring{release()}{release()}}
+{\footnotesize\ttfamily int Load\+::release (\begin{DoxyParamCaption}\item[{double}]{time }\end{DoxyParamCaption})}
+
+
+
+Try to release load. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+leftover ammount of loads. Return -\/1 if load is not ready and -\/2 if out of load 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/components/\mbox{\hyperlink{loads_8hpp}{loads.\+hpp}}\item 
+src/components/\mbox{\hyperlink{loads_8cpp}{loads.\+cpp}}\end{DoxyCompactItemize}

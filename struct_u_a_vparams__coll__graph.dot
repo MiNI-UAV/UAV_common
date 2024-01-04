@@ -1,0 +1,15 @@
+digraph "UAVparams"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="UAVparams",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Parsed UAV configuration from XML."];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" aero_coffs" ,fontname="Helvetica"];
+  Node2 [label="AeroCoefficients",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$struct_aero_coefficients.html",tooltip="Aerodynamic coefficient."];
+  Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" surfaces" ,fontname="Helvetica"];
+  Node3 [label="ControlSurfaces",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_control_surfaces.html",tooltip="Aircraft's control surfaces."];
+  Node4 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" ahrs" ,fontname="Helvetica"];
+  Node4 [label="AHRSParams",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$struct_a_h_r_s_params.html",tooltip="AHRS parameters."];
+  Node5 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" ekf" ,fontname="Helvetica"];
+  Node5 [label="EKFScalers",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$struct_e_k_f_scalers.html",tooltip="Scalers for EKF."];
+}

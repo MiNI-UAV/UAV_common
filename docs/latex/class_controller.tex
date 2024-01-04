@@ -1,0 +1,186 @@
+\hypertarget{class_controller}{}\doxysection{Controller Class Reference}
+\label{class_controller}\index{Controller@{Controller}}
+
+
+{\ttfamily \#include $<$controller.\+hpp$>$}
+
+
+
+Inheritance diagram for Controller\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_controller_a95c56822d667e94b031451729ce069a9}{Controller}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_controller_a0ab87934c4f7a266cfdb86e0f36bc1b5}{$\sim$\+Controller}} ()
+\begin{DoxyCompactList}\small\item\em Empty deconstructor for derived classes. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_controller_a3c9fdc735a5dc973c09733131ec1110c}{set\+\_\+dt}} (double dt)
+\begin{DoxyCompactList}\small\item\em Set new time step. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_controller_a64869eff712f2984a4c7536c4503233c}{calc}} (double desired, double actual)
+\begin{DoxyCompactList}\small\item\em calc output of controller \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{class_controller_a069b8bdde8a3df0e83688a84646d6270}{calc}} (double desired, double actual, double dt)=0
+\begin{DoxyCompactList}\small\item\em calc output of controller with specific time step \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_controller_a540f9f6b248d4e6a29061133a6ede5e2}{clear}} ()=0
+\begin{DoxyCompactList}\small\item\em clear internal state \end{DoxyCompactList}\item 
+virtual std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_controller}{Controller}} $>$ \mbox{\hyperlink{class_controller_a956c82e68f635fce8e66700a985fb3fb}{clone}} () const =0
+\begin{DoxyCompactList}\small\item\em virtual clone method \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_controller}{Controller}} $>$ \mbox{\hyperlink{class_controller_a56841bbaf1636c01f0b2e270a61dffb9}{Controller\+Factory}} (rapidxml\+::xml\+\_\+node$<$$>$ $\ast$controller\+\_\+node)
+\begin{DoxyCompactList}\small\item\em construct controller from given node. If xml is not valid return nullptr. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_controller_a4ae2347f1fbb65bd3049a584e5e652a5}{\+\_\+dt}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_controller_a95c56822d667e94b031451729ce069a9}\label{class_controller_a95c56822d667e94b031451729ce069a9}} 
+\index{Controller@{Controller}!Controller@{Controller}}
+\index{Controller@{Controller}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{Controller()}{Controller()}}
+{\footnotesize\ttfamily Controller\+::\+Controller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor. 
+
+\mbox{\Hypertarget{class_controller_a0ab87934c4f7a266cfdb86e0f36bc1b5}\label{class_controller_a0ab87934c4f7a266cfdb86e0f36bc1b5}} 
+\index{Controller@{Controller}!````~Controller@{$\sim$Controller}}
+\index{````~Controller@{$\sim$Controller}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{$\sim$Controller()}{~Controller()}}
+{\footnotesize\ttfamily Controller\+::$\sim$\+Controller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Empty deconstructor for derived classes. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_controller_a64869eff712f2984a4c7536c4503233c}\label{class_controller_a64869eff712f2984a4c7536c4503233c}} 
+\index{Controller@{Controller}!calc@{calc}}
+\index{calc@{calc}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{calc()}{calc()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double Controller\+::calc (\begin{DoxyParamCaption}\item[{double}]{desired,  }\item[{double}]{actual }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+calc output of controller 
+
+
+\begin{DoxyParams}{Parameters}
+{\em desired} & input of controller, desired value \\
+\hline
+{\em actual} & measured actual value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+output of controller 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_controller_a069b8bdde8a3df0e83688a84646d6270}\label{class_controller_a069b8bdde8a3df0e83688a84646d6270}} 
+\index{Controller@{Controller}!calc@{calc}}
+\index{calc@{calc}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{calc()}{calc()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual double Controller\+::calc (\begin{DoxyParamCaption}\item[{double}]{desired,  }\item[{double}]{actual,  }\item[{double}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+calc output of controller with specific time step 
+
+
+\begin{DoxyParams}{Parameters}
+{\em desired} & input of controller, desired value \\
+\hline
+{\em actual} & measured actual value \\
+\hline
+{\em dt} & time step \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+output of controller 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classcontrollers_1_1_p_i_d___discrete_adb13dff8192f1d9334c45d060b9b722c}{controllers\+::\+PID\+\_\+\+Discrete}}, \mbox{\hyperlink{classcontrollers_1_1_p_i_d_adf71d8e0f81592bd899ddbea6b4b2c8a}{controllers\+::\+PID}}, and \mbox{\hyperlink{classcontrollers_1_1_double_setpoint_ad4932109de10953bd07cbd668be392f6}{controllers\+::\+Double\+Setpoint}}.
+
+\mbox{\Hypertarget{class_controller_a540f9f6b248d4e6a29061133a6ede5e2}\label{class_controller_a540f9f6b248d4e6a29061133a6ede5e2}} 
+\index{Controller@{Controller}!clear@{clear}}
+\index{clear@{clear}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily virtual void Controller\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+clear internal state 
+
+
+
+Implemented in \mbox{\hyperlink{classcontrollers_1_1_z_transform_adf3a411b96c3bc345e3139bf7dda45fa}{controllers\+::\+ZTransform}}, \mbox{\hyperlink{classcontrollers_1_1_z_transform_static_a11c88678b5aaf3114616c0d70b01144f}{controllers\+::\+ZTransform\+Static$<$ N, D $>$}}, \mbox{\hyperlink{classcontrollers_1_1_p_i_d___discrete_ac9ba104e82e76ace18a8728b5f0c0e69}{controllers\+::\+PID\+\_\+\+Discrete}}, \mbox{\hyperlink{classcontrollers_1_1_p_i_d_a12fab9405d975285c6473a01ba0dda28}{controllers\+::\+PID}}, \mbox{\hyperlink{classcontrollers_1_1_double_setpoint_ad76cf236d24194994126dc3c4ee8fcb8}{controllers\+::\+Double\+Setpoint}}, and \mbox{\hyperlink{classcontrollers_1_1_bang_bang_a77f47271bc49c53937bff1795684db47}{controllers\+::\+Bang\+Bang}}.
+
+\mbox{\Hypertarget{class_controller_a956c82e68f635fce8e66700a985fb3fb}\label{class_controller_a956c82e68f635fce8e66700a985fb3fb}} 
+\index{Controller@{Controller}!clone@{clone}}
+\index{clone@{clone}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily virtual std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{class_controller}{Controller}}$>$ Controller\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+virtual clone method 
+
+
+
+Implemented in \mbox{\hyperlink{classcontrollers_1_1_z_transform_a0b5994ae54dfa05733f54bae697565ee}{controllers\+::\+ZTransform}}, \mbox{\hyperlink{classcontrollers_1_1_z_transform_static_ad4c4e585527a14bdaeced430d4efccbb}{controllers\+::\+ZTransform\+Static$<$ N, D $>$}}, \mbox{\hyperlink{classcontrollers_1_1_p_i_d___discrete_aab8c7bd1131efcee368b9a155d30ee6c}{controllers\+::\+PID\+\_\+\+Discrete}}, \mbox{\hyperlink{classcontrollers_1_1_p_i_d_ad5b2d00bb586e2163d816300270a482a}{controllers\+::\+PID}}, \mbox{\hyperlink{classcontrollers_1_1_double_setpoint_af30412b6d829ec6a22f0aad7d553c762}{controllers\+::\+Double\+Setpoint}}, and \mbox{\hyperlink{classcontrollers_1_1_bang_bang_aa7eb29bed59f461444685ea3d5100565}{controllers\+::\+Bang\+Bang}}.
+
+\mbox{\Hypertarget{class_controller_a56841bbaf1636c01f0b2e270a61dffb9}\label{class_controller_a56841bbaf1636c01f0b2e270a61dffb9}} 
+\index{Controller@{Controller}!ControllerFactory@{ControllerFactory}}
+\index{ControllerFactory@{ControllerFactory}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{ControllerFactory()}{ControllerFactory()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_controller}{Controller}} $>$ Controller\+::\+Controller\+Factory (\begin{DoxyParamCaption}\item[{rapidxml\+::xml\+\_\+node$<$$>$ $\ast$}]{controller\+\_\+node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+construct controller from given node. If xml is not valid return nullptr. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller\+\_\+node} & xml node with controller config \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_controller_a3c9fdc735a5dc973c09733131ec1110c}\label{class_controller_a3c9fdc735a5dc973c09733131ec1110c}} 
+\index{Controller@{Controller}!set\_dt@{set\_dt}}
+\index{set\_dt@{set\_dt}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{set\_dt()}{set\_dt()}}
+{\footnotesize\ttfamily virtual void Controller\+::set\+\_\+dt (\begin{DoxyParamCaption}\item[{double}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Set new time step. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & new time step \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classcontrollers_1_1_p_i_d___discrete_ad6438bd2dcdc457a0a348412b9df97d3}{controllers\+::\+PID\+\_\+\+Discrete}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_controller_a4ae2347f1fbb65bd3049a584e5e652a5}\label{class_controller_a4ae2347f1fbb65bd3049a584e5e652a5}} 
+\index{Controller@{Controller}!\_dt@{\_dt}}
+\index{\_dt@{\_dt}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{\_dt}{\_dt}}
+{\footnotesize\ttfamily double Controller\+::\+\_\+dt\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/controllers/\mbox{\hyperlink{controller_8hpp}{controller.\+hpp}}\item 
+src/controllers/\mbox{\hyperlink{controller_8cpp}{controller.\+cpp}}\end{DoxyCompactItemize}

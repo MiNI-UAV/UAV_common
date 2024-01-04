@@ -1,0 +1,86 @@
+\hypertarget{controller__test_8cpp}{}\doxysection{src/controllers/controller\+\_\+test.cpp File Reference}
+\label{controller__test_8cpp}\index{src/controllers/controller\_test.cpp@{src/controllers/controller\_test.cpp}}
+{\ttfamily \#include \char`\"{}impl/\+PID.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}impl/\+PID\+\_\+discrete.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}impl/bang\+\_\+bang.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}impl/double\+\_\+setpoint.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}impl/z\+\_\+trans.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$gtest/gtest.\+h$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$filesystem$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+Include dependency graph for controller\+\_\+test.\+cpp\+:
+% FIG 0
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_controller_test}{Controller\+Test}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_controller}{Controller}} $>$ $>$ \mbox{\hyperlink{controller__test_8cpp_aaabaa7c22e64ddd2dd74e4adb17d6806}{get\+Methods\+To\+Test}} ()
+\item 
+\mbox{\hyperlink{controller__test_8cpp_a23edde5889f611cf7acd2504e50213bc}{TEST\+\_\+P}} (\mbox{\hyperlink{class_controller_test}{Controller\+Test}}, Test\+Const\+Function)
+\item 
+\mbox{\hyperlink{controller__test_8cpp_a58fc195fa71abfe534c6568f3d80e7a7}{TEST\+\_\+P}} (\mbox{\hyperlink{class_controller_test}{Controller\+Test}}, Simple\+Object\+Control)
+\item 
+\mbox{\hyperlink{controller__test_8cpp_ae124bdd3f92301e47c145affffb7258f}{INSTANTIATE\+\_\+\+TEST\+\_\+\+SUITE\+\_\+P}} (Test\+Derived\+Classes, \mbox{\hyperlink{class_controller_test}{Controller\+Test}}, testing\+::\+Values\+In(\mbox{\hyperlink{ode__test_8cpp_aeff80cd36e79bf6c361ddb80f8e4526a}{get\+Methods\+To\+Test}}()))
+\item 
+int \mbox{\hyperlink{controller__test_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr bool \mbox{\hyperlink{controller__test_8cpp_af67787127993b0ccf28c8900a0b1bd7f}{plot}} = true
+\item 
+constexpr auto \mbox{\hyperlink{controller__test_8cpp_a2711579e4af048223f0014448d7b6cca}{plot\+\_\+directory\+\_\+name}} = \char`\"{}controller\+\_\+plots\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{controller__test_8cpp_aaabaa7c22e64ddd2dd74e4adb17d6806}\label{controller__test_8cpp_aaabaa7c22e64ddd2dd74e4adb17d6806}} 
+\index{controller\_test.cpp@{controller\_test.cpp}!getMethodsToTest@{getMethodsToTest}}
+\index{getMethodsToTest@{getMethodsToTest}!controller\_test.cpp@{controller\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{getMethodsToTest()}{getMethodsToTest()}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_controller}{Controller}}$>$ $>$ get\+Methods\+To\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{controller__test_8cpp_ae124bdd3f92301e47c145affffb7258f}\label{controller__test_8cpp_ae124bdd3f92301e47c145affffb7258f}} 
+\index{controller\_test.cpp@{controller\_test.cpp}!INSTANTIATE\_TEST\_SUITE\_P@{INSTANTIATE\_TEST\_SUITE\_P}}
+\index{INSTANTIATE\_TEST\_SUITE\_P@{INSTANTIATE\_TEST\_SUITE\_P}!controller\_test.cpp@{controller\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{INSTANTIATE\_TEST\_SUITE\_P()}{INSTANTIATE\_TEST\_SUITE\_P()}}
+{\footnotesize\ttfamily INSTANTIATE\+\_\+\+TEST\+\_\+\+SUITE\+\_\+P (\begin{DoxyParamCaption}\item[{Test\+Derived\+Classes}]{,  }\item[{\mbox{\hyperlink{class_controller_test}{Controller\+Test}}}]{,  }\item[{testing\+::\+Values\+In(\mbox{\hyperlink{ode__test_8cpp_aeff80cd36e79bf6c361ddb80f8e4526a}{get\+Methods\+To\+Test}}())}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{controller__test_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{controller__test_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{controller\_test.cpp@{controller\_test.cpp}!main@{main}}
+\index{main@{main}!controller\_test.cpp@{controller\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{controller__test_8cpp_a58fc195fa71abfe534c6568f3d80e7a7}\label{controller__test_8cpp_a58fc195fa71abfe534c6568f3d80e7a7}} 
+\index{controller\_test.cpp@{controller\_test.cpp}!TEST\_P@{TEST\_P}}
+\index{TEST\_P@{TEST\_P}!controller\_test.cpp@{controller\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_P()}{TEST\_P()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily TEST\+\_\+P (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_controller_test}{Controller\+Test}}}]{,  }\item[{Simple\+Object\+Control}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{controller__test_8cpp_a23edde5889f611cf7acd2504e50213bc}\label{controller__test_8cpp_a23edde5889f611cf7acd2504e50213bc}} 
+\index{controller\_test.cpp@{controller\_test.cpp}!TEST\_P@{TEST\_P}}
+\index{TEST\_P@{TEST\_P}!controller\_test.cpp@{controller\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_P()}{TEST\_P()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily TEST\+\_\+P (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_controller_test}{Controller\+Test}}}]{,  }\item[{Test\+Const\+Function}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{controller__test_8cpp_af67787127993b0ccf28c8900a0b1bd7f}\label{controller__test_8cpp_af67787127993b0ccf28c8900a0b1bd7f}} 
+\index{controller\_test.cpp@{controller\_test.cpp}!plot@{plot}}
+\index{plot@{plot}!controller\_test.cpp@{controller\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{plot}{plot}}
+{\footnotesize\ttfamily constexpr bool plot = true\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\mbox{\Hypertarget{controller__test_8cpp_a2711579e4af048223f0014448d7b6cca}\label{controller__test_8cpp_a2711579e4af048223f0014448d7b6cca}} 
+\index{controller\_test.cpp@{controller\_test.cpp}!plot\_directory\_name@{plot\_directory\_name}}
+\index{plot\_directory\_name@{plot\_directory\_name}!controller\_test.cpp@{controller\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{plot\_directory\_name}{plot\_directory\_name}}
+{\footnotesize\ttfamily constexpr auto plot\+\_\+directory\+\_\+name = \char`\"{}controller\+\_\+plots\char`\"{}\hspace{0.3cm}{\ttfamily [constexpr]}}
+

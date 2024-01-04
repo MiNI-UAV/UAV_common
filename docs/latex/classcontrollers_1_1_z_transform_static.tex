@@ -1,0 +1,124 @@
+\hypertarget{classcontrollers_1_1_z_transform_static}{}\doxysection{controllers\+::ZTransform\+Static$<$ N, D $>$ Class Template Reference}
+\label{classcontrollers_1_1_z_transform_static}\index{controllers::ZTransformStatic$<$ N, D $>$@{controllers::ZTransformStatic$<$ N, D $>$}}
+
+
+{\ttfamily \#include $<$z\+\_\+trans.\+hpp$>$}
+
+
+
+Inheritance diagram for controllers\+::ZTransform\+Static$<$ N, D $>$\+:
+% FIG 0
+
+
+Collaboration diagram for controllers\+::ZTransform\+Static$<$ N, D $>$\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcontrollers_1_1_z_transform_static_a341441028c8ca7ea5c6a0667653baa2d}{ZTransform\+Static}} (const std\+::array$<$ double, N $>$ \&num, const std\+::array$<$ double, D $>$ \&den, double min=-\/std\+::numeric\+\_\+limits$<$ double $>$\+::max(), double max=std\+::numeric\+\_\+limits$<$ double $>$\+::max())
+\begin{DoxyCompactList}\small\item\em Constructorof Z-\/\+Transform controller. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcontrollers_1_1_z_transform_static_abeb9f18a494163ad26bcf22bd5b8f568}{ZTransform\+Static}} (rapidxml\+::xml\+\_\+node$<$$>$ $\ast$controller\+\_\+node)=delete
+\begin{DoxyCompactList}\small\item\em Construct controller with parameters from xml. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classcontrollers_1_1_z_transform_static_a2f1291d626d78796214dd150821c46f8}{calc}} (double desired, double actual, \mbox{[}\mbox{[}maybe\+\_\+unused\mbox{]}\mbox{]} double dt) override
+\begin{DoxyCompactList}\small\item\em calc output of controller \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcontrollers_1_1_z_transform_static_a11c88678b5aaf3114616c0d70b01144f}{clear}} () override
+\begin{DoxyCompactList}\small\item\em clear internal state \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_controller}{Controller}} $>$ \mbox{\hyperlink{classcontrollers_1_1_z_transform_static_ad4c4e585527a14bdaeced430d4efccbb}{clone}} () const override
+\begin{DoxyCompactList}\small\item\em virtual clone method \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classcontrollers_1_1_z_transform_static_a341441028c8ca7ea5c6a0667653baa2d}\label{classcontrollers_1_1_z_transform_static_a341441028c8ca7ea5c6a0667653baa2d}} 
+\index{controllers::ZTransformStatic$<$ N, D $>$@{controllers::ZTransformStatic$<$ N, D $>$}!ZTransformStatic@{ZTransformStatic}}
+\index{ZTransformStatic@{ZTransformStatic}!controllers::ZTransformStatic$<$ N, D $>$@{controllers::ZTransformStatic$<$ N, D $>$}}
+\doxysubsubsection{\texorpdfstring{ZTransformStatic()}{ZTransformStatic()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$unsigned int N, unsigned int D$>$ \\
+\mbox{\hyperlink{classcontrollers_1_1_z_transform_static}{controllers\+::\+ZTransform\+Static}}$<$ N, D $>$\+::\mbox{\hyperlink{classcontrollers_1_1_z_transform_static}{ZTransform\+Static}} (\begin{DoxyParamCaption}\item[{const std\+::array$<$ double, N $>$ \&}]{num,  }\item[{const std\+::array$<$ double, D $>$ \&}]{den,  }\item[{double}]{min = {\ttfamily -\/std\+:\+:numeric\+\_\+limits$<$double$>$\+:\+:max()},  }\item[{double}]{max = {\ttfamily std\+:\+:numeric\+\_\+limits$<$double$>$\+:\+:max()} }\end{DoxyParamCaption})}
+
+
+
+Constructorof Z-\/\+Transform controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min} & saturation -\/ lower range limit \\
+\hline
+{\em max} & saturation -\/ upper range limit \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcontrollers_1_1_z_transform_static_abeb9f18a494163ad26bcf22bd5b8f568}\label{classcontrollers_1_1_z_transform_static_abeb9f18a494163ad26bcf22bd5b8f568}} 
+\index{controllers::ZTransformStatic$<$ N, D $>$@{controllers::ZTransformStatic$<$ N, D $>$}!ZTransformStatic@{ZTransformStatic}}
+\index{ZTransformStatic@{ZTransformStatic}!controllers::ZTransformStatic$<$ N, D $>$@{controllers::ZTransformStatic$<$ N, D $>$}}
+\doxysubsubsection{\texorpdfstring{ZTransformStatic()}{ZTransformStatic()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$unsigned int N, unsigned int D$>$ \\
+\mbox{\hyperlink{classcontrollers_1_1_z_transform_static}{controllers\+::\+ZTransform\+Static}}$<$ N, D $>$\+::\mbox{\hyperlink{classcontrollers_1_1_z_transform_static}{ZTransform\+Static}} (\begin{DoxyParamCaption}\item[{rapidxml\+::xml\+\_\+node$<$$>$ $\ast$}]{controller\+\_\+node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Construct controller with parameters from xml. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller\+\_\+node} & xml node with controller params \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classcontrollers_1_1_z_transform_static_a2f1291d626d78796214dd150821c46f8}\label{classcontrollers_1_1_z_transform_static_a2f1291d626d78796214dd150821c46f8}} 
+\index{controllers::ZTransformStatic$<$ N, D $>$@{controllers::ZTransformStatic$<$ N, D $>$}!calc@{calc}}
+\index{calc@{calc}!controllers::ZTransformStatic$<$ N, D $>$@{controllers::ZTransformStatic$<$ N, D $>$}}
+\doxysubsubsection{\texorpdfstring{calc()}{calc()}}
+{\footnotesize\ttfamily template$<$unsigned int N, unsigned int D$>$ \\
+double \mbox{\hyperlink{classcontrollers_1_1_z_transform_static}{controllers\+::\+ZTransform\+Static}}$<$ N, D $>$\+::calc (\begin{DoxyParamCaption}\item[{double}]{desired,  }\item[{double}]{actual,  }\item[{\mbox{[}\mbox{[}maybe\+\_\+unused\mbox{]} \mbox{]} double}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+calc output of controller 
+
+
+\begin{DoxyParams}{Parameters}
+{\em desired} & input of controller, desired value \\
+\hline
+{\em actual} & measured actual value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+output of controller 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcontrollers_1_1_z_transform_static_a11c88678b5aaf3114616c0d70b01144f}\label{classcontrollers_1_1_z_transform_static_a11c88678b5aaf3114616c0d70b01144f}} 
+\index{controllers::ZTransformStatic$<$ N, D $>$@{controllers::ZTransformStatic$<$ N, D $>$}!clear@{clear}}
+\index{clear@{clear}!controllers::ZTransformStatic$<$ N, D $>$@{controllers::ZTransformStatic$<$ N, D $>$}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily template$<$unsigned int N, unsigned int D$>$ \\
+void \mbox{\hyperlink{classcontrollers_1_1_z_transform_static}{controllers\+::\+ZTransform\+Static}}$<$ N, D $>$\+::clear\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+clear internal state 
+
+
+
+Implements \mbox{\hyperlink{class_controller_a540f9f6b248d4e6a29061133a6ede5e2}{Controller}}.
+
+\mbox{\Hypertarget{classcontrollers_1_1_z_transform_static_ad4c4e585527a14bdaeced430d4efccbb}\label{classcontrollers_1_1_z_transform_static_ad4c4e585527a14bdaeced430d4efccbb}} 
+\index{controllers::ZTransformStatic$<$ N, D $>$@{controllers::ZTransformStatic$<$ N, D $>$}!clone@{clone}}
+\index{clone@{clone}!controllers::ZTransformStatic$<$ N, D $>$@{controllers::ZTransformStatic$<$ N, D $>$}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily template$<$unsigned int N, unsigned int D$>$ \\
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_controller}{Controller}} $>$ \mbox{\hyperlink{classcontrollers_1_1_z_transform_static}{controllers\+::\+ZTransform\+Static}}$<$ N, D $>$\+::clone\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+virtual clone method 
+
+
+
+Implements \mbox{\hyperlink{class_controller_a956c82e68f635fce8e66700a985fb3fb}{Controller}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/controllers/impl/\mbox{\hyperlink{z__trans_8hpp}{z\+\_\+trans.\+hpp}}\end{DoxyCompactItemize}

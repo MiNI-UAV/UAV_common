@@ -1,0 +1,120 @@
+\hypertarget{classcontrollers_1_1_z_transform}{}\doxysection{controllers\+::ZTransform Class Reference}
+\label{classcontrollers_1_1_z_transform}\index{controllers::ZTransform@{controllers::ZTransform}}
+
+
+{\ttfamily \#include $<$z\+\_\+trans.\+hpp$>$}
+
+
+
+Inheritance diagram for controllers\+::ZTransform\+:
+% FIG 0
+
+
+Collaboration diagram for controllers\+::ZTransform\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcontrollers_1_1_z_transform_a4ae67af0b9c06e0ec07fe1fc2f4a1d72}{ZTransform}} (const std\+::vector$<$ double $>$ \&num, const std\+::vector$<$ double $>$ \&den, double min=-\/std\+::numeric\+\_\+limits$<$ double $>$\+::max(), double max=std\+::numeric\+\_\+limits$<$ double $>$\+::max())
+\begin{DoxyCompactList}\small\item\em Constructorof Z-\/\+Transform controller. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcontrollers_1_1_z_transform_a092a6a1600b87d2e6dc71ba5b0a3ea0f}{ZTransform}} (rapidxml\+::xml\+\_\+node$<$$>$ $\ast$controller\+\_\+node)
+\begin{DoxyCompactList}\small\item\em Construct controller with parameters from xml. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classcontrollers_1_1_z_transform_a1c373d6f373a95c2a8478d75b8d72d28}{calc}} (double desired, double actual, \mbox{[}\mbox{[}maybe\+\_\+unused\mbox{]}\mbox{]} double dt) override
+\begin{DoxyCompactList}\small\item\em calc output of controller \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcontrollers_1_1_z_transform_adf3a411b96c3bc345e3139bf7dda45fa}{clear}} () override
+\begin{DoxyCompactList}\small\item\em clear internal state \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_controller}{Controller}} $>$ \mbox{\hyperlink{classcontrollers_1_1_z_transform_a0b5994ae54dfa05733f54bae697565ee}{clone}} () const override
+\begin{DoxyCompactList}\small\item\em virtual clone method \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classcontrollers_1_1_z_transform_a4ae67af0b9c06e0ec07fe1fc2f4a1d72}\label{classcontrollers_1_1_z_transform_a4ae67af0b9c06e0ec07fe1fc2f4a1d72}} 
+\index{controllers::ZTransform@{controllers::ZTransform}!ZTransform@{ZTransform}}
+\index{ZTransform@{ZTransform}!controllers::ZTransform@{controllers::ZTransform}}
+\doxysubsubsection{\texorpdfstring{ZTransform()}{ZTransform()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ZTransform\+::\+ZTransform (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{num,  }\item[{const std\+::vector$<$ double $>$ \&}]{den,  }\item[{double}]{min = {\ttfamily -\/std\+:\+:numeric\+\_\+limits$<$double$>$\+:\+:max()},  }\item[{double}]{max = {\ttfamily std\+:\+:numeric\+\_\+limits$<$double$>$\+:\+:max()} }\end{DoxyParamCaption})}
+
+
+
+Constructorof Z-\/\+Transform controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min} & saturation -\/ lower range limit \\
+\hline
+{\em max} & saturation -\/ upper range limit \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcontrollers_1_1_z_transform_a092a6a1600b87d2e6dc71ba5b0a3ea0f}\label{classcontrollers_1_1_z_transform_a092a6a1600b87d2e6dc71ba5b0a3ea0f}} 
+\index{controllers::ZTransform@{controllers::ZTransform}!ZTransform@{ZTransform}}
+\index{ZTransform@{ZTransform}!controllers::ZTransform@{controllers::ZTransform}}
+\doxysubsubsection{\texorpdfstring{ZTransform()}{ZTransform()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily controllers\+::\+ZTransform\+::\+ZTransform (\begin{DoxyParamCaption}\item[{rapidxml\+::xml\+\_\+node$<$$>$ $\ast$}]{controller\+\_\+node }\end{DoxyParamCaption})}
+
+
+
+Construct controller with parameters from xml. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller\+\_\+node} & xml node with controller params \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classcontrollers_1_1_z_transform_a1c373d6f373a95c2a8478d75b8d72d28}\label{classcontrollers_1_1_z_transform_a1c373d6f373a95c2a8478d75b8d72d28}} 
+\index{controllers::ZTransform@{controllers::ZTransform}!calc@{calc}}
+\index{calc@{calc}!controllers::ZTransform@{controllers::ZTransform}}
+\doxysubsubsection{\texorpdfstring{calc()}{calc()}}
+{\footnotesize\ttfamily double ZTransform\+::calc (\begin{DoxyParamCaption}\item[{double}]{desired,  }\item[{double}]{actual,  }\item[{\mbox{[}\mbox{[}maybe\+\_\+unused\mbox{]} \mbox{]} double}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+calc output of controller 
+
+
+\begin{DoxyParams}{Parameters}
+{\em desired} & input of controller, desired value \\
+\hline
+{\em actual} & measured actual value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+output of controller 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcontrollers_1_1_z_transform_adf3a411b96c3bc345e3139bf7dda45fa}\label{classcontrollers_1_1_z_transform_adf3a411b96c3bc345e3139bf7dda45fa}} 
+\index{controllers::ZTransform@{controllers::ZTransform}!clear@{clear}}
+\index{clear@{clear}!controllers::ZTransform@{controllers::ZTransform}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void ZTransform\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+clear internal state 
+
+
+
+Implements \mbox{\hyperlink{class_controller_a540f9f6b248d4e6a29061133a6ede5e2}{Controller}}.
+
+\mbox{\Hypertarget{classcontrollers_1_1_z_transform_a0b5994ae54dfa05733f54bae697565ee}\label{classcontrollers_1_1_z_transform_a0b5994ae54dfa05733f54bae697565ee}} 
+\index{controllers::ZTransform@{controllers::ZTransform}!clone@{clone}}
+\index{clone@{clone}!controllers::ZTransform@{controllers::ZTransform}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_controller}{Controller}} $>$ ZTransform\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+virtual clone method 
+
+
+
+Implements \mbox{\hyperlink{class_controller_a956c82e68f635fce8e66700a985fb3fb}{Controller}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/controllers/impl/\mbox{\hyperlink{z__trans_8hpp}{z\+\_\+trans.\+hpp}}\item 
+src/controllers/impl/\mbox{\hyperlink{z__trans_8cpp}{z\+\_\+trans.\+cpp}}\end{DoxyCompactItemize}

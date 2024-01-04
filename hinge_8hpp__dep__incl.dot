@@ -1,0 +1,22 @@
+digraph "src/components/hinge.hpp"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="src/components/hinge.hpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="src/components/drive.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$drive_8hpp.html",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="src/components/components.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$components_8hpp.html",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="header/common.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$common_8hpp.html",tooltip=" "];
+  Node3 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="src/parser/uav_params.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$uav__params_8hpp.html",tooltip=" "];
+  Node5 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="src/parser/uav_params.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$uav__params_8cpp.html",tooltip=" "];
+  Node2 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="src/components/drive.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$drive_8cpp.html",tooltip=" "];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="src/components/hinge.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hinge_8cpp.html",tooltip=" "];
+}

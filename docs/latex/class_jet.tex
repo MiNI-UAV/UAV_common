@@ -1,0 +1,119 @@
+\hypertarget{class_jet}{}\doxysection{Jet Class Reference}
+\label{class_jet}\index{Jet@{Jet}}
+
+
+\mbox{\hyperlink{class_jet}{Jet}} rocket engine.  
+
+
+
+
+{\ttfamily \#include $<$drive.\+hpp$>$}
+
+
+
+Inheritance diagram for Jet\+:
+% FIG 0
+
+
+Collaboration diagram for Jet\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_jet_a836dbe2cb506ae94c7fa544496fde67d}{start}} (double \mbox{\hyperlink{class_jet_a881db4266cb3b25590f5b9ea0c13c502}{time}})
+\begin{DoxyCompactList}\small\item\em start jet engine \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_jet_a1ba588a92e987df7531a82fab265701a}{get\+Thrust}} (double \mbox{\hyperlink{class_jet_a881db4266cb3b25590f5b9ea0c13c502}{time}})
+\begin{DoxyCompactList}\small\item\em get thrust in specific time \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_jet_afe79a7ab043e0fac9116cabec9e0f14f}{get\+Last\+Thrust}} ()
+\begin{DoxyCompactList}\small\item\em get last calculated thrust \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_jet_ab4a84a7972c72e4d0b3e4ddf16638450}{phases}}
+\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{class_jet_a424e8a92f93ecf3b8eefed504c4cb4b3}{thrust}}
+\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{class_jet_a881db4266cb3b25590f5b9ea0c13c502}{time}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_jet}{Jet}} rocket engine. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_jet_afe79a7ab043e0fac9116cabec9e0f14f}\label{class_jet_afe79a7ab043e0fac9116cabec9e0f14f}} 
+\index{Jet@{Jet}!getLastThrust@{getLastThrust}}
+\index{getLastThrust@{getLastThrust}!Jet@{Jet}}
+\doxysubsubsection{\texorpdfstring{getLastThrust()}{getLastThrust()}}
+{\footnotesize\ttfamily double Jet\+::get\+Last\+Thrust (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get last calculated thrust 
+
+\begin{DoxyReturn}{Returns}
+last calculated thrust 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_jet_a1ba588a92e987df7531a82fab265701a}\label{class_jet_a1ba588a92e987df7531a82fab265701a}} 
+\index{Jet@{Jet}!getThrust@{getThrust}}
+\index{getThrust@{getThrust}!Jet@{Jet}}
+\doxysubsubsection{\texorpdfstring{getThrust()}{getThrust()}}
+{\footnotesize\ttfamily double Jet\+::get\+Thrust (\begin{DoxyParamCaption}\item[{double}]{time }\end{DoxyParamCaption})}
+
+
+
+get thrust in specific time 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & timestamp \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+thrust value in Newtons 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_jet_a836dbe2cb506ae94c7fa544496fde67d}\label{class_jet_a836dbe2cb506ae94c7fa544496fde67d}} 
+\index{Jet@{Jet}!start@{start}}
+\index{start@{start}!Jet@{Jet}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily bool Jet\+::start (\begin{DoxyParamCaption}\item[{double}]{time }\end{DoxyParamCaption})}
+
+
+
+start jet engine 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & timestamp of start \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if start succesful, false if already started 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_jet_ab4a84a7972c72e4d0b3e4ddf16638450}\label{class_jet_ab4a84a7972c72e4d0b3e4ddf16638450}} 
+\index{Jet@{Jet}!phases@{phases}}
+\index{phases@{phases}!Jet@{Jet}}
+\doxysubsubsection{\texorpdfstring{phases}{phases}}
+{\footnotesize\ttfamily int Jet\+::phases}
+
+\mbox{\Hypertarget{class_jet_a424e8a92f93ecf3b8eefed504c4cb4b3}\label{class_jet_a424e8a92f93ecf3b8eefed504c4cb4b3}} 
+\index{Jet@{Jet}!thrust@{thrust}}
+\index{thrust@{thrust}!Jet@{Jet}}
+\doxysubsubsection{\texorpdfstring{thrust}{thrust}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Jet\+::thrust}
+
+\mbox{\Hypertarget{class_jet_a881db4266cb3b25590f5b9ea0c13c502}\label{class_jet_a881db4266cb3b25590f5b9ea0c13c502}} 
+\index{Jet@{Jet}!time@{time}}
+\index{time@{time}!Jet@{Jet}}
+\doxysubsubsection{\texorpdfstring{time}{time}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Jet\+::time}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/components/\mbox{\hyperlink{drive_8hpp}{drive.\+hpp}}\item 
+src/components/\mbox{\hyperlink{drive_8cpp}{drive.\+cpp}}\end{DoxyCompactItemize}

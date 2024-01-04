@@ -1,0 +1,342 @@
+\hypertarget{struct_u_a_vparams}{}\doxysection{UAVparams Struct Reference}
+\label{struct_u_a_vparams}\index{UAVparams@{UAVparams}}
+
+
+Parsed UAV configuration from XML.  
+
+
+
+
+{\ttfamily \#include $<$uav\+\_\+params.\+hpp$>$}
+
+
+
+Collaboration diagram for UAVparams\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_u_a_vparams_a0b73936adaed2df9e3e96d7c33d788c7}{UAVparams}} ()
+\begin{DoxyCompactList}\small\item\em Initialize default data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_u_a_vparams_a4862c189fb7c80eb0bcb01ce6478d17f}{$\sim$\+UAVparams}} ()
+\item 
+void \mbox{\hyperlink{struct_u_a_vparams_ad94e51fbb882dde21be20eca308e83ab}{load\+Config}} (std\+::string config\+File)
+\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{struct_u_a_vparams_aa0fc8cb71620778e5c667c4ef2c78b97}{get\+Rotor\+Time\+Contants}} () const
+\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{struct_u_a_vparams_a3547c23a61dbe6d7920f6796ddb23bc6}{get\+Rotor\+Max\+Speeds}} () const
+\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{struct_u_a_vparams_a54fad4b1147eac0ee23e6635f3294481}{get\+Rotor\+Hover\+Speeds}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const \mbox{\hyperlink{struct_u_a_vparams}{UAVparams}} $\ast$ \mbox{\hyperlink{struct_u_a_vparams_a5c30cc561bd039fe3bfa4d271c2b7a10}{get\+Singleton}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{struct_u_a_vparams_a3d05aab6b5f46714c8e7f06ccb2290ab}{name}}
+\item 
+bool \mbox{\hyperlink{struct_u_a_vparams_aa715ffa3710e4ced79cb46be3cd181f5}{instant\+Run}}
+\item 
+std\+::string \mbox{\hyperlink{struct_u_a_vparams_aefff37a87200a5975d7722b2e750ed51}{initial\+Mode}}
+\item 
+Eigen\+::\+Vector3d \mbox{\hyperlink{struct_u_a_vparams_a07d441027e86d5cd809e491542fcdc52}{initial\+Position}}
+\item 
+Eigen\+::\+Vector3d \mbox{\hyperlink{struct_u_a_vparams_a118bae98c7ecc95a39adcd04bc961d19}{initial\+Orientation}}
+\item 
+Eigen\+::\+Vector3d \mbox{\hyperlink{struct_u_a_vparams_af87b0804f33e160e10ac9e55c1a5693c}{initial\+Velocity}}
+\item 
+Eigen\+::\+Vector3d \mbox{\hyperlink{struct_u_a_vparams_a9e9c1a36c5252f3945582342e711d5a7}{target}}
+\item 
+double \mbox{\hyperlink{struct_u_a_vparams_ae1e56184ccbe5640aaae4a4990f91746}{m}}
+\item 
+double \mbox{\hyperlink{struct_u_a_vparams_a739d6e7d2869f6b6a151d95ddac59f64}{Ix}}
+\item 
+double \mbox{\hyperlink{struct_u_a_vparams_a6dd14d39d649e24fe3bb127f6d2ffe59}{Iy}}
+\item 
+double \mbox{\hyperlink{struct_u_a_vparams_a5995f5d5a4d91896eb927d79febe6592}{Iz}}
+\item 
+double \mbox{\hyperlink{struct_u_a_vparams_a69634df6e9907ab1fdd7d894fa012ca2}{Ixy}}
+\item 
+double \mbox{\hyperlink{struct_u_a_vparams_a153d10268e292b5588fefff180ce37cf}{Ixz}}
+\item 
+double \mbox{\hyperlink{struct_u_a_vparams_a58830277b24cb3dd18cf492867c684b3}{Iyz}}
+\item 
+int \mbox{\hyperlink{struct_u_a_vparams_a7f288a15eae9f0bbb851b37063a17292}{no\+Of\+Rotors}}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{struct_rotor}{Rotor}}\mbox{[}$\,$\mbox{]}$>$ \mbox{\hyperlink{struct_u_a_vparams_ab8ef3b13e75f5e478f7af6da80f1686d}{rotors}}
+\item 
+int \mbox{\hyperlink{struct_u_a_vparams_a5f4d45ca6a6767ba247742c63f98b66c}{no\+Of\+Jets}}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_jet}{Jet}}\mbox{[}$\,$\mbox{]}$>$ \mbox{\hyperlink{struct_u_a_vparams_afeb18e53ac5d930871f327a6ad915473}{jets}}
+\item 
+\mbox{\hyperlink{class_control_surfaces}{Control\+Surfaces}} \mbox{\hyperlink{struct_u_a_vparams_aa43853bd1d69d37ad3978b540ba1a51c}{surfaces}}
+\item 
+\mbox{\hyperlink{struct_aero_coefficients}{Aero\+Coefficients}} \mbox{\hyperlink{struct_u_a_vparams_a6bef46955129ed087aac26a51d5f88c2}{aero\+\_\+coffs}}
+\item 
+std\+::map$<$ std\+::string, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_controller}{Controller}} $>$ $>$ \mbox{\hyperlink{struct_u_a_vparams_af506811615135d1dbe3e22fe50c7d8a6}{controllers}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_sensor_params}{Sensor\+Params}} $>$ \mbox{\hyperlink{struct_u_a_vparams_a96a603567923ff427040377e1dd7a4a0}{sensors}}
+\item 
+\mbox{\hyperlink{struct_a_h_r_s_params}{AHRSParams}} \mbox{\hyperlink{struct_u_a_vparams_ad21467c17744bddfdf3a43fc6e389d4a}{ahrs}}
+\item 
+\mbox{\hyperlink{struct_e_k_f_scalers}{EKFScalers}} \mbox{\hyperlink{struct_u_a_vparams_a684150a3033e0f335d3ed5176a8f0c86}{ekf}}
+\item 
+Eigen\+::\+Matrix\+X4d \mbox{\hyperlink{struct_u_a_vparams_a2ce7cbfa3d3a49e25db498bd8ca35491}{rotor\+Mixer}}
+\item 
+Eigen\+::\+Matrix\+X4d \mbox{\hyperlink{struct_u_a_vparams_a8ffd251f1b195afb94e8b56af5b8e2b7}{surface\+Mixer}}
+\item 
+int \mbox{\hyperlink{struct_u_a_vparams_acdf32fb27d8acb97a6ca1d48884794dd}{no\+Of\+Ammo}}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_ammo}{Ammo}}\mbox{[}$\,$\mbox{]}$>$ \mbox{\hyperlink{struct_u_a_vparams_a403e8ea63f473d66ca8c54366add475a}{ammo}}
+\item 
+int \mbox{\hyperlink{struct_u_a_vparams_a4e753bfb641c473291cf3d0f9cffadce}{no\+Of\+Cargo}}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_cargo}{Cargo}}\mbox{[}$\,$\mbox{]}$>$ \mbox{\hyperlink{struct_u_a_vparams_a5bb6c8b9ca0da4f2f16521250055d4b0}{cargo}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Parsed UAV configuration from XML. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_u_a_vparams_a0b73936adaed2df9e3e96d7c33d788c7}\label{struct_u_a_vparams_a0b73936adaed2df9e3e96d7c33d788c7}} 
+\index{UAVparams@{UAVparams}!UAVparams@{UAVparams}}
+\index{UAVparams@{UAVparams}!UAVparams@{UAVparams}}
+\doxysubsubsection{\texorpdfstring{UAVparams()}{UAVparams()}}
+{\footnotesize\ttfamily UAVparams\+::\+UAVparams (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialize default data. 
+
+\mbox{\Hypertarget{struct_u_a_vparams_a4862c189fb7c80eb0bcb01ce6478d17f}\label{struct_u_a_vparams_a4862c189fb7c80eb0bcb01ce6478d17f}} 
+\index{UAVparams@{UAVparams}!````~UAVparams@{$\sim$UAVparams}}
+\index{````~UAVparams@{$\sim$UAVparams}!UAVparams@{UAVparams}}
+\doxysubsubsection{\texorpdfstring{$\sim$UAVparams()}{~UAVparams()}}
+{\footnotesize\ttfamily UAVparams\+::$\sim$\+UAVparams (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_u_a_vparams_a54fad4b1147eac0ee23e6635f3294481}\label{struct_u_a_vparams_a54fad4b1147eac0ee23e6635f3294481}} 
+\index{UAVparams@{UAVparams}!getRotorHoverSpeeds@{getRotorHoverSpeeds}}
+\index{getRotorHoverSpeeds@{getRotorHoverSpeeds}!UAVparams@{UAVparams}}
+\doxysubsubsection{\texorpdfstring{getRotorHoverSpeeds()}{getRotorHoverSpeeds()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd UAVparams\+::get\+Rotor\+Hover\+Speeds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{struct_u_a_vparams_a3547c23a61dbe6d7920f6796ddb23bc6}\label{struct_u_a_vparams_a3547c23a61dbe6d7920f6796ddb23bc6}} 
+\index{UAVparams@{UAVparams}!getRotorMaxSpeeds@{getRotorMaxSpeeds}}
+\index{getRotorMaxSpeeds@{getRotorMaxSpeeds}!UAVparams@{UAVparams}}
+\doxysubsubsection{\texorpdfstring{getRotorMaxSpeeds()}{getRotorMaxSpeeds()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd UAVparams\+::get\+Rotor\+Max\+Speeds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{struct_u_a_vparams_aa0fc8cb71620778e5c667c4ef2c78b97}\label{struct_u_a_vparams_aa0fc8cb71620778e5c667c4ef2c78b97}} 
+\index{UAVparams@{UAVparams}!getRotorTimeContants@{getRotorTimeContants}}
+\index{getRotorTimeContants@{getRotorTimeContants}!UAVparams@{UAVparams}}
+\doxysubsubsection{\texorpdfstring{getRotorTimeContants()}{getRotorTimeContants()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd UAVparams\+::get\+Rotor\+Time\+Contants (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{struct_u_a_vparams_a5c30cc561bd039fe3bfa4d271c2b7a10}\label{struct_u_a_vparams_a5c30cc561bd039fe3bfa4d271c2b7a10}} 
+\index{UAVparams@{UAVparams}!getSingleton@{getSingleton}}
+\index{getSingleton@{getSingleton}!UAVparams@{UAVparams}}
+\doxysubsubsection{\texorpdfstring{getSingleton()}{getSingleton()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_u_a_vparams}{UAVparams}} $\ast$ UAVparams\+::get\+Singleton (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{struct_u_a_vparams_ad94e51fbb882dde21be20eca308e83ab}\label{struct_u_a_vparams_ad94e51fbb882dde21be20eca308e83ab}} 
+\index{UAVparams@{UAVparams}!loadConfig@{loadConfig}}
+\index{loadConfig@{loadConfig}!UAVparams@{UAVparams}}
+\doxysubsubsection{\texorpdfstring{loadConfig()}{loadConfig()}}
+{\footnotesize\ttfamily void UAVparams\+::load\+Config (\begin{DoxyParamCaption}\item[{std\+::string}]{config\+File }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_u_a_vparams_a6bef46955129ed087aac26a51d5f88c2}\label{struct_u_a_vparams_a6bef46955129ed087aac26a51d5f88c2}} 
+\index{UAVparams@{UAVparams}!aero\_coffs@{aero\_coffs}}
+\index{aero\_coffs@{aero\_coffs}!UAVparams@{UAVparams}}
+\doxysubsubsection{\texorpdfstring{aero\_coffs}{aero\_coffs}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_aero_coefficients}{Aero\+Coefficients}} UAVparams\+::aero\+\_\+coffs}
+
+\mbox{\Hypertarget{struct_u_a_vparams_ad21467c17744bddfdf3a43fc6e389d4a}\label{struct_u_a_vparams_ad21467c17744bddfdf3a43fc6e389d4a}} 
+\index{UAVparams@{UAVparams}!ahrs@{ahrs}}
+\index{ahrs@{ahrs}!UAVparams@{UAVparams}}
+\doxysubsubsection{\texorpdfstring{ahrs}{ahrs}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_a_h_r_s_params}{AHRSParams}} UAVparams\+::ahrs}
+
+\mbox{\Hypertarget{struct_u_a_vparams_a403e8ea63f473d66ca8c54366add475a}\label{struct_u_a_vparams_a403e8ea63f473d66ca8c54366add475a}} 
+\index{UAVparams@{UAVparams}!ammo@{ammo}}
+\index{ammo@{ammo}!UAVparams@{UAVparams}}
+\doxysubsubsection{\texorpdfstring{ammo}{ammo}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{class_ammo}{Ammo}}\mbox{[}$\,$\mbox{]}$>$ UAVparams\+::ammo}
+
+\mbox{\Hypertarget{struct_u_a_vparams_a5bb6c8b9ca0da4f2f16521250055d4b0}\label{struct_u_a_vparams_a5bb6c8b9ca0da4f2f16521250055d4b0}} 
+\index{UAVparams@{UAVparams}!cargo@{cargo}}
+\index{cargo@{cargo}!UAVparams@{UAVparams}}
+\doxysubsubsection{\texorpdfstring{cargo}{cargo}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{class_cargo}{Cargo}}\mbox{[}$\,$\mbox{]}$>$ UAVparams\+::cargo}
+
+\mbox{\Hypertarget{struct_u_a_vparams_af506811615135d1dbe3e22fe50c7d8a6}\label{struct_u_a_vparams_af506811615135d1dbe3e22fe50c7d8a6}} 
+\index{UAVparams@{UAVparams}!controllers@{controllers}}
+\index{controllers@{controllers}!UAVparams@{UAVparams}}
+\doxysubsubsection{\texorpdfstring{controllers}{controllers}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string,std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{class_controller}{Controller}}$>$ $>$ UAVparams\+::controllers}
+
+\mbox{\Hypertarget{struct_u_a_vparams_a684150a3033e0f335d3ed5176a8f0c86}\label{struct_u_a_vparams_a684150a3033e0f335d3ed5176a8f0c86}} 
+\index{UAVparams@{UAVparams}!ekf@{ekf}}
+\index{ekf@{ekf}!UAVparams@{UAVparams}}
+\doxysubsubsection{\texorpdfstring{ekf}{ekf}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_e_k_f_scalers}{EKFScalers}} UAVparams\+::ekf}
+
+\mbox{\Hypertarget{struct_u_a_vparams_aefff37a87200a5975d7722b2e750ed51}\label{struct_u_a_vparams_aefff37a87200a5975d7722b2e750ed51}} 
+\index{UAVparams@{UAVparams}!initialMode@{initialMode}}
+\index{initialMode@{initialMode}!UAVparams@{UAVparams}}
+\doxysubsubsection{\texorpdfstring{initialMode}{initialMode}}
+{\footnotesize\ttfamily std\+::string UAVparams\+::initial\+Mode}
+
+\mbox{\Hypertarget{struct_u_a_vparams_a118bae98c7ecc95a39adcd04bc961d19}\label{struct_u_a_vparams_a118bae98c7ecc95a39adcd04bc961d19}} 
+\index{UAVparams@{UAVparams}!initialOrientation@{initialOrientation}}
+\index{initialOrientation@{initialOrientation}!UAVparams@{UAVparams}}
+\doxysubsubsection{\texorpdfstring{initialOrientation}{initialOrientation}}
+{\footnotesize\ttfamily Eigen\+::\+Vector3d UAVparams\+::initial\+Orientation}
+
+\mbox{\Hypertarget{struct_u_a_vparams_a07d441027e86d5cd809e491542fcdc52}\label{struct_u_a_vparams_a07d441027e86d5cd809e491542fcdc52}} 
+\index{UAVparams@{UAVparams}!initialPosition@{initialPosition}}
+\index{initialPosition@{initialPosition}!UAVparams@{UAVparams}}
+\doxysubsubsection{\texorpdfstring{initialPosition}{initialPosition}}
+{\footnotesize\ttfamily Eigen\+::\+Vector3d UAVparams\+::initial\+Position}
+
+\mbox{\Hypertarget{struct_u_a_vparams_af87b0804f33e160e10ac9e55c1a5693c}\label{struct_u_a_vparams_af87b0804f33e160e10ac9e55c1a5693c}} 
+\index{UAVparams@{UAVparams}!initialVelocity@{initialVelocity}}
+\index{initialVelocity@{initialVelocity}!UAVparams@{UAVparams}}
+\doxysubsubsection{\texorpdfstring{initialVelocity}{initialVelocity}}
+{\footnotesize\ttfamily Eigen\+::\+Vector3d UAVparams\+::initial\+Velocity}
+
+\mbox{\Hypertarget{struct_u_a_vparams_aa715ffa3710e4ced79cb46be3cd181f5}\label{struct_u_a_vparams_aa715ffa3710e4ced79cb46be3cd181f5}} 
+\index{UAVparams@{UAVparams}!instantRun@{instantRun}}
+\index{instantRun@{instantRun}!UAVparams@{UAVparams}}
+\doxysubsubsection{\texorpdfstring{instantRun}{instantRun}}
+{\footnotesize\ttfamily bool UAVparams\+::instant\+Run}
+
+\mbox{\Hypertarget{struct_u_a_vparams_a739d6e7d2869f6b6a151d95ddac59f64}\label{struct_u_a_vparams_a739d6e7d2869f6b6a151d95ddac59f64}} 
+\index{UAVparams@{UAVparams}!Ix@{Ix}}
+\index{Ix@{Ix}!UAVparams@{UAVparams}}
+\doxysubsubsection{\texorpdfstring{Ix}{Ix}}
+{\footnotesize\ttfamily double UAVparams\+::\+Ix}
+
+\mbox{\Hypertarget{struct_u_a_vparams_a69634df6e9907ab1fdd7d894fa012ca2}\label{struct_u_a_vparams_a69634df6e9907ab1fdd7d894fa012ca2}} 
+\index{UAVparams@{UAVparams}!Ixy@{Ixy}}
+\index{Ixy@{Ixy}!UAVparams@{UAVparams}}
+\doxysubsubsection{\texorpdfstring{Ixy}{Ixy}}
+{\footnotesize\ttfamily double UAVparams\+::\+Ixy}
+
+\mbox{\Hypertarget{struct_u_a_vparams_a153d10268e292b5588fefff180ce37cf}\label{struct_u_a_vparams_a153d10268e292b5588fefff180ce37cf}} 
+\index{UAVparams@{UAVparams}!Ixz@{Ixz}}
+\index{Ixz@{Ixz}!UAVparams@{UAVparams}}
+\doxysubsubsection{\texorpdfstring{Ixz}{Ixz}}
+{\footnotesize\ttfamily double UAVparams\+::\+Ixz}
+
+\mbox{\Hypertarget{struct_u_a_vparams_a6dd14d39d649e24fe3bb127f6d2ffe59}\label{struct_u_a_vparams_a6dd14d39d649e24fe3bb127f6d2ffe59}} 
+\index{UAVparams@{UAVparams}!Iy@{Iy}}
+\index{Iy@{Iy}!UAVparams@{UAVparams}}
+\doxysubsubsection{\texorpdfstring{Iy}{Iy}}
+{\footnotesize\ttfamily double UAVparams\+::\+Iy}
+
+\mbox{\Hypertarget{struct_u_a_vparams_a58830277b24cb3dd18cf492867c684b3}\label{struct_u_a_vparams_a58830277b24cb3dd18cf492867c684b3}} 
+\index{UAVparams@{UAVparams}!Iyz@{Iyz}}
+\index{Iyz@{Iyz}!UAVparams@{UAVparams}}
+\doxysubsubsection{\texorpdfstring{Iyz}{Iyz}}
+{\footnotesize\ttfamily double UAVparams\+::\+Iyz}
+
+\mbox{\Hypertarget{struct_u_a_vparams_a5995f5d5a4d91896eb927d79febe6592}\label{struct_u_a_vparams_a5995f5d5a4d91896eb927d79febe6592}} 
+\index{UAVparams@{UAVparams}!Iz@{Iz}}
+\index{Iz@{Iz}!UAVparams@{UAVparams}}
+\doxysubsubsection{\texorpdfstring{Iz}{Iz}}
+{\footnotesize\ttfamily double UAVparams\+::\+Iz}
+
+\mbox{\Hypertarget{struct_u_a_vparams_afeb18e53ac5d930871f327a6ad915473}\label{struct_u_a_vparams_afeb18e53ac5d930871f327a6ad915473}} 
+\index{UAVparams@{UAVparams}!jets@{jets}}
+\index{jets@{jets}!UAVparams@{UAVparams}}
+\doxysubsubsection{\texorpdfstring{jets}{jets}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{class_jet}{Jet}}\mbox{[}$\,$\mbox{]}$>$ UAVparams\+::jets}
+
+\mbox{\Hypertarget{struct_u_a_vparams_ae1e56184ccbe5640aaae4a4990f91746}\label{struct_u_a_vparams_ae1e56184ccbe5640aaae4a4990f91746}} 
+\index{UAVparams@{UAVparams}!m@{m}}
+\index{m@{m}!UAVparams@{UAVparams}}
+\doxysubsubsection{\texorpdfstring{m}{m}}
+{\footnotesize\ttfamily double UAVparams\+::m}
+
+\mbox{\Hypertarget{struct_u_a_vparams_a3d05aab6b5f46714c8e7f06ccb2290ab}\label{struct_u_a_vparams_a3d05aab6b5f46714c8e7f06ccb2290ab}} 
+\index{UAVparams@{UAVparams}!name@{name}}
+\index{name@{name}!UAVparams@{UAVparams}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily std\+::string UAVparams\+::name}
+
+\mbox{\Hypertarget{struct_u_a_vparams_acdf32fb27d8acb97a6ca1d48884794dd}\label{struct_u_a_vparams_acdf32fb27d8acb97a6ca1d48884794dd}} 
+\index{UAVparams@{UAVparams}!noOfAmmo@{noOfAmmo}}
+\index{noOfAmmo@{noOfAmmo}!UAVparams@{UAVparams}}
+\doxysubsubsection{\texorpdfstring{noOfAmmo}{noOfAmmo}}
+{\footnotesize\ttfamily int UAVparams\+::no\+Of\+Ammo}
+
+\mbox{\Hypertarget{struct_u_a_vparams_a4e753bfb641c473291cf3d0f9cffadce}\label{struct_u_a_vparams_a4e753bfb641c473291cf3d0f9cffadce}} 
+\index{UAVparams@{UAVparams}!noOfCargo@{noOfCargo}}
+\index{noOfCargo@{noOfCargo}!UAVparams@{UAVparams}}
+\doxysubsubsection{\texorpdfstring{noOfCargo}{noOfCargo}}
+{\footnotesize\ttfamily int UAVparams\+::no\+Of\+Cargo}
+
+\mbox{\Hypertarget{struct_u_a_vparams_a5f4d45ca6a6767ba247742c63f98b66c}\label{struct_u_a_vparams_a5f4d45ca6a6767ba247742c63f98b66c}} 
+\index{UAVparams@{UAVparams}!noOfJets@{noOfJets}}
+\index{noOfJets@{noOfJets}!UAVparams@{UAVparams}}
+\doxysubsubsection{\texorpdfstring{noOfJets}{noOfJets}}
+{\footnotesize\ttfamily int UAVparams\+::no\+Of\+Jets}
+
+\mbox{\Hypertarget{struct_u_a_vparams_a7f288a15eae9f0bbb851b37063a17292}\label{struct_u_a_vparams_a7f288a15eae9f0bbb851b37063a17292}} 
+\index{UAVparams@{UAVparams}!noOfRotors@{noOfRotors}}
+\index{noOfRotors@{noOfRotors}!UAVparams@{UAVparams}}
+\doxysubsubsection{\texorpdfstring{noOfRotors}{noOfRotors}}
+{\footnotesize\ttfamily int UAVparams\+::no\+Of\+Rotors}
+
+\mbox{\Hypertarget{struct_u_a_vparams_a2ce7cbfa3d3a49e25db498bd8ca35491}\label{struct_u_a_vparams_a2ce7cbfa3d3a49e25db498bd8ca35491}} 
+\index{UAVparams@{UAVparams}!rotorMixer@{rotorMixer}}
+\index{rotorMixer@{rotorMixer}!UAVparams@{UAVparams}}
+\doxysubsubsection{\texorpdfstring{rotorMixer}{rotorMixer}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+X4d UAVparams\+::rotor\+Mixer}
+
+\mbox{\Hypertarget{struct_u_a_vparams_ab8ef3b13e75f5e478f7af6da80f1686d}\label{struct_u_a_vparams_ab8ef3b13e75f5e478f7af6da80f1686d}} 
+\index{UAVparams@{UAVparams}!rotors@{rotors}}
+\index{rotors@{rotors}!UAVparams@{UAVparams}}
+\doxysubsubsection{\texorpdfstring{rotors}{rotors}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{struct_rotor}{Rotor}}\mbox{[}$\,$\mbox{]}$>$ UAVparams\+::rotors}
+
+\mbox{\Hypertarget{struct_u_a_vparams_a96a603567923ff427040377e1dd7a4a0}\label{struct_u_a_vparams_a96a603567923ff427040377e1dd7a4a0}} 
+\index{UAVparams@{UAVparams}!sensors@{sensors}}
+\index{sensors@{sensors}!UAVparams@{UAVparams}}
+\doxysubsubsection{\texorpdfstring{sensors}{sensors}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{struct_sensor_params}{Sensor\+Params}}$>$ UAVparams\+::sensors}
+
+\mbox{\Hypertarget{struct_u_a_vparams_a8ffd251f1b195afb94e8b56af5b8e2b7}\label{struct_u_a_vparams_a8ffd251f1b195afb94e8b56af5b8e2b7}} 
+\index{UAVparams@{UAVparams}!surfaceMixer@{surfaceMixer}}
+\index{surfaceMixer@{surfaceMixer}!UAVparams@{UAVparams}}
+\doxysubsubsection{\texorpdfstring{surfaceMixer}{surfaceMixer}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+X4d UAVparams\+::surface\+Mixer}
+
+\mbox{\Hypertarget{struct_u_a_vparams_aa43853bd1d69d37ad3978b540ba1a51c}\label{struct_u_a_vparams_aa43853bd1d69d37ad3978b540ba1a51c}} 
+\index{UAVparams@{UAVparams}!surfaces@{surfaces}}
+\index{surfaces@{surfaces}!UAVparams@{UAVparams}}
+\doxysubsubsection{\texorpdfstring{surfaces}{surfaces}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_control_surfaces}{Control\+Surfaces}} UAVparams\+::surfaces}
+
+\mbox{\Hypertarget{struct_u_a_vparams_a9e9c1a36c5252f3945582342e711d5a7}\label{struct_u_a_vparams_a9e9c1a36c5252f3945582342e711d5a7}} 
+\index{UAVparams@{UAVparams}!target@{target}}
+\index{target@{target}!UAVparams@{UAVparams}}
+\doxysubsubsection{\texorpdfstring{target}{target}}
+{\footnotesize\ttfamily Eigen\+::\+Vector3d UAVparams\+::target}
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/parser/\mbox{\hyperlink{uav__params_8hpp}{uav\+\_\+params.\+hpp}}\item 
+src/parser/\mbox{\hyperlink{uav__params_8cpp}{uav\+\_\+params.\+cpp}}\end{DoxyCompactItemize}

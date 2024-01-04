@@ -1,0 +1,124 @@
+\hypertarget{classcontrollers_1_1_bang_bang}{}\doxysection{controllers\+::Bang\+Bang Class Reference}
+\label{classcontrollers_1_1_bang_bang}\index{controllers::BangBang@{controllers::BangBang}}
+
+
+{\ttfamily \#include $<$bang\+\_\+bang.\+hpp$>$}
+
+
+
+Inheritance diagram for controllers\+::Bang\+Bang\+:
+% FIG 0
+
+
+Collaboration diagram for controllers\+::Bang\+Bang\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcontrollers_1_1_bang_bang_a9e322ebd576307bc6a3cbdebdc55d852}{Bang\+Bang}} (double high, double low, double delta=0.\+0)
+\begin{DoxyCompactList}\small\item\em Constructor with all Bang-\/bang controller parameters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcontrollers_1_1_bang_bang_a3ed795e4e282a0fab117fc5b122414dc}{Bang\+Bang}} (rapidxml\+::xml\+\_\+node$<$$>$ $\ast$controller\+\_\+node)
+\begin{DoxyCompactList}\small\item\em Construct controller with parameters from xml. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classcontrollers_1_1_bang_bang_a255dd462f9594b7981a163e84ba75bed}{calc}} (double desired, double actual, \mbox{[}\mbox{[}maybe\+\_\+unused\mbox{]}\mbox{]} double dt) override
+\begin{DoxyCompactList}\small\item\em calc output of controller with specific time step \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcontrollers_1_1_bang_bang_a77f47271bc49c53937bff1795684db47}{clear}} () override
+\begin{DoxyCompactList}\small\item\em clear internal state \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_controller}{Controller}} $>$ \mbox{\hyperlink{classcontrollers_1_1_bang_bang_aa7eb29bed59f461444685ea3d5100565}{clone}} () const override
+\begin{DoxyCompactList}\small\item\em virtual clone method \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classcontrollers_1_1_bang_bang_a9e322ebd576307bc6a3cbdebdc55d852}\label{classcontrollers_1_1_bang_bang_a9e322ebd576307bc6a3cbdebdc55d852}} 
+\index{controllers::BangBang@{controllers::BangBang}!BangBang@{BangBang}}
+\index{BangBang@{BangBang}!controllers::BangBang@{controllers::BangBang}}
+\doxysubsubsection{\texorpdfstring{BangBang()}{BangBang()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily controllers\+::\+Bang\+Bang\+::\+Bang\+Bang (\begin{DoxyParamCaption}\item[{double}]{high,  }\item[{double}]{low,  }\item[{double}]{delta = {\ttfamily 0.0} }\end{DoxyParamCaption})}
+
+
+
+Constructor with all Bang-\/bang controller parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em high} & output when error is positive \\
+\hline
+{\em low} & output when error is negative \\
+\hline
+{\em delta} & histeresis symetrical to zero \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcontrollers_1_1_bang_bang_a3ed795e4e282a0fab117fc5b122414dc}\label{classcontrollers_1_1_bang_bang_a3ed795e4e282a0fab117fc5b122414dc}} 
+\index{controllers::BangBang@{controllers::BangBang}!BangBang@{BangBang}}
+\index{BangBang@{BangBang}!controllers::BangBang@{controllers::BangBang}}
+\doxysubsubsection{\texorpdfstring{BangBang()}{BangBang()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily controllers\+::\+Bang\+Bang\+::\+Bang\+Bang (\begin{DoxyParamCaption}\item[{rapidxml\+::xml\+\_\+node$<$$>$ $\ast$}]{controller\+\_\+node }\end{DoxyParamCaption})}
+
+
+
+Construct controller with parameters from xml. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller\+\_\+node} & xml node with controller params \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classcontrollers_1_1_bang_bang_a255dd462f9594b7981a163e84ba75bed}\label{classcontrollers_1_1_bang_bang_a255dd462f9594b7981a163e84ba75bed}} 
+\index{controllers::BangBang@{controllers::BangBang}!calc@{calc}}
+\index{calc@{calc}!controllers::BangBang@{controllers::BangBang}}
+\doxysubsubsection{\texorpdfstring{calc()}{calc()}}
+{\footnotesize\ttfamily double controllers\+::\+Bang\+Bang\+::calc (\begin{DoxyParamCaption}\item[{double}]{desired,  }\item[{double}]{actual,  }\item[{\mbox{[}\mbox{[}maybe\+\_\+unused\mbox{]} \mbox{]} double}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+calc output of controller with specific time step 
+
+
+\begin{DoxyParams}{Parameters}
+{\em desired} & input of controller, desired value \\
+\hline
+{\em actual} & measured actual value \\
+\hline
+{\em dt} & time step \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+output of controller 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcontrollers_1_1_bang_bang_a77f47271bc49c53937bff1795684db47}\label{classcontrollers_1_1_bang_bang_a77f47271bc49c53937bff1795684db47}} 
+\index{controllers::BangBang@{controllers::BangBang}!clear@{clear}}
+\index{clear@{clear}!controllers::BangBang@{controllers::BangBang}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void controllers\+::\+Bang\+Bang\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+clear internal state 
+
+
+
+Implements \mbox{\hyperlink{class_controller_a540f9f6b248d4e6a29061133a6ede5e2}{Controller}}.
+
+\mbox{\Hypertarget{classcontrollers_1_1_bang_bang_aa7eb29bed59f461444685ea3d5100565}\label{classcontrollers_1_1_bang_bang_aa7eb29bed59f461444685ea3d5100565}} 
+\index{controllers::BangBang@{controllers::BangBang}!clone@{clone}}
+\index{clone@{clone}!controllers::BangBang@{controllers::BangBang}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_controller}{Controller}} $>$ controllers\+::\+Bang\+Bang\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+virtual clone method 
+
+
+
+Implements \mbox{\hyperlink{class_controller_a956c82e68f635fce8e66700a985fb3fb}{Controller}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/controllers/impl/\mbox{\hyperlink{bang__bang_8hpp}{bang\+\_\+bang.\+hpp}}\item 
+src/controllers/impl/\mbox{\hyperlink{bang__bang_8cpp}{bang\+\_\+bang.\+cpp}}\end{DoxyCompactItemize}

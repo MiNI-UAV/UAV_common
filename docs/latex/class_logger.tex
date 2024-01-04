@@ -1,0 +1,137 @@
+\hypertarget{class_logger}{}\doxysection{Logger Class Reference}
+\label{class_logger}\index{Logger@{Logger}}
+
+
+Log vector data with timestamp in file.  
+
+
+
+
+{\ttfamily \#include $<$logger.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_logger_af4da1032b0d645dbe6dd10ef4146c8b1}{Logger}} (std\+::string path, std\+::string fmt=\char`\"{}\char`\"{}, uint8\+\_\+t group=0)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_logger_acb668a9e186a25fbaad2e4af6d1ed00a}{$\sim$\+Logger}} ()
+\begin{DoxyCompactList}\small\item\em Deconstructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_logger_a1e00a8b5e0f523404a73fd3f739ee611}{set\+Fmt}} (std\+::string fmt)
+\begin{DoxyCompactList}\small\item\em Set new format if was not known in constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_logger_a61a5b41fe82010ffbf7961ed1b91bfc1}{log}} (double time, std\+::initializer\+\_\+list$<$ Eigen\+::\+Vector\+Xd $>$ args)
+\begin{DoxyCompactList}\small\item\em Log one row. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_logger_aa70b6d0664065089181591b833433f0b}{log}} (double time, std\+::initializer\+\_\+list$<$ double $>$ args)
+\begin{DoxyCompactList}\small\item\em Log one row. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_logger_a914042440de7ce4b722554fdb83ae306}{set\+Log\+Directory}} (std\+::string subdirectory)
+\begin{DoxyCompactList}\small\item\em Set global path that log should be created at. Path will be added to relative path of specific log instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Log vector data with timestamp in file. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_logger_af4da1032b0d645dbe6dd10ef4146c8b1}\label{class_logger_af4da1032b0d645dbe6dd10ef4146c8b1}} 
+\index{Logger@{Logger}!Logger@{Logger}}
+\index{Logger@{Logger}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{Logger()}{Logger()}}
+{\footnotesize\ttfamily Logger\+::\+Logger (\begin{DoxyParamCaption}\item[{std\+::string}]{path,  }\item[{std\+::string}]{fmt = {\ttfamily \char`\"{}\char`\"{}},  }\item[{uint8\+\_\+t}]{group = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & relative path with log file name. \\
+\hline
+{\em fmt} & format -\/ information about log structure. First line in log file \\
+\hline
+{\em group} & log group -\/ log will be created only if group is in actual LOGGER\+\_\+\+MASK \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_logger_acb668a9e186a25fbaad2e4af6d1ed00a}\label{class_logger_acb668a9e186a25fbaad2e4af6d1ed00a}} 
+\index{Logger@{Logger}!````~Logger@{$\sim$Logger}}
+\index{````~Logger@{$\sim$Logger}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{$\sim$Logger()}{~Logger()}}
+{\footnotesize\ttfamily Logger\+::$\sim$\+Logger (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Deconstructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_logger_aa70b6d0664065089181591b833433f0b}\label{class_logger_aa70b6d0664065089181591b833433f0b}} 
+\index{Logger@{Logger}!log@{log}}
+\index{log@{log}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{log()}{log()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Logger\+::log (\begin{DoxyParamCaption}\item[{double}]{time,  }\item[{std\+::initializer\+\_\+list$<$ double $>$}]{args }\end{DoxyParamCaption})}
+
+
+
+Log one row. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & timestamp \\
+\hline
+{\em args} & list of doubles \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_logger_a61a5b41fe82010ffbf7961ed1b91bfc1}\label{class_logger_a61a5b41fe82010ffbf7961ed1b91bfc1}} 
+\index{Logger@{Logger}!log@{log}}
+\index{log@{log}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{log()}{log()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Logger\+::log (\begin{DoxyParamCaption}\item[{double}]{time,  }\item[{std\+::initializer\+\_\+list$<$ Eigen\+::\+Vector\+Xd $>$}]{args }\end{DoxyParamCaption})}
+
+
+
+Log one row. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & timestamp \\
+\hline
+{\em args} & list of double vectors \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_logger_a1e00a8b5e0f523404a73fd3f739ee611}\label{class_logger_a1e00a8b5e0f523404a73fd3f739ee611}} 
+\index{Logger@{Logger}!setFmt@{setFmt}}
+\index{setFmt@{setFmt}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{setFmt()}{setFmt()}}
+{\footnotesize\ttfamily void Logger\+::set\+Fmt (\begin{DoxyParamCaption}\item[{std\+::string}]{fmt }\end{DoxyParamCaption})}
+
+
+
+Set new format if was not known in constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fmt} & new format \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_logger_a914042440de7ce4b722554fdb83ae306}\label{class_logger_a914042440de7ce4b722554fdb83ae306}} 
+\index{Logger@{Logger}!setLogDirectory@{setLogDirectory}}
+\index{setLogDirectory@{setLogDirectory}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{setLogDirectory()}{setLogDirectory()}}
+{\footnotesize\ttfamily void Logger\+::set\+Log\+Directory (\begin{DoxyParamCaption}\item[{std\+::string}]{subdirectory }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Set global path that log should be created at. Path will be added to relative path of specific log instance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em subdirectory} & new global log path \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/logger/\mbox{\hyperlink{logger_8hpp}{logger.\+hpp}}\item 
+src/logger/\mbox{\hyperlink{logger_8cpp}{logger.\+cpp}}\end{DoxyCompactItemize}
