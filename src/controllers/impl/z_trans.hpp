@@ -3,9 +3,11 @@
 #include <memory>
 #include <limits>
 #include <array>
+#include <vector>
 #include <algorithm>
 #include <numeric>
 #include <stdexcept>
+#include <cassert>
 #include "rapidxml/rapidxml.hpp"
 #include "../controller.hpp"
 
@@ -13,13 +15,13 @@
 namespace controllers
 {
     template<unsigned int N, unsigned int D>
-    class ZTransform : public Controller
+    class ZTransformStatic : public Controller
     {
         public:
             /// @brief Constructorof Z-Transform controller
             /// @param min saturation - lower range limit
             /// @param max saturation - upper range limit
-            ZTransform(
+            ZTransformStatic(
                 const std::array<double,N>& num,
                 const std::array<double,D>& den,
                 double min = -std::numeric_limits<double>::max(),
@@ -29,7 +31,7 @@ namespace controllers
 
             /// @brief Construct controller with parameters from xml
             /// @param controller_node xml node with controller params
-            ZTransform(rapidxml::xml_node<>* controller_node) = delete;
+            ZTransformStatic(rapidxml::xml_node<>* controller_node) = delete;
 
             /// @brief calc output of controller
             /// @param desired input of controller, desired value
@@ -53,7 +55,7 @@ namespace controllers
     };
 
      template<unsigned int N, unsigned int D>
-    ZTransform<N, D>::ZTransform(const std::array<double, N>& num, const std::array<double, D>& den,
+    ZTransformStatic<N, D>::ZTransformStatic(const std::array<double, N>& num, const std::array<double, D>& den,
         double min, double max) 
         : _min{min}, _max{max}
     {
@@ -73,7 +75,7 @@ namespace controllers
     }
 
     template<unsigned int N, unsigned int D>
-    double ZTransform<N, D>::calc(double desired, double actual, [[maybe_unused]] double dt)
+    double ZTransformStatic<N, D>::calc(double desired, double actual, [[maybe_unused]] double dt)
     {
         for(int i = N-1; i >= 1; i--)
         {
@@ -94,7 +96,7 @@ namespace controllers
     }
 
     template<unsigned int N, unsigned int D>
-    void ZTransform<N, D>::clear()
+    void ZTransformStatic<N, D>::clear()
     {
         for(auto& elem : _num_history)
         {
@@ -107,14 +109,47 @@ namespace controllers
     }
 
     template<unsigned int N, unsigned int D>
-    std::unique_ptr<Controller> ZTransform<N, D>::clone() const
+    std::unique_ptr<Controller> ZTransformStatic<N, D>::clone() const
     {
-        return std::make_unique<ZTransform<N, D>>(_num, _den);
+        return std::make_unique<ZTransformStatic<N, D>>(_num, _den);
     }
 
-    class ZTransformFactory
+    class ZTransform : public Controller
     {
-    public:
-        static std::unique_ptr<Controller> factory(rapidxml::xml_node<>* controller_node);
+        public:
+            /// @brief Constructorof Z-Transform controller
+            /// @param min saturation - lower range limit
+            /// @param max saturation - upper range limit
+            ZTransform(
+                const std::vector<double>& num,
+                const std::vector<double>& den,
+                double min = -std::numeric_limits<double>::max(),
+                double max = std::numeric_limits<double>::max()
+                );
+
+
+            /// @brief Construct controller with parameters from xml
+            /// @param controller_node xml node with controller params
+            ZTransform(rapidxml::xml_node<>* controller_node);
+
+            /// @brief calc output of controller
+            /// @param desired input of controller, desired value
+            /// @param actual measured actual value
+            /// @return output of controller
+            double calc(double desired, double actual, [[maybe_unused]] double dt) override;
+
+            /// @brief clear internal state
+            void clear() override;
+
+            /// @brief virtual clone method
+            std::unique_ptr<Controller> clone() const override;
+
+        private:
+            std::vector<double> _num;
+            std::vector<double> _den;
+            std::vector<double> _num_history;
+            std::vector<double> _den_history;
+            double _max;
+            double _min;
     };
 }

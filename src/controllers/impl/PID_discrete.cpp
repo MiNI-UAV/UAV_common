@@ -53,7 +53,7 @@ void controllers::PID_Discrete::set_dt(double dt)
         1.0
         }};
     
-    _pid_discrete = std::make_unique<ZTransform<3,3>>(num, den,_min,_max);
+    _pid_discrete = std::make_unique<ZTransformStatic<3,3>>(num, den,_min,_max);
 }
 
 void controllers::PID_Discrete::clear() 

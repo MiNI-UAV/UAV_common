@@ -26,7 +26,10 @@ std::vector<std::shared_ptr<Controller>> getMethodsToTest()
     controllers.push_back(std::shared_ptr<Controller>(new controllers::BangBang(0.5,-0.5,0.1)));
     controllers.push_back(std::shared_ptr<Controller>(new controllers::DoubleSetpoint(0.5,0.0,-0.5,0.1)));
     controllers.push_back(std::shared_ptr<Controller>(
-        new controllers::ZTransform<3,3>(
+        new controllers::ZTransformStatic<3,3>(
+            {{0.01, 0.48, -0.489}}, {{1.0,-1.0, 0.0}})));
+    controllers.push_back(std::shared_ptr<Controller>(
+        new controllers::ZTransform(
             {{0.01, 0.48, -0.489}}, {{1.0,-1.0, 0.0}})));
     return controllers;
 }

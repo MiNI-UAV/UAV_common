@@ -42,9 +42,9 @@ Controller::ControllerFactory(rapidxml::xml_node<> *controller_node)
     {
         return std::unique_ptr<Controller>(new controllers::PID_Discrete(controller_node));
     }
-    if(std::strcmp(type_node->value(),"ZTRANS") == 0)
+    if(std::strcmp(type_node->value(),"Z_TRANSFORM") == 0)
     {
-        return controllers::ZTransformFactory::factory(controller_node);
+        return std::unique_ptr<Controller>(new controllers::ZTransform(controller_node));
     }
 
     return std::unique_ptr<Controller>{};

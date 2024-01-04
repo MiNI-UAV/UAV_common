@@ -49,6 +49,7 @@ target_sources(${PROJECT_NAME}
     ${SOURCE_DIR}/controllers/impl/PID_discrete.cpp
     ${SOURCE_DIR}/controllers/impl/bang_bang.cpp
     ${SOURCE_DIR}/controllers/impl/double_setpoint.cpp
+    ${SOURCE_DIR}/controllers/impl/z_trans.cpp
 )
 
 # Tests
