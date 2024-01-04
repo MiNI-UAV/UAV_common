@@ -11,7 +11,6 @@
 #include "rapidxml/rapidxml.hpp"
 #include "../controller.hpp"
 
-
 namespace controllers
 {
     template<unsigned int N, unsigned int D>
@@ -90,8 +89,7 @@ namespace controllers
         {
             _den_history[i] = _den_history[i-1];
         }
-        _den_history[0] = std::clamp(res,_min,_max);;
-
+        _den_history[0] = std::clamp(res,_min,_max);
         return _den_history[0];
     }
 
@@ -111,7 +109,7 @@ namespace controllers
     template<unsigned int N, unsigned int D>
     std::unique_ptr<Controller> ZTransformStatic<N, D>::clone() const
     {
-        return std::make_unique<ZTransformStatic<N, D>>(_num, _den);
+        return std::make_unique<ZTransformStatic<N, D>>(_num, _den, _min, _max);
     }
 
     class ZTransform : public Controller

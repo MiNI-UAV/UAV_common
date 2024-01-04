@@ -17,6 +17,7 @@ controllers::PID_Discrete::PID_Discrete(double Kp, double Ki, double Kd,
 {}
 
 controllers::PID_Discrete::PID_Discrete(rapidxml::xml_node<> *controller_node)
+    : PID_Discrete(0.0,0.0,0.0)
 {
     for (rapidxml::xml_node<>* node = controller_node->first_node(); node; node = node->next_sibling()) 
     {
@@ -24,6 +25,7 @@ controllers::PID_Discrete::PID_Discrete(rapidxml::xml_node<> *controller_node)
         if(std::strcmp(node->name(),"I") == 0) _Ki = std::stod(node->value());
         if(std::strcmp(node->name(),"D") == 0) _Kd = std::stod(node->value());
         if(std::strcmp(node->name(),"FF") == 0) _Kff = std::stod(node->value());
+        if(std::strcmp(node->name(),"N") == 0) _N = std::stod(node->value());
         if(std::strcmp(node->name(),"min") == 0) _min = std::stod(node->value());
         if(std::strcmp(node->name(),"max") == 0) _max = std::stod(node->value());
         if(std::strcmp(node->name(),"type") == 0) assert(std::strcmp(node->value(),"PID_DISCRETE") == 0);
@@ -66,7 +68,7 @@ void controllers::PID_Discrete::clear()
 
 std::unique_ptr<Controller> controllers::PID_Discrete::clone() const
 {
-    auto copied = std::unique_ptr<Controller>(new PID_Discrete(_Kp,_Ki,_Kd, _Kff,_min,_max));
+    auto copied = std::unique_ptr<Controller>(new PID_Discrete(_Kp,_Ki,_Kd, _Kff,_N,_min,_max));
     copied->set_dt(_dt);
     copied->clear();
     return copied;
